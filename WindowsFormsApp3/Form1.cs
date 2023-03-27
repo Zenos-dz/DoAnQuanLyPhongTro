@@ -32,5 +32,13 @@ namespace WindowsFormsApp3
             hd.Show();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            phongtro hd = new phongtro(db);
+            hd.TopLevel = false;
+            panel1.Controls.Add(hd);
+            hd.Dock = DockStyle.Fill;
+            hd.Show();
+        }
     }
 }

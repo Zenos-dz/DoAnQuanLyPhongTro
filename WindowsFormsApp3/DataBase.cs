@@ -13,7 +13,7 @@ namespace WindowsFormsApp3
 {
     public class Database
     {
-        private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\csdl\QUANLYNTRO.mdf;Integrated Security=True";
+        private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\csdl\QUANLYTRO.mdf;Integrated Security=True";
 
         // Cac đối tượng để truy vấn dữ liệu
         private SqlConnection conn;
@@ -48,6 +48,21 @@ namespace WindowsFormsApp3
             {
                 MessageBox.Show(ex.Message);
                 return null;
+            }
+        }
+        public void runQuery (string query)
+        {
+            try
+            {
+                mySqlConnection.Open();
+                SqlCommand mySqlConnection= new SqlCommand(query, conn);
+                mySqlConnection.ExecuteNonQuery();
+                mySqlConnection.Clone();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
         
