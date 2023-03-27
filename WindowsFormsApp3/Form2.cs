@@ -12,13 +12,10 @@ namespace WindowsFormsApp3
 {
     public partial class HopDong : Form
     {
-        public HopDong()
-        {
-            InitializeComponent();
-        }
         Database db= null;
         public HopDong(Database dbinput)
         {
+            InitializeComponent();
             db = dbinput;
         }
 

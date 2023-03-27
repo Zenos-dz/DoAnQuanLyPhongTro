@@ -12,7 +12,7 @@ namespace WindowsFormsApp3
 {
     public partial class Main : Form
     {
-        internal Database db = new Database();
+        Database db = new Database();
         public Main()
         {
             InitializeComponent();
