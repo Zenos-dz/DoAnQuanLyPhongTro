@@ -12,6 +12,7 @@ namespace WindowsFormsApp3
 {
     public partial class Main : Form
     {
+        internal Database db = new Database();
         public Main()
         {
             InitializeComponent();
@@ -21,5 +22,15 @@ namespace WindowsFormsApp3
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HopDong hd = new HopDong(db);
+            hd.TopLevel = false;
+            panel1.Controls.Add(hd);
+            hd.Dock = DockStyle.Fill;
+            hd.Show();
+        }
+
     }
 }

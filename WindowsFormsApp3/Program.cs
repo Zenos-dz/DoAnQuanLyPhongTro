@@ -12,12 +12,13 @@ namespace WindowsFormsApp3
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hieuuu\source\repos\WindowsFormsApp3\WindowsFormsApp3\csdl\QUANLYTRO.mdf;Integrated Security=True"
+        
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
+            
         }
     }
 }
