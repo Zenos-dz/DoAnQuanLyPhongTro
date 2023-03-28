@@ -50,23 +50,22 @@ namespace WindowsFormsApp3
                 return null;
             }
         }
-        public void runQuery (string query)
+        public void runQuery(string query)
         {
             try
             {
-                mySqlConnection.Open();
-                SqlCommand mySqlConnection= new SqlCommand(query, conn);
-                mySqlConnection.ExecuteNonQuery();
-                mySqlConnection.Clone();
+                SqlConnection .Open();
+                SqlCommand mySqlCommand = new SqlCommand(ssql, SqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+                SqlConnection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
             }
-        }
-        
-    }
 
+        }
+    }
 }
 

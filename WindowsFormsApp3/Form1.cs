@@ -40,5 +40,14 @@ namespace WindowsFormsApp3
             hd.Dock = DockStyle.Fill;
             hd.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            nguoithuetro hd =  new nguoithuetro();
+            hd.TopLevel = false;
+            panel1.Controls.Add(hd);
+            hd.Dock = DockStyle.Fill;
+            hd.Show();
+        }
     }
 }

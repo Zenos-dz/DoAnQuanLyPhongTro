@@ -21,14 +21,14 @@ namespace WindowsFormsApp3
 
         private void phongtro_Load(object sender, EventArgs e)
         {
-           LoadGridData();
+            LoadGridData();
         }
         private void setEnable (bool check) 
         {
-            txtdientich.Enabled = false;
-            txtgiatien.Enabled = false;
-            txtgiatien.Enabled = false;
-            txttenphong.Enabled = false;
+            txtdientich.Enabled = check;
+            txtgiatien.Enabled = check;
+            txtgiatien.Enabled = check;
+            txttenphong.Enabled = check;
         }
         private void LoadGridData ()
         {
@@ -59,19 +59,13 @@ namespace WindowsFormsApp3
             txtdientich.Text = dgvUsers.Rows[i].Cells["dientich"].Value.ToString();
             txtgiatien.Text = dgvUsers.Rows[i].Cells["giatien"].Value.ToString();
             txtmaphong.Text = dgvUsers.Rows[i].Cells["maphong"].Value.ToString();
-            txttenphong.Text = dgvUsers.Rows[i].Cells["tienphong"].Value.ToString();
+            txttenphong.Text = dgvUsers.Rows[i].Cells["tenphong"].Value.ToString();
         }
 
         private void btnAddnew_Click(object sender, EventArgs e)
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke((MethodInvoker)delegate {
-                    btnAddnew_Click(sender, e);
-                });
-            }
-            else
-            {
+           
+          
                 btnAddnew.Enabled = false;
                 setEnable(true);
                 txtdientich.Clear();
@@ -79,16 +73,62 @@ namespace WindowsFormsApp3
                 txtmaphong.Clear();
                 txttenphong.Focus();
             }
+        
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txttenphong.Text.Trim() == "")
+            {
+                MessageBox.Show("Thông tin tên phòng không được để trống!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txttenphong.Focus();
+                return;
+            }
+            string uid = txttenphong.Text;
+            string fn = txtmaphong.Text;
+            string un = txtgiatien.Text;
+            string pw = txtdientich.Text;
+            if(btnAddnew.Enabled)
+            {
+                string ssql = string.Format("insert into tblphongtro(maphong,tenphong,giatien,dientich)values" +
+                    "(N'{0}',N'{1}',N'{2}',N'{3}')", uid, fn, un, pw);
+                Database db = new Database();
+                db.runQuery(ssql);
+                LoadGridData();
+            }
+            else
+            {
+                int r = dgvUsers.CurrentRow.Index;
+                string id = dgvUsers.Rows[r].Cells[0].Value.ToString();
+                string ssql = string.Format("Update tblphongtro SET" +
+                                        "tenphong = N'{0}'," +
+                                        "maphong = N'{1}'," +
+                                        "giatien = N'{2}'," +
+                                        "dientich = N'{3}'", uid, fn, un, pw);
+                Database db = new Database();
+                db.runQuery(ssql);
+                LoadGridData();                         
+            }
         }
-    private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             int r = dgvUsers.CurrentRow.Index;
             string uid = dgvUsers.Rows[r].Cells[0].Value.ToString();
-            string sSql = string.Format("delete from phongtro wehere maphong = N'{0}'", uid);
+            string sSql = string.Format("DELETE FROM tblphongtro where tenphong={0}",uid);
             Database db = new Database();
             db.runQuery(sSql);
             LoadGridData();
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnAddnew.Enabled = false;
+            setEnable(true);
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            setEnable(false);
         }
     }
 }
