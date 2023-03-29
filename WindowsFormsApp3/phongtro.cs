@@ -32,14 +32,15 @@ namespace WindowsFormsApp3
             txtgiatien.Enabled = check;
             txttenphong.Enabled = check;
         }
-        private void LoadGridData ()
+        private void LoadGridData (string ssql = "")
         {
-            if (string.IsNullOrEmpty(txtmaphong.Text))
-            {
-
+            dgvUsers.DataSource = null;
+            if (string.IsNullOrEmpty(ssql)) { 
+                string sql = $"SELECT * from phongtro  ";
+                dgvUsers.DataSource = db.getData(sql);
             }
-            string sql = "SELECT * from phongtro where ";
-            dgvUsers.DataSource = db.getData(sql);
+            else
+                dgvUsers.DataSource = db.getData(ssql);
             setEnable(false);
         }
 
@@ -51,9 +52,25 @@ namespace WindowsFormsApp3
             {
                 this.Close();
             }*/
-            string ssql = $" Select * from phongtro where ";
-            db.runQuery(ssql);
-            LoadGridData();
+            string exp = " ";
+            if (!string.IsNullOrEmpty(txtmaphong.Text))
+            {
+                exp += $"where maphong = {txtmaphong.Text}";
+            }/*
+            if (!string.IsNullOrEmpty(txtdientich.Text))
+            {
+                exp += $"where dientich = {txtdientich.Text}";
+            }
+            if (!string.IsNullOrEmpty(txtgiatien.Text))
+            {
+                exp += $"where giatien = {txtgiatien.Text}";
+            }
+            if (!string.IsNullOrEmpty(txttenphong.Text))
+            {
+                exp += $"where tenphong = {txttenphong.Text}";
+            }*/
+            string ssql = $" Select * from phongtro {exp} ";
+            LoadGridData(ssql);
         }
 
         private void dgvUsers_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -100,8 +117,8 @@ namespace WindowsFormsApp3
                 string pw = txtdientich.Text;
                 if (btnAddnew.Enabled == true)
                 {
-                    string ssql = string.Format("SET IDENTITY_INSERT phongtro ON;insert into phongtro(maphong,tenphong,giatienphong,dientich)values" +
-                        "(N'{0}',N'{1}',N'{2}',N'{3}'); SET IDENTITY_INSERT phongtro OFF;", fn, uid, un, pw);
+                    string ssql = $"insert into phongtro(maphong,tenphong,giatienphong,dientich)values" +
+                        $"({fn}, {uid}, {un}, {pw})";
                     Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();

@@ -12,11 +12,12 @@ namespace WindowsFormsApp3
 {
     public partial class Main : Form
     {
-        Database db = new Database();
+        Database db = null;
         Form temp = null;
         public Main()
         {
             InitializeComponent();
+            db = new Database();
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
