@@ -25,7 +25,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void hopdong(object sender, EventArgs e)
         {
 
             if (temp != null)
@@ -40,7 +40,7 @@ namespace WindowsFormsApp3
             temp = hd;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void phongtro(object sender, EventArgs e)
         {
             if (temp != null)
             {
@@ -54,7 +54,7 @@ namespace WindowsFormsApp3
             temp = pt;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void nguoithuetro(object sender, EventArgs e)
         {
             if (temp != null)
             {
@@ -66,6 +66,11 @@ namespace WindowsFormsApp3
             ntt.Dock = DockStyle.Fill;
             ntt.Show();
             temp = ntt;
+        }
+
+        private void button7_DockChanged(object sender, EventArgs e)
+        {
+            button7.Location = new Point(0, 100);
         }
     }
 }
