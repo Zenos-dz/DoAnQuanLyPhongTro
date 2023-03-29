@@ -34,7 +34,10 @@ namespace WindowsFormsApp3
         }
         private void LoadGridData ()
         {
-            if(string.IsNullOrEmpty(txtmaphong.Text))
+            if (string.IsNullOrEmpty(txtmaphong.Text))
+            {
+
+            }
             string sql = "SELECT * from phongtro where ";
             dgvUsers.DataSource = db.getData(sql);
             setEnable(false);
