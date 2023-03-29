@@ -176,7 +176,7 @@
             this.Controls.Add(this.ControlTab);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Main";
             this.ControlTab.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
