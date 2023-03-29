@@ -130,5 +130,10 @@ namespace WindowsFormsApp3
         {
             setEnable(false);
         }
+
+        private void txtmaphong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
