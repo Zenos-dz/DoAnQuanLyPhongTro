@@ -232,6 +232,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "nguoithuetro";
             this.Text = "nguoithuetro";
             this.Load += new System.EventHandler(this.nguoithuetro_Load);

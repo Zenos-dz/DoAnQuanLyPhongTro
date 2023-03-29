@@ -13,6 +13,7 @@ namespace WindowsFormsApp3
     public partial class Main : Form
     {
         Database db = new Database();
+        Form temp = null;
         public Main()
         {
             InitializeComponent();
@@ -25,29 +26,45 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (temp != null)
+            {
+                temp.Close();
+            }
             HopDong hd = new HopDong(db);
             hd.TopLevel = false;
             panel1.Controls.Add(hd);
             hd.Dock = DockStyle.Fill;
             hd.Show();
+            temp = hd;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            phongtro hd = new phongtro(db);
-            hd.TopLevel = false;
-            panel1.Controls.Add(hd);
-            hd.Dock = DockStyle.Fill;
-            hd.Show();
+            if (temp != null)
+            {
+                temp.Close();
+            }
+            phongtro pt = new phongtro(db);
+            pt.TopLevel = false;
+            panel1.Controls.Add(pt);
+            pt.Dock = DockStyle.Fill;
+            pt.Show();
+            temp = pt;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            nguoithuetro hd =  new nguoithuetro();
-            hd.TopLevel = false;
-            panel1.Controls.Add(hd);
-            hd.Dock = DockStyle.Fill;
-            hd.Show();
+            if (temp != null)
+            {
+                temp.Close();
+            }
+            nguoithuetro ntt =  new nguoithuetro();
+            ntt.TopLevel = false;
+            panel1.Controls.Add(ntt);
+            ntt.Dock = DockStyle.Fill;
+            ntt.Show();
+            temp = ntt;
         }
     }
 }

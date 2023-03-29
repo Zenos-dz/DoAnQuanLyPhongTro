@@ -89,7 +89,7 @@ namespace WindowsFormsApp3
             string pw = txtdientich.Text;
             if(btnAddnew.Enabled)
             {
-                string ssql = string.Format("insert into tblphongtro(maphong,tenphong,giatien,dientich)values" +
+                string ssql = string.Format("insert into phongtro(maphong,tenphong,giatien,dientich)values" +
                     "(N'{0}',N'{1}',N'{2}',N'{3}')", uid, fn, un, pw);
                 Database db = new Database();
                 db.runQuery(ssql);
@@ -99,11 +99,11 @@ namespace WindowsFormsApp3
             {
                 int r = dgvUsers.CurrentRow.Index;
                 string id = dgvUsers.Rows[r].Cells[0].Value.ToString();
-                string ssql = string.Format("Update tblphongtro SET" +
-                                        "tenphong = N'{0}'," +
-                                        "maphong = N'{1}'," +
-                                        "giatien = N'{2}'," +
-                                        "dientich = N'{3}'", uid, fn, un, pw);
+                string ssql = string.Format("Update phongtro SET" +
+                                        " tenphong = N'{0}'," +
+                                        " maphong = N'{1}'," +
+                                        " giatien = N'{2}'," +
+                                        " dientich = N'{3}'", uid, fn, un, pw);
                 Database db = new Database();
                 db.runQuery(ssql);
                 LoadGridData();                         
@@ -113,7 +113,7 @@ namespace WindowsFormsApp3
         {
             int r = dgvUsers.CurrentRow.Index;
             string uid = dgvUsers.Rows[r].Cells[0].Value.ToString();
-            string sSql = string.Format("DELETE FROM tblphongtro where tenphong={0}",uid);
+            string sSql = string.Format("DELETE FROM phongtro where tenphong={0}",uid);
             Database db = new Database();
             db.runQuery(sSql);
             LoadGridData();
