@@ -70,7 +70,27 @@ namespace WindowsFormsApp3
 
         private void button7_DockChanged(object sender, EventArgs e)
         {
-            button7.Location = new Point(0, 100);
+            a1phongtro.Location = new Point(0, 100);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
