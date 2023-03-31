@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace Doancs
 {
     public class Database
     {
-        private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\csdl\QUANLYTRO.mdf;Integrated Security=True";
+        private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\asset\csdl\QUANLYTRO.mdf;Integrated Security=True";
 
         // Cac đối tượng để truy vấn dữ liệu
         private SqlConnection conn;

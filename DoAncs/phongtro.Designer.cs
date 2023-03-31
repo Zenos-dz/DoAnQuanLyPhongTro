@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace Doancs
 {
     partial class phongtro
     {

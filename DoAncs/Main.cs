@@ -8,16 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace Doancs
 {
     public partial class Main : Form
     {
-        Database db = null;
+        public Database db = new Database();
         Form temp = null;
         public Main()
         {
             InitializeComponent();
-            db = new Database();
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace WindowsFormsApp3
             {
                 temp.Close();
             }
-            nguoithuetro ntt =  new nguoithuetro();
+            nguoithuetro ntt =  new nguoithuetro(db);
             ntt.TopLevel = false;
             panel1.Controls.Add(ntt);
             ntt.Dock = DockStyle.Fill;
@@ -85,7 +84,16 @@ namespace WindowsFormsApp3
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            if (temp != null)
+            {
+                temp.Close();
+            }
+            hoadon fhd = new hoadon(db);
+            fhd.TopLevel = false;
+            panel1.Controls.Add(fhd);
+            fhd.Dock = DockStyle.Fill;
+            fhd.Show();
+            temp = fhd;
         }
 
         private void button4_Click(object sender, EventArgs e)

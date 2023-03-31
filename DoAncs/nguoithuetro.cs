@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace Doancs
 {
     public partial class nguoithuetro : Form
     {
@@ -66,7 +66,7 @@ namespace WindowsFormsApp3
             int i = e.RowIndex;
             txtmanguoithue.Text = dataGridView1.Rows[i].Cells["manguoithue"].Value.ToString();
             txttennguoithue.Text = dataGridView1.Rows[i].Cells["tennguoithue"].Value.ToString() ;
-            txtngaysinh.Text = dataGridView1.Rows[i].Cells["ngayyinh"].Value.ToString();
+            txtngaysinh.Text = dataGridView1.Rows[i].Cells["ngaysinh"].Value.ToString();
             txtgioitinh.Text = dataGridView1.Rows[i].Cells["gioitinh"].Value.ToString();
             txtsdt.Text = dataGridView1.Rows[i].Cells["gioitinh"].Value.ToString();
             txtcmnd.Text = dataGridView1.Rows[i].Cells["cmnd"].Value.ToString();
