@@ -158,7 +158,7 @@ namespace Doancs
                 db.runQuery(sSql);
                 LoadGridData();
             }
-            catch(Exception ex )
+            catch(Exception ex)
             {
                 MessageBox.Show($" Lỗi dòng {r} đã nằm trong bảng thanh toán, bạn có thể muốn xóa dữ liệu trong bảng thanh toán trước ");
             }
