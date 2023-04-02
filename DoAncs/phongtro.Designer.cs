@@ -94,7 +94,7 @@
             // 
             this.txtmaphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtmaphong.Location = new System.Drawing.Point(163, 49);
-            this.txtmaphong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtmaphong.Margin = new System.Windows.Forms.Padding(4);
             this.txtmaphong.Name = "txtmaphong";
             this.txtmaphong.Size = new System.Drawing.Size(222, 27);
             this.txtmaphong.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.txttenphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txttenphong.Location = new System.Drawing.Point(163, 204);
-            this.txttenphong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttenphong.Margin = new System.Windows.Forms.Padding(4);
             this.txttenphong.Name = "txttenphong";
             this.txttenphong.Size = new System.Drawing.Size(222, 27);
             this.txttenphong.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.txtdientich.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtdientich.Location = new System.Drawing.Point(163, 126);
-            this.txtdientich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdientich.Margin = new System.Windows.Forms.Padding(4);
             this.txtdientich.Name = "txtdientich";
             this.txtdientich.Size = new System.Drawing.Size(222, 27);
             this.txtdientich.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             this.txtgiatien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtgiatien.Location = new System.Drawing.Point(163, 279);
-            this.txtgiatien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtgiatien.Margin = new System.Windows.Forms.Padding(4);
             this.txtgiatien.Name = "txtgiatien";
             this.txtgiatien.Size = new System.Drawing.Size(222, 27);
             this.txtgiatien.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(429, 38);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.Size = new System.Drawing.Size(563, 500);
@@ -143,7 +143,7 @@
             // 
             this.btnAddnew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddnew.Location = new System.Drawing.Point(33, 359);
-            this.btnAddnew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddnew.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddnew.Name = "btnAddnew";
             this.btnAddnew.Size = new System.Drawing.Size(100, 28);
             this.btnAddnew.TabIndex = 9;
@@ -155,7 +155,7 @@
             // 
             this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.Location = new System.Drawing.Point(33, 421);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncancel.Margin = new System.Windows.Forms.Padding(4);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(100, 28);
             this.btncancel.TabIndex = 11;
@@ -167,7 +167,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(304, 359);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 12;
@@ -179,7 +179,7 @@
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(173, 359);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 28);
             this.btnEdit.TabIndex = 13;
@@ -191,7 +191,7 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(173, 421);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 14;
@@ -203,7 +203,7 @@
             // 
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.Location = new System.Drawing.Point(304, 421);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(100, 28);
             this.btnFind.TabIndex = 10;
@@ -232,7 +232,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "phongtro";
             this.Text = "phongtro";
             this.Load += new System.EventHandler(this.phongtro_Load);
