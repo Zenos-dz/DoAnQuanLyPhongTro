@@ -116,7 +116,7 @@
             this.txtmanguoithue.Location = new System.Drawing.Point(122, 28);
             this.txtmanguoithue.Name = "txtmanguoithue";
             this.txtmanguoithue.Size = new System.Drawing.Size(159, 26);
-            this.txtmanguoithue.TabIndex = 7;
+            this.txtmanguoithue.TabIndex = 1;
             // 
             // txtcmnd
             // 
@@ -124,7 +124,7 @@
             this.txtcmnd.Location = new System.Drawing.Point(122, 295);
             this.txtcmnd.Name = "txtcmnd";
             this.txtcmnd.Size = new System.Drawing.Size(159, 26);
-            this.txtcmnd.TabIndex = 9;
+            this.txtcmnd.TabIndex = 6;
             // 
             // txtsdt
             // 
@@ -132,7 +132,7 @@
             this.txtsdt.Location = new System.Drawing.Point(122, 241);
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.Size = new System.Drawing.Size(159, 26);
-            this.txtsdt.TabIndex = 10;
+            this.txtsdt.TabIndex = 5;
             // 
             // txtngaysinh
             // 
@@ -140,7 +140,7 @@
             this.txtngaysinh.Location = new System.Drawing.Point(122, 187);
             this.txtngaysinh.Name = "txtngaysinh";
             this.txtngaysinh.Size = new System.Drawing.Size(159, 26);
-            this.txtngaysinh.TabIndex = 11;
+            this.txtngaysinh.TabIndex = 4;
             // 
             // txtgioitinh
             // 
@@ -148,7 +148,7 @@
             this.txtgioitinh.Location = new System.Drawing.Point(122, 133);
             this.txtgioitinh.Name = "txtgioitinh";
             this.txtgioitinh.Size = new System.Drawing.Size(159, 26);
-            this.txtgioitinh.TabIndex = 12;
+            this.txtgioitinh.TabIndex = 3;
             // 
             // txttennguoithue
             // 
@@ -156,13 +156,17 @@
             this.txttennguoithue.Location = new System.Drawing.Point(122, 77);
             this.txttennguoithue.Name = "txttennguoithue";
             this.txttennguoithue.Size = new System.Drawing.Size(159, 26);
-            this.txttennguoithue.TabIndex = 13;
+            this.txttennguoithue.TabIndex = 2;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(322, 31);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(422, 406);
             this.dataGridView1.TabIndex = 14;
@@ -171,66 +175,66 @@
             // 
             // btnadd
             // 
-            this.btnadd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.Location = new System.Drawing.Point(40, 358);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(60, 23);
-            this.btnadd.TabIndex = 15;
+            this.btnadd.TabIndex = 7;
             this.btnadd.Text = "Add";
             this.btnadd.UseVisualStyleBackColor = true;
             this.btnadd.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnfind
             // 
-            this.btnfind.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfind.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfind.Location = new System.Drawing.Point(234, 417);
             this.btnfind.Name = "btnfind";
             this.btnfind.Size = new System.Drawing.Size(60, 23);
-            this.btnfind.TabIndex = 16;
+            this.btnfind.TabIndex = 12;
             this.btnfind.Text = "Find";
             this.btnfind.UseVisualStyleBackColor = true;
             this.btnfind.Click += new System.EventHandler(this.btnfind_Click);
             // 
             // btncancel
             // 
-            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.Location = new System.Drawing.Point(138, 417);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(60, 23);
-            this.btncancel.TabIndex = 17;
+            this.btncancel.TabIndex = 11;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btndelete
             // 
-            this.btndelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.Location = new System.Drawing.Point(40, 417);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(60, 23);
-            this.btndelete.TabIndex = 18;
+            this.btndelete.TabIndex = 10;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnsave
             // 
-            this.btnsave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.Location = new System.Drawing.Point(234, 358);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(60, 23);
-            this.btnsave.TabIndex = 19;
+            this.btnsave.TabIndex = 9;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btnedit
             // 
-            this.btnedit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnedit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.Location = new System.Drawing.Point(140, 358);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(60, 23);
-            this.btnedit.TabIndex = 20;
+            this.btnedit.TabIndex = 8;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
@@ -240,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(764, 466);
+            this.ClientSize = new System.Drawing.Size(764, 467);
             this.Controls.Add(this.btnedit);
             this.Controls.Add(this.btnsave);
             this.Controls.Add(this.btndelete);

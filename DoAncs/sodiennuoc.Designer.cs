@@ -55,36 +55,39 @@
             // 
             // bFind
             // 
+            this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bFind.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bFind.Location = new System.Drawing.Point(223, 412);
             this.bFind.Margin = new System.Windows.Forms.Padding(2);
             this.bFind.Name = "bFind";
             this.bFind.Size = new System.Drawing.Size(72, 24);
-            this.bFind.TabIndex = 27;
+            this.bFind.TabIndex = 13;
             this.bFind.Text = "Find";
             this.bFind.UseVisualStyleBackColor = true;
             this.bFind.Click += new System.EventHandler(this.bFind_Click);
             // 
             // bDelete
             // 
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(147, 412);
+            this.bDelete.Location = new System.Drawing.Point(129, 412);
             this.bDelete.Margin = new System.Windows.Forms.Padding(2);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(72, 24);
-            this.bDelete.TabIndex = 26;
+            this.bDelete.TabIndex = 12;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
             this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // bSave
             // 
+            this.bSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSave.Location = new System.Drawing.Point(223, 384);
             this.bSave.Margin = new System.Windows.Forms.Padding(2);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(72, 24);
-            this.bSave.TabIndex = 25;
+            this.bSave.TabIndex = 10;
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
             this.bSave.Click += new System.EventHandler(this.bSave_Click);
@@ -96,7 +99,7 @@
             this.tbcsdm.Margin = new System.Windows.Forms.Padding(2);
             this.tbcsdm.Name = "tbcsdm";
             this.tbcsdm.Size = new System.Drawing.Size(166, 26);
-            this.tbcsdm.TabIndex = 24;
+            this.tbcsdm.TabIndex = 5;
             // 
             // tbcsdc
             // 
@@ -105,7 +108,7 @@
             this.tbcsdc.Margin = new System.Windows.Forms.Padding(2);
             this.tbcsdc.Name = "tbcsdc";
             this.tbcsdc.Size = new System.Drawing.Size(166, 26);
-            this.tbcsdc.TabIndex = 23;
+            this.tbcsdc.TabIndex = 4;
             // 
             // tbnam
             // 
@@ -114,7 +117,7 @@
             this.tbnam.Margin = new System.Windows.Forms.Padding(2);
             this.tbnam.Name = "tbnam";
             this.tbnam.Size = new System.Drawing.Size(166, 26);
-            this.tbnam.TabIndex = 22;
+            this.tbnam.TabIndex = 3;
             // 
             // tbthang
             // 
@@ -123,7 +126,7 @@
             this.tbthang.Margin = new System.Windows.Forms.Padding(2);
             this.tbthang.Name = "tbthang";
             this.tbthang.Size = new System.Drawing.Size(166, 26);
-            this.tbthang.TabIndex = 21;
+            this.tbthang.TabIndex = 2;
             // 
             // tbmap
             // 
@@ -132,7 +135,7 @@
             this.tbmap.Margin = new System.Windows.Forms.Padding(2);
             this.tbmap.Name = "tbmap";
             this.tbmap.Size = new System.Drawing.Size(166, 26);
-            this.tbmap.TabIndex = 20;
+            this.tbmap.TabIndex = 1;
             // 
             // label5
             // 
@@ -191,10 +194,14 @@
             // 
             // bangsodiennuoc
             // 
+            this.bangsodiennuoc.AllowUserToAddRows = false;
+            this.bangsodiennuoc.AllowUserToDeleteRows = false;
+            this.bangsodiennuoc.AllowUserToOrderColumns = true;
             this.bangsodiennuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bangsodiennuoc.Location = new System.Drawing.Point(325, 30);
             this.bangsodiennuoc.Margin = new System.Windows.Forms.Padding(2);
             this.bangsodiennuoc.Name = "bangsodiennuoc";
+            this.bangsodiennuoc.ReadOnly = true;
             this.bangsodiennuoc.RowHeadersWidth = 51;
             this.bangsodiennuoc.RowTemplate.Height = 24;
             this.bangsodiennuoc.Size = new System.Drawing.Size(422, 406);
@@ -208,7 +215,7 @@
             this.tbcsnm.Margin = new System.Windows.Forms.Padding(2);
             this.tbcsnm.Name = "tbcsnm";
             this.tbcsnm.Size = new System.Drawing.Size(166, 26);
-            this.tbcsnm.TabIndex = 29;
+            this.tbcsnm.TabIndex = 7;
             // 
             // tbcsnc
             // 
@@ -217,7 +224,7 @@
             this.tbcsnc.Margin = new System.Windows.Forms.Padding(2);
             this.tbcsnc.Name = "tbcsnc";
             this.tbcsnc.Size = new System.Drawing.Size(166, 26);
-            this.tbcsnc.TabIndex = 28;
+            this.tbcsnc.TabIndex = 6;
             // 
             // label6
             // 
@@ -243,36 +250,39 @@
             // 
             // bCancel
             // 
+            this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancel.Location = new System.Drawing.Point(71, 412);
+            this.bCancel.Location = new System.Drawing.Point(23, 412);
             this.bCancel.Margin = new System.Windows.Forms.Padding(2);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(72, 24);
-            this.bCancel.TabIndex = 34;
+            this.bCancel.TabIndex = 11;
             this.bCancel.Text = "Cancel";
             this.bCancel.UseVisualStyleBackColor = true;
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // bAdd
             // 
+            this.bAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAdd.Location = new System.Drawing.Point(71, 384);
+            this.bAdd.Location = new System.Drawing.Point(23, 384);
             this.bAdd.Margin = new System.Windows.Forms.Padding(2);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(72, 24);
-            this.bAdd.TabIndex = 33;
+            this.bAdd.TabIndex = 8;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // bEdit
             // 
+            this.bEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEdit.Location = new System.Drawing.Point(147, 384);
+            this.bEdit.Location = new System.Drawing.Point(129, 384);
             this.bEdit.Margin = new System.Windows.Forms.Padding(2);
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(72, 24);
-            this.bEdit.TabIndex = 32;
+            this.bEdit.TabIndex = 9;
             this.bEdit.Text = "Edit";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -131,8 +132,12 @@ namespace Doancs
 
         private void bDelete_Click(object sender, EventArgs e)
         {
-
-            db.cmd($"");
+            ask_form temp = new ask_form();
+            temp.ShowDialog();
+            if (temp.result == true) { 
+                db.cmd($"DELETE FROM sodiennuoc where maphong= {tbmap.Text}");
+                loadbang();
+            }
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -154,11 +159,11 @@ namespace Doancs
                             $" WHERE maphong = {tbmap.Text}");
                         loadbang();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!");
+                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
                     }
-                    
+
                     break;
                 case "add":
                     try { 
@@ -172,8 +177,8 @@ namespace Doancs
                             $")");
                         loadbang();
                     }
-                    catch {
-                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!");
+                    catch (Exception ex){
+                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!"+ex.Message.ToString());
                     }
                     break;
             }

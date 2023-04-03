@@ -28,35 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bangcosovatchat = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.tbmaphong = new System.Windows.Forms.TextBox();
+            this.tbdieuhoa = new System.Windows.Forms.TextBox();
+            this.tbquatdien = new System.Windows.Forms.TextBox();
+            this.tbtulanh = new System.Windows.Forms.TextBox();
+            this.tbbinhnonglanh = new System.Windows.Forms.TextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bCancel = new System.Windows.Forms.Button();
+            this.bAdd = new System.Windows.Forms.Button();
+            this.bEdit = new System.Windows.Forms.Button();
+            this.bFind = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.bSave = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bangcosovatchat)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // bangcosovatchat
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(322, 31);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(422, 406);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            this.bangcosovatchat.AllowUserToAddRows = false;
+            this.bangcosovatchat.AllowUserToDeleteRows = false;
+            this.bangcosovatchat.AllowUserToOrderColumns = true;
+            this.bangcosovatchat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bangcosovatchat.Location = new System.Drawing.Point(322, 31);
+            this.bangcosovatchat.Margin = new System.Windows.Forms.Padding(2);
+            this.bangcosovatchat.Name = "bangcosovatchat";
+            this.bangcosovatchat.ReadOnly = true;
+            this.bangcosovatchat.RowHeadersWidth = 51;
+            this.bangcosovatchat.RowTemplate.Height = 24;
+            this.bangcosovatchat.Size = new System.Drawing.Size(422, 406);
+            this.bangcosovatchat.TabIndex = 0;
+            this.bangcosovatchat.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangcosovatchat_CellEnter);
             // 
             // label1
             // 
@@ -113,109 +120,157 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Bình nóng lạnh";
             // 
-            // textBox1
+            // tbmaphong
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(126, 40);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 26);
-            this.textBox1.TabIndex = 6;
+            this.tbmaphong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbmaphong.Location = new System.Drawing.Point(126, 40);
+            this.tbmaphong.Margin = new System.Windows.Forms.Padding(2);
+            this.tbmaphong.Name = "tbmaphong";
+            this.tbmaphong.Size = new System.Drawing.Size(166, 26);
+            this.tbmaphong.TabIndex = 0;
             // 
-            // textBox2
+            // tbdieuhoa
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(126, 96);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 26);
-            this.textBox2.TabIndex = 7;
+            this.tbdieuhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbdieuhoa.Location = new System.Drawing.Point(126, 96);
+            this.tbdieuhoa.Margin = new System.Windows.Forms.Padding(2);
+            this.tbdieuhoa.Name = "tbdieuhoa";
+            this.tbdieuhoa.Size = new System.Drawing.Size(166, 26);
+            this.tbdieuhoa.TabIndex = 1;
             // 
-            // textBox3
+            // tbquatdien
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(126, 154);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 26);
-            this.textBox3.TabIndex = 8;
+            this.tbquatdien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbquatdien.Location = new System.Drawing.Point(126, 154);
+            this.tbquatdien.Margin = new System.Windows.Forms.Padding(2);
+            this.tbquatdien.Name = "tbquatdien";
+            this.tbquatdien.Size = new System.Drawing.Size(166, 26);
+            this.tbquatdien.TabIndex = 2;
             // 
-            // textBox4
+            // tbtulanh
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(126, 208);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 26);
-            this.textBox4.TabIndex = 9;
+            this.tbtulanh.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtulanh.Location = new System.Drawing.Point(126, 208);
+            this.tbtulanh.Margin = new System.Windows.Forms.Padding(2);
+            this.tbtulanh.Name = "tbtulanh";
+            this.tbtulanh.Size = new System.Drawing.Size(166, 26);
+            this.tbtulanh.TabIndex = 3;
             // 
-            // textBox5
+            // tbbinhnonglanh
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(126, 266);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(166, 26);
-            this.textBox5.TabIndex = 10;
+            this.tbbinhnonglanh.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbbinhnonglanh.Location = new System.Drawing.Point(126, 266);
+            this.tbbinhnonglanh.Margin = new System.Windows.Forms.Padding(2);
+            this.tbbinhnonglanh.Name = "tbbinhnonglanh";
+            this.tbbinhnonglanh.Size = new System.Drawing.Size(166, 26);
+            this.tbbinhnonglanh.TabIndex = 4;
             // 
-            // button1
+            // bCancel
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(27, 337);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 24);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancel.Location = new System.Drawing.Point(20, 395);
+            this.bCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.bCancel.Name = "bCancel";
+            this.bCancel.Size = new System.Drawing.Size(72, 24);
+            this.bCancel.TabIndex = 17;
+            this.bCancel.Text = "Cancel";
+            this.bCancel.UseVisualStyleBackColor = true;
+            this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
-            // button2
+            // bAdd
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(118, 337);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 24);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAdd.Location = new System.Drawing.Point(20, 367);
+            this.bAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(72, 24);
+            this.bAdd.TabIndex = 14;
+            this.bAdd.Text = "Add";
+            this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
-            // button3
+            // bEdit
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(219, 337);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 24);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.bEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEdit.Location = new System.Drawing.Point(126, 367);
+            this.bEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.bEdit.Name = "bEdit";
+            this.bEdit.Size = new System.Drawing.Size(72, 24);
+            this.bEdit.TabIndex = 15;
+            this.bEdit.Text = "Edit";
+            this.bEdit.UseVisualStyleBackColor = true;
+            this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
+            // 
+            // bFind
+            // 
+            this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFind.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFind.Location = new System.Drawing.Point(220, 395);
+            this.bFind.Margin = new System.Windows.Forms.Padding(2);
+            this.bFind.Name = "bFind";
+            this.bFind.Size = new System.Drawing.Size(72, 24);
+            this.bFind.TabIndex = 19;
+            this.bFind.Text = "Find";
+            this.bFind.UseVisualStyleBackColor = true;
+            this.bFind.Click += new System.EventHandler(this.bFind_Click);
+            // 
+            // bDelete
+            // 
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(126, 395);
+            this.bDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(72, 24);
+            this.bDelete.TabIndex = 18;
+            this.bDelete.Text = "Delete";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
+            // 
+            // bSave
+            // 
+            this.bSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSave.Location = new System.Drawing.Point(220, 367);
+            this.bSave.Margin = new System.Windows.Forms.Padding(2);
+            this.bSave.Name = "bSave";
+            this.bSave.Size = new System.Drawing.Size(72, 24);
+            this.bSave.TabIndex = 16;
+            this.bSave.Text = "Save";
+            this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // cosovatchat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 467);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bCancel);
+            this.Controls.Add(this.bAdd);
+            this.Controls.Add(this.bEdit);
+            this.Controls.Add(this.bFind);
+            this.Controls.Add(this.bDelete);
+            this.Controls.Add(this.bSave);
+            this.Controls.Add(this.tbbinhnonglanh);
+            this.Controls.Add(this.tbtulanh);
+            this.Controls.Add(this.tbquatdien);
+            this.Controls.Add(this.tbdieuhoa);
+            this.Controls.Add(this.tbmaphong);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bangcosovatchat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "cosovatchat";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.cosovatchat_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangcosovatchat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,20 +278,23 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView bangcosovatchat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tbmaphong;
+        private System.Windows.Forms.TextBox tbdieuhoa;
+        private System.Windows.Forms.TextBox tbquatdien;
+        private System.Windows.Forms.TextBox tbtulanh;
+        private System.Windows.Forms.TextBox tbbinhnonglanh;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button bCancel;
+        private System.Windows.Forms.Button bAdd;
+        private System.Windows.Forms.Button bEdit;
+        private System.Windows.Forms.Button bFind;
+        private System.Windows.Forms.Button bDelete;
+        private System.Windows.Forms.Button bSave;
     }
 }

@@ -19,11 +19,6 @@ namespace Doancs
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void user_TextChanged(object sender, EventArgs e)
         {
             user.BorderStyle = BorderStyle.None;
@@ -36,24 +31,46 @@ namespace Doancs
             pass.BorderStyle = BorderStyle.None;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
-        private void button1_Click(object sender, EventArgs e)
+        protected void checklogin()
         {
-            //this.UseWaitCursor = true;
-            //button1.Text = "Đang tải chương trình...";
-            db.testconnect();
-            //this.UseWaitCursor = false;
-            this.Hide();
-            Main main = new Main(db);
-            main.ShowDialog();
-            Application.Exit();
+            //code check login
+            if (true)
+            {
+                //this.UseWaitCursor = true;
+                //button1.Text = "Đang tải chương trình...";
+                db.testconnect();
+                //this.UseWaitCursor = false;
+                this.Hide();
+                Main main = new Main(db);
+                main.ShowDialog();
+                Application.Exit();
+            }
         }
-        void call_main()
+        private void dangnhap_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                checklogin();
+            }
+        }
+        private void user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                checklogin();
+            }
+        }
+        private void pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                checklogin();
+            }
+        }
+        private void login_Click(object sender, EventArgs e)
+        {
+            checklogin();
         }
 
-        private void dangnhap_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

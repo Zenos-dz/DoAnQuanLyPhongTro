@@ -121,9 +121,13 @@
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.AllowUserToDeleteRows = false;
+            this.dgvUsers.AllowUserToOrderColumns = true;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(322, 31);
             this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.Size = new System.Drawing.Size(422, 406);
             this.dgvUsers.TabIndex = 8;

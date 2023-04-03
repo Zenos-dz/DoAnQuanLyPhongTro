@@ -143,14 +143,14 @@ namespace Doancs
                 {
                     int r = dataGridView1.CurrentRow.Index;
                     string id = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                    string ssql = string.Format("Update nguoithuetro SET" +
+                    string ssql = string.Format("Update nguoithuetro SET " +
                                                   "manguoithue = N'{0}'," +
                                                   "tennguoithue = N'{1}," +
-                                                  "gioitinh = N'{2}," +
+                                                  "gioitinh = N'{2}'," +
                                                   "ngaysinh = N'{3}'," +
                                                   "sdt = N'{4}'," +
-                                                  "cmnd = N'{5}',"
-                                                  + $"where manguoithue = {uid}"
+                                                  "cmnd = N'{5}' "
+                                                  + $"where manguoithue = {uid} "
                                                   , uid, hn, an, fn, ah, dn);
                     Database db = new Database();
                     db.runQuery(ssql);

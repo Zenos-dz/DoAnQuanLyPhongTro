@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ask_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ask_form.Designer.cs">
+      <DependentUpon>ask_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="cosovatchat.cs">
       <SubType>Form</SubType>
@@ -131,6 +137,9 @@
     <Compile Include="sodiennuoc.Designer.cs">
       <DependentUpon>sodiennuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ask_form.resx">
+      <DependentUpon>ask_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cosovatchat.resx">
       <DependentUpon>cosovatchat.cs</DependentUpon>
     </EmbeddedResource>
