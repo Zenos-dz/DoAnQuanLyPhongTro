@@ -13,6 +13,7 @@ namespace Doancs
 {
     public partial class dangnhap : Form
     {
+        Database db = new Database();
         public dangnhap()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Doancs
         {
        
            this.Hide();
-            Main main = new Main();
+            Main main = new Main(db);
             main.ShowDialog();
             Application.Exit();
         }

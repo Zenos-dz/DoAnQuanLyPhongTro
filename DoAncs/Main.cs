@@ -12,11 +12,14 @@ namespace Doancs
 {
     public partial class Main : Form
     {
-        public Database db = new Database();
+        public Database db = null;
         Form temp = null;
-        public Main()
+        public Main(Database db)
         {
             InitializeComponent();
+            this.db = db;
+            //test csdl
+            //db.cmd("GO");
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
