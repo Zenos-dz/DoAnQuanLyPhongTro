@@ -17,7 +17,7 @@ namespace Doancs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new dangnhap());
             
         }
     }
