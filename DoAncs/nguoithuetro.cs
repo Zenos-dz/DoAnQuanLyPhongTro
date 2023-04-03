@@ -76,9 +76,9 @@ namespace Doancs
             int i = e.RowIndex;
             txtmanguoithue.Text = dataGridView1.Rows[i].Cells["manguoithue"].Value.ToString();
             txttennguoithue.Text = dataGridView1.Rows[i].Cells["tennguoithue"].Value.ToString();
-            txtngaysinh.Text = dataGridView1.Rows[i].Cells["ngaysinh"].Value.ToString();
+            txtngaysinh.Text = ((DateTime)dataGridView1.Rows[i].Cells["ngaysinh"].Value).ToString("dd-MM-yyyy");
             txtgioitinh.Text = dataGridView1.Rows[i].Cells["gioitinh"].Value.ToString();
-            txtsdt.Text = dataGridView1.Rows[i].Cells["gioitinh"].Value.ToString();
+            txtsdt.Text = dataGridView1.Rows[i].Cells["sdt"].Value.ToString();
             txtcmnd.Text = dataGridView1.Rows[i].Cells["cmnd"].Value.ToString();
         }
 
@@ -96,10 +96,14 @@ namespace Doancs
             try
             {
                 string uid  = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                string sSql = $"DELETE from nguoithuetro where manguoithue={uid}";
-                Database db = new Database();
-                db.runQuery(sSql);
-                LoadGridData();
+                ask_form temp = new ask_form();
+                temp.ShowDialog();
+                if(temp.result == true) { 
+                    string sSql = $"DELETE from nguoithuetro where manguoithue={uid}";
+                    Database db = new Database();
+                    db.runQuery(sSql);
+                    LoadGridData();
+                }
             }
             catch(Exception ex)
             {
@@ -174,8 +178,6 @@ namespace Doancs
                 btnsave.Enabled = true;
                 btnedit.Enabled = true;
                 btndelete.Enabled = true;
-
-
             }
             catch (Exception ex)
             {

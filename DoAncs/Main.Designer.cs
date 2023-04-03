@@ -39,8 +39,8 @@
             this.a4sodiennuoc = new System.Windows.Forms.Button();
             this.a3hopdong = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.CLOCK = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.TimerForMainClock = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,7 +54,7 @@
             this.splitter1.BackColor = System.Drawing.Color.DarkCyan;
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(946, 80);
             this.splitter1.TabIndex = 7;
@@ -64,7 +64,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 80);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -99,7 +99,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Cơ sở vật chất";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.cosovchat);
             // 
             // a1phongtro
             // 
@@ -129,7 +129,7 @@
             this.a5hoadon.TabIndex = 9;
             this.a5hoadon.Text = "Hoá đơn";
             this.a5hoadon.UseVisualStyleBackColor = false;
-            this.a5hoadon.Click += new System.EventHandler(this.button6_Click);
+            this.a5hoadon.Click += new System.EventHandler(this.hoadon);
             // 
             // a2nguoithue
             // 
@@ -158,7 +158,7 @@
             this.a4sodiennuoc.TabIndex = 6;
             this.a4sodiennuoc.Text = "Số điện nước";
             this.a4sodiennuoc.UseVisualStyleBackColor = false;
-            this.a4sodiennuoc.Click += new System.EventHandler(this.button3_Click);
+            this.a4sodiennuoc.Click += new System.EventHandler(this.sdn_Click);
             // 
             // a3hopdong
             // 
@@ -179,20 +179,10 @@
             this.panel1.Controls.Add(this.CLOCK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 467);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 80);
-            this.panel2.TabIndex = 9;
             // 
             // CLOCK
             // 
@@ -203,6 +193,15 @@
             this.CLOCK.Size = new System.Drawing.Size(311, 86);
             this.CLOCK.TabIndex = 0;
             this.CLOCK.Text = "hh:mm:ss";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(946, 80);
+            this.panel2.TabIndex = 9;
             // 
             // TimerForMainClock
             // 
@@ -218,10 +217,9 @@
             this.Controls.Add(this.splitter1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

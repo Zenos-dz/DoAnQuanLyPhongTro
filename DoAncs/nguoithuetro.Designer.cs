@@ -116,7 +116,7 @@
             this.txtmanguoithue.Location = new System.Drawing.Point(122, 28);
             this.txtmanguoithue.Name = "txtmanguoithue";
             this.txtmanguoithue.Size = new System.Drawing.Size(159, 26);
-            this.txtmanguoithue.TabIndex = 1;
+            this.txtmanguoithue.TabIndex = 0;
             // 
             // txtcmnd
             // 
@@ -124,7 +124,7 @@
             this.txtcmnd.Location = new System.Drawing.Point(122, 295);
             this.txtcmnd.Name = "txtcmnd";
             this.txtcmnd.Size = new System.Drawing.Size(159, 26);
-            this.txtcmnd.TabIndex = 6;
+            this.txtcmnd.TabIndex = 5;
             // 
             // txtsdt
             // 
@@ -132,7 +132,7 @@
             this.txtsdt.Location = new System.Drawing.Point(122, 241);
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.Size = new System.Drawing.Size(159, 26);
-            this.txtsdt.TabIndex = 5;
+            this.txtsdt.TabIndex = 4;
             // 
             // txtngaysinh
             // 
@@ -140,7 +140,7 @@
             this.txtngaysinh.Location = new System.Drawing.Point(122, 187);
             this.txtngaysinh.Name = "txtngaysinh";
             this.txtngaysinh.Size = new System.Drawing.Size(159, 26);
-            this.txtngaysinh.TabIndex = 4;
+            this.txtngaysinh.TabIndex = 3;
             // 
             // txtgioitinh
             // 
@@ -148,7 +148,7 @@
             this.txtgioitinh.Location = new System.Drawing.Point(122, 133);
             this.txtgioitinh.Name = "txtgioitinh";
             this.txtgioitinh.Size = new System.Drawing.Size(159, 26);
-            this.txtgioitinh.TabIndex = 3;
+            this.txtgioitinh.TabIndex = 2;
             // 
             // txttennguoithue
             // 
@@ -156,7 +156,7 @@
             this.txttennguoithue.Location = new System.Drawing.Point(122, 77);
             this.txttennguoithue.Name = "txttennguoithue";
             this.txttennguoithue.Size = new System.Drawing.Size(159, 26);
-            this.txttennguoithue.TabIndex = 2;
+            this.txttennguoithue.TabIndex = 1;
             // 
             // dataGridView1
             // 

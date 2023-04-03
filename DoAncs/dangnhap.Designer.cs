@@ -97,7 +97,6 @@
             this.Name = "dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dangnhap_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Doancs
 {
     public class Database
     {
+        //sử dụng đường dẫn cục bộ ./asset/csdl để lưu database (mdf,_log.mdf)
         private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\asset\csdl\QUANLYTRO.mdf;Integrated Security=True";
 
         // Cac đối tượng để truy vấn dữ liệu
         private SqlConnection conn;
-
         public Database()
         {
             try
@@ -29,8 +23,13 @@ namespace Doancs
             {
                 MessageBox.Show("connected failed: " + ex.Message);
             }
-
         }
+        //
+        /// <summary>
+        ///     không có ngoại lệ trả về
+        ///     dùng trong trường hợp xử lý các ngoại lệ biết trước(custom exception)
+        /// </summary>
+        /// <param name="commandString"></param>
         public void cmd(string commandString)
         {
             SqlCommand sqlDatabaseCommand = new SqlCommand(commandString, conn);
@@ -48,6 +47,11 @@ namespace Doancs
                 return false;
             }
         }
+        /// <summary>
+        ///     Lấy dữ liệu thông qua sqlQuery(ssql), trả về 1 bảng chứa dữ liệu hoặc không gì cả
+        /// </summary>
+        /// <param name="ssql"></param>
+        /// <returns>DataTable | null</returns>
         public DataTable getData(string ssql)
         {
             try
@@ -63,6 +67,12 @@ namespace Doancs
                 return null;
             }
         }
+        //
+        /// <summary>
+        ///     sử dụng ngoại lệ mặc định
+        ///     dùng trong trường hợp xử lý các ngoại lệ không biết trước(system exception)
+        /// </summary>
+        /// <param name="ssql"></param>
         public void runQuery(string ssql)
         {
             try
@@ -75,7 +85,6 @@ namespace Doancs
                 MessageBox.Show(ex.Message);
                 return;
             }
-
         }
     }
 }

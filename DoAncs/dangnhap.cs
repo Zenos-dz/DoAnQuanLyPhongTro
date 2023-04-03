@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Doancs
@@ -17,13 +9,13 @@ namespace Doancs
         public dangnhap()
         {
             InitializeComponent();
+            db.testconnect(); //load csdl 1 lan truoc khi chay main de tang toc do
         }
 
         private void user_TextChanged(object sender, EventArgs e)
         {
             user.BorderStyle = BorderStyle.None;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            //user.BackColor = Color.FromArgb(0, Color.Red);
         }
 
         private void pass_TextChanged(object sender, EventArgs e)
@@ -31,6 +23,7 @@ namespace Doancs
             pass.BorderStyle = BorderStyle.None;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
+        //for login
         protected void checklogin()
         {
             //code check login
@@ -38,7 +31,6 @@ namespace Doancs
             {
                 //this.UseWaitCursor = true;
                 //button1.Text = "Đang tải chương trình...";
-                db.testconnect();
                 //this.UseWaitCursor = false;
                 this.Hide();
                 Main main = new Main(db);
@@ -46,31 +38,21 @@ namespace Doancs
                 Application.Exit();
             }
         }
-        private void dangnhap_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                checklogin();
-            }
-        }
-        private void user_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                checklogin();
-            }
-        }
-        private void pass_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                checklogin();
-            }
-        }
+        //login with button
         private void login_Click(object sender, EventArgs e)
         {
             checklogin();
         }
-
+        //login with enter key
+        private void user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                checklogin();
+        }
+        private void pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                checklogin();
+        }
     }
 }
