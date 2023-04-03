@@ -176,7 +176,6 @@ namespace Doancs
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!");
                     }
                     break;
-
             }
         }
     }
