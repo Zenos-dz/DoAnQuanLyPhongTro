@@ -131,7 +131,7 @@ namespace Doancs
                                             " tenphong = N'{0}'," +
                                             " maphong = N'{1}'," +
                                             " giatienphong = N'{2}'," +
-                                            " dientich = N'{3}'"
+                                            " dientich = N'{3}' "
                                             + $"where maphong = {fn}"
                                             , uid, fn, un, pw);
                     Database db = new Database();
@@ -160,6 +160,7 @@ namespace Doancs
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show($" Lỗi dòng {r} đã nằm trong bảng thanh toán, bạn có thể muốn xóa dữ liệu trong bảng thanh toán trước ");
             }
         }
