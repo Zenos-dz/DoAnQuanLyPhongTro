@@ -159,7 +159,7 @@ namespace Doancs
                     string id = dataGridView1.Rows[r].Cells[0].Value.ToString();
                     string ssql = string.Format("Update nguoithuetro SET " +
                                                   "manguoithue = N'{0}'," +
-                                                  "tennguoithue = N'{1}," +
+                                                  "tennguoithue = N'{1}'," +
                                                   "gioitinh = N'{2}'," +
                                                   "ngaysinh = N'{3}'," +
                                                   "sdt = N'{4}'," +
