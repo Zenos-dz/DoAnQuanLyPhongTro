@@ -160,6 +160,7 @@ namespace Doancs
             }
             catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show($" Lỗi dòng {r} đã nằm trong bảng thanh toán, bạn có thể muốn xóa dữ liệu trong bảng thanh toán trước ");
             }
         }

@@ -54,7 +54,7 @@ namespace Doancs
         private void button1_Click(object sender, EventArgs e)
         {
             btndelete.Enabled = false;
-            btnsave.Enabled = false;
+            btnsave.Enabled = true;
             /*  btnadd.Enabled = false;*/
             btnedit.Enabled = false;
             setEnable(true);
@@ -92,6 +92,20 @@ namespace Doancs
 
         private void btndelete_Click(object sender, EventArgs e)
         {
+            int r = dataGridView1.CurrentRow.Index;
+            try
+            {
+                string uid  = dataGridView1.Rows[r].Cells[0].Value.ToString();
+                string sSql = $"DELETE from nguoithuetro where manguoithue={uid}";
+                Database db = new Database();
+                db.runQuery(sSql);
+                LoadGridData();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
 
         }
 
@@ -151,7 +165,7 @@ namespace Doancs
                                                   "sdt = N'{4}'," +
                                                   "cmnd = N'{5}',"
                                                   + $"where manguoithue = {uid}"
-                                                  , uid, hn, an, fn, ah, dn);
+                                                  ,uid, hn, an, fn, ah, dn);
                     Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();
