@@ -118,7 +118,7 @@ namespace Doancs
                 if (btnAddnew.Enabled == true)
                 {
                     string ssql = $"insert into phongtro(maphong,tenphong,giatienphong,dientich)values" +
-                        $"({fn}, {uid}, {un}, {pw})";
+                        $"({fn}, N'{uid}', {un}, {pw})";
                     Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();
