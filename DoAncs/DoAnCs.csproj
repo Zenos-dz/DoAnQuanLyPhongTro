@@ -53,7 +53,7 @@
     <StartupObject>Doancs.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>asset\img\logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>
@@ -182,7 +182,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="asset\img\logo.ico" />
     <Content Include="asset\img\logo.png" />
     <Content Include="asset\csdl\QUANLYTRO.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -191,7 +190,7 @@
       <DependentUpon>QUANLYTRO.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="logo.ico" />
+    <Content Include="asset\img\logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
