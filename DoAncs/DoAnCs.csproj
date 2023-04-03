@@ -125,6 +125,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sodiennuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sodiennuoc.Designer.cs">
+      <DependentUpon>sodiennuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="cosovatchat.resx">
       <DependentUpon>cosovatchat.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +162,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sodiennuoc.resx">
+      <DependentUpon>sodiennuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,7 +191,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="asset\img\logo.png" />
     <Content Include="asset\csdl\QUANLYTRO.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -190,6 +198,7 @@
       <DependentUpon>QUANLYTRO.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="asset\img\logo.png" />
     <Content Include="asset\img\logo.ico" />
   </ItemGroup>
   <ItemGroup>

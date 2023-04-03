@@ -185,5 +185,10 @@ namespace Doancs
         {
 
         }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

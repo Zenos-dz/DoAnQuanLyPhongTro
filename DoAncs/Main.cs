@@ -79,7 +79,16 @@ namespace Doancs
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (temp != null)
+            {
+                temp.Close();
+            }
+            sodiennuoc sdn = new sodiennuoc(db);
+            sdn.TopLevel = false;
+            panel1.Controls.Add(sdn);
+            sdn.Dock = DockStyle.Fill;
+            sdn.Show();
+            temp = sdn;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -98,7 +107,16 @@ namespace Doancs
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (temp != null)
+            {
+                temp.Close();
+            }
+            cosovatchat csvc = new cosovatchat(db);
+            csvc.TopLevel = false;
+            panel1.Controls.Add(csvc);
+            csvc.Dock = DockStyle.Fill;
+            csvc.Show();
+            temp = csvc;
         }
     }
 }

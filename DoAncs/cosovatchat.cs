@@ -12,9 +12,25 @@ namespace Doancs
 {
     public partial class cosovatchat : Form
     {
-        public cosovatchat()
+        Database db = null;
+        public cosovatchat(Database db)
         {
             InitializeComponent();
+            this.db = db;
+        }
+
+        private void cosovatchat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            //txtdientich.Text = dgvUsers.Rows[i].Cells["dientich"].Value.ToString();
+            //txtgiatien.Text = dgvUsers.Rows[i].Cells["giatienphong"].Value.ToString();
+            //txtmaphong.Text = dgvUsers.Rows[i].Cells["maphong"].Value.ToString();
+            //txttenphong.Text = dgvUsers.Rows[i].Cells["tenphong"].Value.ToString();
         }
     }
 }
