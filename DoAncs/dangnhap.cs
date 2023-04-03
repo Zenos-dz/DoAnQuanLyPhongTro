@@ -36,11 +36,13 @@ namespace Doancs
             pass.BorderStyle = BorderStyle.None;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-       
-           this.Hide();
+            //this.UseWaitCursor = true;
+            //button1.Text = "Đang tải chương trình...";
+            db.testconnect();
+            //this.UseWaitCursor = false;
+            this.Hide();
             Main main = new Main(db);
             main.ShowDialog();
             Application.Exit();

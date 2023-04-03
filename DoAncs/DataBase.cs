@@ -24,7 +24,6 @@ namespace Doancs
             {
                 conn = new SqlConnection(conStr);
                 conn.Open();
-                testconnect("select * from ...");
             }
             catch (Exception ex)
             {
@@ -37,12 +36,11 @@ namespace Doancs
             SqlCommand sqlDatabaseCommand = new SqlCommand(commandString, conn);
             sqlDatabaseCommand.ExecuteNonQuery();
         }
-        public bool testconnect(string commandString)
+        public bool testconnect(string commandString = "select * from ...")
         {
             try
             {
-                SqlCommand sqlDatabaseCommand = new SqlCommand(commandString, conn);
-                sqlDatabaseCommand.ExecuteNonQuery();
+                cmd(commandString);
                 return true;
             }
             catch
