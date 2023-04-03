@@ -144,30 +144,33 @@ namespace Doancs
                 case "edit":
                     try
                     {
-                        db.cmd($"INSERT INTO sodiennuoc values ({tbmap.Text}," +
-                            $"{tbthang.Text}," +
-                            $"{tbnam.Text}" +
-                            $"{tbcsdc.Text}" +
-                            $"{tbcsdm.Text}" +
-                            $"{tbcsnc.Text}" +
-                            $"{tbcsnm.Text}" +
-                            $")");
+                        db.cmd($"UPDATE sodiennuoc SET " +
+                            $"thang = {tbthang.Text}," +
+                            $"nam = {tbnam.Text}," +
+                            $"ChiSoDienCu = {tbcsdc.Text}," +
+                            $"ChiSoDienMoi = {tbcsdm.Text}," +
+                            $"ChiSoNuocCu = {tbcsnc.Text}," +
+                            $"ChiSoNuocMoi = {tbcsnm.Text}" +
+                            $" WHERE maphong = {tbmap.Text}");
+                        loadbang();
                     }
                     catch
                     {
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!");
                     }
+                    
                     break;
                 case "add":
                     try { 
-                        db.cmd($"INSERT INTO sodiennuoc values ({tbmap.Text}," +
+                        db.cmd($"INSERT INTO sodiennuoc VALUES ({tbmap.Text}," +
                             $"{tbthang.Text}," +
-                            $"{tbnam.Text}" +
-                            $"{tbcsdc.Text}" +
-                            $"{tbcsdm.Text}" +
-                            $"{tbcsnc.Text}" +
+                            $"{tbnam.Text}," +
+                            $"{tbcsdc.Text}," +
+                            $"{tbcsdm.Text}," +
+                            $"{tbcsnc.Text}," +
                             $"{tbcsnm.Text}" +
                             $")");
+                        loadbang();
                     }
                     catch {
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!");

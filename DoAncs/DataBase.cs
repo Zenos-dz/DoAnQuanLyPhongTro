@@ -23,6 +23,7 @@ namespace Doancs
             try
             {
                 conn = new SqlConnection(conStr);
+                conn.Open();
             }
             catch (Exception ex)
             {
@@ -54,10 +55,8 @@ namespace Doancs
         {
             try
             {
-                conn.Open();
                 SqlCommand mySqlCommand = new SqlCommand(ssql, conn);
                 mySqlCommand.ExecuteNonQuery();
-                conn.Close();
             }
             catch (Exception ex)
             {
