@@ -18,6 +18,7 @@ namespace Doancs
         {
             InitializeComponent();
             this.db = db;
+            disable_all(false, true, tbmaphong);
         }
 
         //enable all button and textbox with except
@@ -83,7 +84,7 @@ namespace Doancs
         {
             if (temp == null)
             {
-                banghoadon.DataSource = db.getData("select * from hoadon");
+                banghoadon.DataSource = db.getData("SELECT * FROM hoadon");
             }
             else
             {
@@ -121,7 +122,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"select * from hoadon where maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM hoadon WHERE maphong = {tbmaphong.Text}");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -132,7 +133,7 @@ namespace Doancs
             temp.ShowDialog();
             if (temp.result == true)
             {
-                db.cmd($"DELETE FROM hoadon where mahoadon= {tbmahd.Text}");
+                db.cmd($"DELETE FROM hoadon WHERE mahoadon= {tbmahd.Text}");
                 loadbang();
             }
         }

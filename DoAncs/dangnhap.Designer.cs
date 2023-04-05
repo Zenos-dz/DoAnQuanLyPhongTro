@@ -40,12 +40,11 @@
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(214, 257);
-            this.username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.username.Location = new System.Drawing.Point(285, 316);
+            this.username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(223, 19);
+            this.username.Size = new System.Drawing.Size(297, 23);
             this.username.TabIndex = 0;
-
             this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
             // pass
@@ -53,12 +52,11 @@
             this.pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(214, 306);
-            this.pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pass.Location = new System.Drawing.Point(285, 377);
+            this.pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(223, 19);
+            this.pass.Size = new System.Drawing.Size(297, 23);
             this.pass.TabIndex = 1;
-
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
             // login
@@ -69,10 +67,10 @@
             this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.Color.FloralWhite;
-            this.login.Location = new System.Drawing.Point(242, 350);
-            this.login.Margin = new System.Windows.Forms.Padding(150, 162, 150, 162);
+            this.login.Location = new System.Drawing.Point(323, 431);
+            this.login.Margin = new System.Windows.Forms.Padding(200, 199, 200, 199);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(144, 47);
+            this.login.Size = new System.Drawing.Size(192, 58);
             this.login.TabIndex = 2;
             this.login.Text = "Đăng Nhập";
             this.login.UseVisualStyleBackColor = false;
@@ -84,21 +82,20 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(596, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(795, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 27);
+            this.label1.Size = new System.Drawing.Size(29, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dangnhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(626, 465);
+            this.ClientSize = new System.Drawing.Size(835, 572);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pass);
@@ -107,7 +104,8 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

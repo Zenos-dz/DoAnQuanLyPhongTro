@@ -19,6 +19,7 @@ namespace Doancs
         {
             InitializeComponent();
             this.db = db;
+            disable_all(false, true, tbmaphong);
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -34,7 +35,7 @@ namespace Doancs
             tbcsdm.Enabled = true;
             tbcsnc.Enabled = true;
             tbcsnm.Enabled = true;
-            tbmap.Enabled = true;
+            tbmaphong.Enabled = true;
             tbthang.Enabled = true;
             tbnam.Enabled = true;
             //except
@@ -61,7 +62,7 @@ namespace Doancs
                 tbcsdm.Enabled = false;
                 tbcsnc.Enabled = false;
                 tbcsnm.Enabled = false;
-                tbmap.Enabled = false;
+                tbmaphong.Enabled = false;
                 tbthang.Enabled = false;
                 tbnam.Enabled = false;
             }
@@ -75,7 +76,7 @@ namespace Doancs
         private void bangsodiennuoc_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int pos = e.RowIndex;
-            tbmap.Text = bangsodiennuoc.Rows[pos].Cells[0].Value.ToString();
+            tbmaphong.Text = bangsodiennuoc.Rows[pos].Cells[0].Value.ToString();
             tbthang.Text = bangsodiennuoc.Rows[pos].Cells[1].Value.ToString();
             tbnam.Text = bangsodiennuoc.Rows[pos].Cells[2].Value.ToString();
             tbcsdc.Text = bangsodiennuoc.Rows[pos].Cells[3].Value.ToString();
@@ -87,7 +88,7 @@ namespace Doancs
         void loadbang(string temp = null)
         {
             if(temp == null) { 
-                bangsodiennuoc.DataSource = db.getData("select * from sodiennuoc");
+                bangsodiennuoc.DataSource = db.getData("SELECT * FROM sodiennuoc");
             }
             else
             {
@@ -125,9 +126,9 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            disable_all(true, true, bFind,tbmap);
+            disable_all(true, true, bFind,tbmaphong);
             savebutton = "find";
-            loadbang($"select * from sodiennuoc where maphong = {tbmap.Text}");
+            loadbang($"SELECT * FROM sodiennuoc WHERE maphong = {tbmaphong.Text}");
         }
 
         private void bDelete_Click(object sender, EventArgs e)
@@ -135,7 +136,7 @@ namespace Doancs
             ask_form temp = new ask_form();
             temp.ShowDialog();
             if (temp.result == true) { 
-                db.cmd($"DELETE FROM sodiennuoc where maphong= {tbmap.Text}");
+                db.cmd($"DELETE FROM sodiennuoc WHERE maphong= {tbmaphong.Text}");
                 loadbang();
             }
         }
@@ -156,7 +157,7 @@ namespace Doancs
                             $"ChiSoDienMoi = {tbcsdm.Text}," +
                             $"ChiSoNuocCu = {tbcsnc.Text}," +
                             $"ChiSoNuocMoi = {tbcsnm.Text}" +
-                            $" WHERE maphong = {tbmap.Text}");
+                            $" WHERE maphong = {tbmaphong.Text}");
                         loadbang();
                     }
                     catch (Exception ex)
@@ -167,7 +168,7 @@ namespace Doancs
                     break;
                 case "add":
                     try { 
-                        db.cmd($"INSERT INTO sodiennuoc VALUES ({tbmap.Text}," +
+                        db.cmd($"INSERT INTO sodiennuoc VALUES ({tbmaphong.Text}," +
                             $"{tbthang.Text}," +
                             $"{tbnam.Text}," +
                             $"{tbcsdc.Text}," +

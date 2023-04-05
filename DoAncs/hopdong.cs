@@ -18,6 +18,7 @@ namespace Doancs
         {
             InitializeComponent();
             db = dbinput;
+            disable_all(false, true, tbmaphong);
         }
 
         private void HopDong_Load(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace Doancs
         {
             if (temp == null)
             {
-                banghopdong.DataSource = db.getData("select * from hopdong");
+                banghopdong.DataSource = db.getData("SELECT * FROM hopdong");
             }
             else
             {
@@ -122,7 +123,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"select * from hopdong where maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM hopdong WHERE maphong = {tbmaphong.Text}");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -133,7 +134,7 @@ namespace Doancs
             temp.ShowDialog();
             if (temp.result == true)
             {
-                db.cmd($"DELETE FROM hopdong where maphong= {tbmaphong.Text}");
+                db.cmd($"DELETE FROM hopdong WHERE maphong= {tbmaphong.Text}");
                 loadbang();
             }
         }

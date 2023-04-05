@@ -11,6 +11,7 @@ namespace Doancs
         {
             InitializeComponent();
             this.db = db;
+            disable_all(false, true, tbmaphong);
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -82,7 +83,7 @@ namespace Doancs
         {
             if (temp == null)
             {
-                bangcosovatchat.DataSource = db.getData("select * from cosovatchat");
+                bangcosovatchat.DataSource = db.getData("SELECT * FROM cosovatchat");
             }
             else
             {
@@ -120,7 +121,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"select * from cosovatchat where maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM cosovatchat WHERE maphong = {tbmaphong.Text}");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -131,7 +132,7 @@ namespace Doancs
             temp.ShowDialog();
             if (temp.result == true)
             {
-                db.cmd($"DELETE FROM cosovatchat where maphong= {tbmaphong.Text}");
+                db.cmd($"DELETE FROM cosovatchat WHERE maphong= {tbmaphong.Text}");
                 loadbang();
             }
         }

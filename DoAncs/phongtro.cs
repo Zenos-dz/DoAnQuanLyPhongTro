@@ -36,7 +36,7 @@ namespace Doancs
         {
             dgvUsers.DataSource = null;
             if (string.IsNullOrEmpty(ssql)) { 
-                string sql = $"SELECT * from phongtro  ";
+                string sql = $"SELECT * FROM phongtro  ";
                 dgvUsers.DataSource = db.getData(sql);
             }
             else
@@ -55,7 +55,7 @@ namespace Doancs
             string exp = " ";
             if (!string.IsNullOrEmpty(txtmaphong.Text))
             {
-                exp += $"where maphong = {txtmaphong.Text}";
+                exp += $"WHERE maphong = {txtmaphong.Text}";
             }/*
             if (!string.IsNullOrEmpty(txtdientich.Text))
             {
@@ -69,7 +69,7 @@ namespace Doancs
             {
                 exp += $"where tenphong = {txttenphong.Text}";
             }*/
-            string ssql = $" Select * from phongtro {exp} ";
+            string ssql = $" SELECT * FROM phongtro {exp} ";
             LoadGridData(ssql);
         }
 
@@ -117,7 +117,7 @@ namespace Doancs
                 string pw = txtdientich.Text;
                 if (btnAddnew.Enabled == true)
                 {
-                    string ssql = $"insert into phongtro(maphong,tenphong,giatienphong,dientich)values" +
+                    string ssql = $"INSERT INTO phongtro(maphong,tenphong,giatienphong,dientich)VALUES" +
                         $"({fn}, N'{uid}', {un}, {pw})";
                     Database db = new Database();
                     db.runQuery(ssql);
@@ -127,12 +127,12 @@ namespace Doancs
                 {
                     int r = dgvUsers.CurrentRow.Index;
                     string id = dgvUsers.Rows[r].Cells[0].Value.ToString();
-                    string ssql = string.Format("Update phongtro SET" +
+                    string ssql = string.Format("UPDATE phongtro SET" +
                                             " tenphong = N'{0}'," +
                                             " maphong = N'{1}'," +
                                             " giatienphong = N'{2}'," +
                                             " dientich = N'{3}' "
-                                            + $"where maphong = {fn}"
+                                            + $"WHERE maphong = {fn}"
                                             , uid, fn, un, pw);
                     Database db = new Database();
                     db.runQuery(ssql);
@@ -153,7 +153,7 @@ namespace Doancs
             try
             { 
                 string uid = dgvUsers.Rows[r].Cells[0].Value.ToString();
-                string sSql = $"DELETE FROM phongtro where maphong={uid}";
+                string sSql = $"DELETE FROM phongtro WHERE maphong={uid}";
                 Database db = new Database();
                 db.runQuery(sSql);
                 LoadGridData();

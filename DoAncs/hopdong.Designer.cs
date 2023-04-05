@@ -52,41 +52,40 @@
             // 
             this.ngayketthuc.CalendarFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngayketthuc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngayketthuc.Location = new System.Drawing.Point(124, 271);
-            this.ngayketthuc.Margin = new System.Windows.Forms.Padding(2);
+            this.ngayketthuc.Location = new System.Drawing.Point(165, 350);
+            this.ngayketthuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ngayketthuc.Name = "ngayketthuc";
-            this.ngayketthuc.Size = new System.Drawing.Size(162, 23);
+            this.ngayketthuc.Size = new System.Drawing.Size(215, 27);
             this.ngayketthuc.TabIndex = 4;
             // 
             // ngaythue
             // 
             this.ngaythue.CalendarFont = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngaythue.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ngaythue.Location = new System.Drawing.Point(124, 220);
-            this.ngaythue.Margin = new System.Windows.Forms.Padding(2);
+            this.ngaythue.Location = new System.Drawing.Point(165, 271);
+            this.ngaythue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ngaythue.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.ngaythue.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.ngaythue.Name = "ngaythue";
-            this.ngaythue.Size = new System.Drawing.Size(162, 23);
+            this.ngaythue.Size = new System.Drawing.Size(215, 27);
             this.ngaythue.TabIndex = 3;
             // 
             // tbmanguoithue
             // 
             this.tbmanguoithue.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbmanguoithue.Location = new System.Drawing.Point(124, 158);
-            this.tbmanguoithue.Margin = new System.Windows.Forms.Padding(2);
+            this.tbmanguoithue.Location = new System.Drawing.Point(165, 194);
+            this.tbmanguoithue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbmanguoithue.Name = "tbmanguoithue";
-            this.tbmanguoithue.Size = new System.Drawing.Size(162, 26);
+            this.tbmanguoithue.Size = new System.Drawing.Size(215, 30);
             this.tbmanguoithue.TabIndex = 2;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 275);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(18, 353);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 19);
+            this.label9.Size = new System.Drawing.Size(117, 23);
             this.label9.TabIndex = 10;
             this.label9.Text = "Ngày kết thúc";
             // 
@@ -94,10 +93,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 220);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(45, 274);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 19);
+            this.label5.Size = new System.Drawing.Size(90, 23);
             this.label5.TabIndex = 8;
             this.label5.Text = "Ngày thuê";
             // 
@@ -105,50 +103,47 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 158);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(13, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 19);
+            this.label4.Size = new System.Drawing.Size(123, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mã người thuê";
             // 
             // tbmaphong
             // 
             this.tbmaphong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbmaphong.Location = new System.Drawing.Point(124, 101);
-            this.tbmaphong.Margin = new System.Windows.Forms.Padding(2);
+            this.tbmaphong.Location = new System.Drawing.Point(165, 124);
+            this.tbmaphong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbmaphong.Name = "tbmaphong";
-            this.tbmaphong.Size = new System.Drawing.Size(162, 26);
+            this.tbmaphong.Size = new System.Drawing.Size(215, 30);
             this.tbmaphong.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 103);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(48, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.Size = new System.Drawing.Size(89, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mã Phòng";
             // 
             // tbmahd
             // 
             this.tbmahd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbmahd.Location = new System.Drawing.Point(124, 44);
-            this.tbmahd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbmahd.Location = new System.Drawing.Point(165, 54);
+            this.tbmahd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbmahd.Name = "tbmahd";
-            this.tbmahd.Size = new System.Drawing.Size(162, 26);
+            this.tbmahd.Size = new System.Drawing.Size(215, 30);
             this.tbmahd.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(21, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 19);
+            this.label2.Size = new System.Drawing.Size(114, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã hợp đồng";
             // 
@@ -158,13 +153,13 @@
             this.banghopdong.AllowUserToDeleteRows = false;
             this.banghopdong.AllowUserToOrderColumns = true;
             this.banghopdong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.banghopdong.Location = new System.Drawing.Point(322, 31);
-            this.banghopdong.Margin = new System.Windows.Forms.Padding(2);
+            this.banghopdong.Location = new System.Drawing.Point(429, 38);
+            this.banghopdong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.banghopdong.Name = "banghopdong";
             this.banghopdong.ReadOnly = true;
             this.banghopdong.RowHeadersWidth = 51;
             this.banghopdong.RowTemplate.Height = 24;
-            this.banghopdong.Size = new System.Drawing.Size(422, 406);
+            this.banghopdong.Size = new System.Drawing.Size(563, 500);
             this.banghopdong.TabIndex = 5;
             this.banghopdong.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.banghopdong_CellEnter);
             // 
@@ -172,10 +167,10 @@
             // 
             this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancel.Location = new System.Drawing.Point(18, 398);
-            this.bCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.bCancel.Location = new System.Drawing.Point(37, 490);
+            this.bCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCancel.Name = "bCancel";
-            this.bCancel.Size = new System.Drawing.Size(72, 24);
+            this.bCancel.Size = new System.Drawing.Size(96, 30);
             this.bCancel.TabIndex = 23;
             this.bCancel.Text = "Cancel";
             this.bCancel.UseVisualStyleBackColor = true;
@@ -185,10 +180,10 @@
             // 
             this.bAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAdd.Location = new System.Drawing.Point(18, 370);
-            this.bAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.bAdd.Location = new System.Drawing.Point(37, 436);
+            this.bAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(72, 24);
+            this.bAdd.Size = new System.Drawing.Size(96, 30);
             this.bAdd.TabIndex = 20;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -198,10 +193,10 @@
             // 
             this.bEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEdit.Location = new System.Drawing.Point(124, 370);
-            this.bEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.bEdit.Location = new System.Drawing.Point(165, 436);
+            this.bEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEdit.Name = "bEdit";
-            this.bEdit.Size = new System.Drawing.Size(72, 24);
+            this.bEdit.Size = new System.Drawing.Size(96, 30);
             this.bEdit.TabIndex = 21;
             this.bEdit.Text = "Edit";
             this.bEdit.UseVisualStyleBackColor = true;
@@ -211,10 +206,10 @@
             // 
             this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bFind.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bFind.Location = new System.Drawing.Point(218, 398);
-            this.bFind.Margin = new System.Windows.Forms.Padding(2);
+            this.bFind.Location = new System.Drawing.Point(291, 490);
+            this.bFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bFind.Name = "bFind";
-            this.bFind.Size = new System.Drawing.Size(72, 24);
+            this.bFind.Size = new System.Drawing.Size(96, 30);
             this.bFind.TabIndex = 25;
             this.bFind.Text = "Find";
             this.bFind.UseVisualStyleBackColor = true;
@@ -224,10 +219,10 @@
             // 
             this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDelete.Location = new System.Drawing.Point(124, 398);
-            this.bDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.bDelete.Location = new System.Drawing.Point(165, 490);
+            this.bDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(72, 24);
+            this.bDelete.Size = new System.Drawing.Size(96, 30);
             this.bDelete.TabIndex = 24;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
@@ -237,10 +232,10 @@
             // 
             this.bSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSave.Location = new System.Drawing.Point(218, 370);
-            this.bSave.Margin = new System.Windows.Forms.Padding(2);
+            this.bSave.Location = new System.Drawing.Point(291, 436);
+            this.bSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(72, 24);
+            this.bSave.Size = new System.Drawing.Size(96, 30);
             this.bSave.TabIndex = 22;
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
@@ -248,10 +243,10 @@
             // 
             // HopDong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(764, 466);
+            this.ClientSize = new System.Drawing.Size(1019, 574);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.bEdit);
@@ -270,7 +265,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.banghopdong);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HopDong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form2";

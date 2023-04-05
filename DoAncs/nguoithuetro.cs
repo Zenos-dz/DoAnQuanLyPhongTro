@@ -12,7 +12,7 @@ namespace Doancs
 {
     public partial class nguoithuetro : Form
     {
-        internal Database db = null;
+        Database db = null;
         public nguoithuetro(Database dbinput)
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace Doancs
             dataGridView1.DataSource = null;
             if (string.IsNullOrEmpty(ssql))
             {
-                string sql = $"SELECT * from nguoithuetro ";
+                string sql = $"SELECT * FROM nguoithuetro ";
                 dataGridView1.DataSource = db.getData(sql);
             }
             else
@@ -99,7 +99,7 @@ namespace Doancs
                 ask_form temp = new ask_form();
                 temp.ShowDialog();
                 if(temp.result == true) { 
-                    string sSql = $"DELETE from nguoithuetro where manguoithue={uid}";
+                    string sSql = $"DELETE FROM nguoithuetro WHERE manguoithue={uid}";
                     Database db = new Database();
                     db.runQuery(sSql);
                     LoadGridData();
@@ -124,13 +124,15 @@ namespace Doancs
 
         private void btnfind_Click(object sender, EventArgs e)
         {
+            txtsdt.Enabled= false;
             string exp = " ";
             if (!string.IsNullOrEmpty(txtmanguoithue.Text))
             {
-                exp += $"where manguoithue = {txtmanguoithue.Text}";
+                exp += $"WHERE manguoithue = {txtmanguoithue.Text}";
             }
             string ssql = $"SELECT * FROM NGUOITHUETRO{exp} ";
             LoadGridData(ssql);
+            txtmanguoithue.Enabled = true;
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -161,14 +163,14 @@ namespace Doancs
                 {
                     int r = dataGridView1.CurrentRow.Index;
                     string id = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                    string ssql = string.Format("Update nguoithuetro SET " +
+                    string ssql = string.Format("UPDATE nguoithuetro SET " +
                                                   "manguoithue = N'{0}'," +
                                                   "tennguoithue = N'{1}'," +
                                                   "gioitinh = N'{2}'," +
                                                   "ngaysinh = N'{3}'," +
                                                   "sdt = N'{4}'," +
                                                   "cmnd = N'{5}' "
-                                                  + $"where manguoithue = {uid} "
+                                                  + $"WHERE manguoithue = {uid} "
                                                   , uid, hn, an, fn, ah, dn);
                     Database db = new Database();
                     db.runQuery(ssql);
