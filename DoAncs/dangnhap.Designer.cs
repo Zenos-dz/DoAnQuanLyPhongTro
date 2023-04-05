@@ -32,6 +32,7 @@
             this.username = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // username
@@ -79,6 +80,19 @@
             this.login.UseVisualStyleBackColor = false;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(794, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // dangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -87,6 +101,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 572);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.username);
             this.Controls.Add(this.login);
@@ -107,5 +122,6 @@
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Button login;
+        private System.Windows.Forms.Label label1;
     }
 }

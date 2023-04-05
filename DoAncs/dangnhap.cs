@@ -34,7 +34,7 @@ namespace Doancs
             try { 
                 if (reader.Rows[0].IsNull(0) == false)
                 {
-                    MessageBox.Show("Login successful");
+                    //MessageBox.Show("Login successful");
                     //this.UseWaitCursor = true;
                     //button1.Text = "Đang tải chương trình...";
                     //this.UseWaitCursor = false;
@@ -67,6 +67,11 @@ namespace Doancs
         {
             if (e.KeyChar == (char)Keys.Enter)
                 checklogin();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
