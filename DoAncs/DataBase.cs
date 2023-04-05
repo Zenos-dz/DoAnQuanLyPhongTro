@@ -48,7 +48,7 @@ namespace Doancs
             }
         }
         /// <summary>
-        ///     Lấy dữ liệu thông qua sqlQuery(ssql), trả về 1 bảng chứa dữ liệu hoặc không gì cả
+        ///     Truy vấn dữ liệu thông qua sqlQuery(ssql), trả về 1 bảng chứa dữ liệu hoặc không gì cả
         /// </summary>
         /// <param name="ssql"></param>
         /// <returns>DataTable | null</returns>
