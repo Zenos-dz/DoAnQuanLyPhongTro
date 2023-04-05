@@ -119,7 +119,6 @@ namespace Doancs
                 {
                     string ssql = $"INSERT INTO phongtro(maphong,tenphong,giatienphong,dientich)VALUES" +
                         $"({fn}, N'{uid}', {un}, {pw})";
-                    Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();
                 }
@@ -134,7 +133,6 @@ namespace Doancs
                                             " dientich = N'{3}' "
                                             + $"WHERE maphong = {fn}"
                                             , uid, fn, un, pw);
-                    Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();
                 }
@@ -154,7 +152,6 @@ namespace Doancs
             { 
                 string uid = dgvUsers.Rows[r].Cells[0].Value.ToString();
                 string sSql = $"DELETE FROM phongtro WHERE maphong={uid}";
-                Database db = new Database();
                 db.runQuery(sSql);
                 LoadGridData();
             }
