@@ -121,9 +121,9 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
+            loadbang($"select * from cosovatchat where maphong = {tbmaphong.Text}");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
-            loadbang($"select * from cosovatchat where maphong = {tbmaphong.Text}");
         }
 
         private void bDelete_Click(object sender, EventArgs e)
