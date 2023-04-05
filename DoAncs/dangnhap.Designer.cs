@@ -45,7 +45,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(223, 19);
             this.username.TabIndex = 0;
-            this.username.TextChanged += new System.EventHandler(this.user_TextChanged);
+
             this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
             // pass
@@ -58,7 +58,7 @@
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(223, 19);
             this.pass.TabIndex = 1;
-            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
+
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
             // login

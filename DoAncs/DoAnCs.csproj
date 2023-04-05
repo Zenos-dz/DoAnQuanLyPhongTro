@@ -139,6 +139,7 @@
     </Compile>
     <EmbeddedResource Include="ask_form.resx">
       <DependentUpon>ask_form.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="cosovatchat.resx">
       <DependentUpon>cosovatchat.cs</DependentUpon>

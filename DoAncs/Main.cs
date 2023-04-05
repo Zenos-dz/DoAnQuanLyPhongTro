@@ -8,6 +8,7 @@ namespace Doancs
     {
         public Database db = null;
         Form saveform = null;
+        Button savebutton = null;
 
         //for database and clock
         public Main(Database db)
@@ -27,12 +28,16 @@ namespace Doancs
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
         }
         //for form
-        private void loadchildform(Form anyform)
+        private void loadchildform(Form anyform,Button anybutton)
         {
             //form control
             if (saveform != null)
             {
                 saveform.Close();
+                savebutton.ForeColor = SystemColors.ControlText;
+                savebutton.FlatAppearance.BorderColor = default;
+                savebutton.FlatAppearance.BorderSize = 1;
+                savebutton.FlatStyle = FlatStyle.Standard;
             }
             else
             {
@@ -40,42 +45,47 @@ namespace Doancs
                 CLOCK.Hide();
                 TimerForMainClock.Stop();
             }
+            anybutton.ForeColor = Color.MidnightBlue;
+            anybutton.FlatAppearance.BorderColor = Color.DarkCyan;//Color.FromArgb(238,238,0);
+            anybutton.FlatAppearance.BorderSize = 1;
+            anybutton.FlatStyle = FlatStyle.Flat;
             anyform.TopLevel = false;
             panel1.Controls.Add(anyform);
             anyform.Dock = DockStyle.Fill;
             anyform.Show();
             saveform = anyform;
+            savebutton = anybutton;
         }
         private void hopdong(object sender, EventArgs e)
         {
 
             HopDong hd = new HopDong(db);
-            loadchildform(hd);
+            loadchildform(hd,a3hopdong);
         }
         private void phongtro(object sender, EventArgs e)
         {
             phongtro pt = new phongtro(db);
-            loadchildform(pt);
+            loadchildform(pt,a1phongtro);
         }
         private void nguoithuetro(object sender, EventArgs e)
         {
             nguoithuetro ntt =  new nguoithuetro(db);
-            loadchildform(ntt);
+            loadchildform(ntt, a2nguoithue);
         }
         private void hoadon(object sender, EventArgs e)
         {
             hoadon fhd = new hoadon(db);
-            loadchildform(fhd);
+            loadchildform(fhd,a5hoadon);
         }
         private void cosovchat(object sender, EventArgs e)
         {
             cosovatchat csvc = new cosovatchat(db);
-            loadchildform(csvc);
+            loadchildform(csvc,bcsvc);
         }
         private void sdn_Click(object sender, EventArgs e)
         {
             sodiennuoc sdn = new sodiennuoc(db);
-            loadchildform(sdn);
+            loadchildform(sdn,a4sodiennuoc);
         }
     }
 }
