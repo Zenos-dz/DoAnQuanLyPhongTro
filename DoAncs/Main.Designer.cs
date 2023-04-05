@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button4 = new System.Windows.Forms.Button();
+            this.bcsvc = new System.Windows.Forms.Button();
             this.a1phongtro = new System.Windows.Forms.Button();
             this.a5hoadon = new System.Windows.Forms.Button();
             this.a2nguoithue = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.SlateGray;
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
+            this.splitContainer1.Panel1.Controls.Add(this.bcsvc);
             this.splitContainer1.Panel1.Controls.Add(this.a1phongtro);
             this.splitContainer1.Panel1.Controls.Add(this.a5hoadon);
             this.splitContainer1.Panel1.Controls.Add(this.a2nguoithue);
@@ -86,20 +86,20 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 8;
             // 
-            // button4
+            // bcsvc
             // 
-            this.button4.BackColor = System.Drawing.Color.Snow;
-            this.button4.CausesValidation = false;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.button4.Location = new System.Drawing.Point(1, 139);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 64);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Cơ sở vật chất";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.cosovchat);
+            this.bcsvc.BackColor = System.Drawing.Color.Snow;
+            this.bcsvc.CausesValidation = false;
+            this.bcsvc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bcsvc.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.bcsvc.Location = new System.Drawing.Point(1, 139);
+            this.bcsvc.Margin = new System.Windows.Forms.Padding(2);
+            this.bcsvc.Name = "bcsvc";
+            this.bcsvc.Size = new System.Drawing.Size(175, 64);
+            this.bcsvc.TabIndex = 10;
+            this.bcsvc.Text = "Cơ sở vật chất";
+            this.bcsvc.UseVisualStyleBackColor = false;
+            this.bcsvc.Click += new System.EventHandler(this.cosovchat);
             // 
             // a1phongtro
             // 
@@ -234,7 +234,7 @@
 
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bcsvc;
         private System.Windows.Forms.Button a5hoadon;
         private System.Windows.Forms.Button a2nguoithue;
         private System.Windows.Forms.Button a4sodiennuoc;
