@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Doancs
@@ -11,10 +13,9 @@ namespace Doancs
             InitializeComponent();
             db.testconnect(); //load csdl 1 lan truoc khi chay main de tang toc do
         }
-
         private void user_TextChanged(object sender, EventArgs e)
         {
-            user.BorderStyle = BorderStyle.None;
+            username.BorderStyle = BorderStyle.None;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
 
@@ -27,16 +28,29 @@ namespace Doancs
         protected void checklogin()
         {
             //code check login
-            if (true)
-            {
-                //this.UseWaitCursor = true;
-                //button1.Text = "Đang tải chương trình...";
-                //this.UseWaitCursor = false;
-                this.Hide();
-                Main main = new Main(db);
-                main.ShowDialog();
-                Application.Exit();
+            string query = $"SELECT username FROM NguoiDung WHERE username='{username.Text}' AND password='{pass.Text}'";
+            DataTable reader = db.getData(query);
+            reader.NewRow();
+            try { 
+                if (reader.Rows[0].IsNull(0) == false)
+                {
+                    MessageBox.Show("Login successful");
+                    //this.UseWaitCursor = true;
+                    //button1.Text = "Đang tải chương trình...";
+                    //this.UseWaitCursor = false;
+                    this.Hide();
+                    Main main = new Main(db);
+                    main.ShowDialog();
+                    Application.Exit();
+                    // allow user to a
+                    // close application
+                }
             }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+            
         }
         //login with button
         private void login_Click(object sender, EventArgs e)

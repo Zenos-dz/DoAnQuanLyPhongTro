@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dangnhap));
-            this.user = new System.Windows.Forms.TextBox();
+            this.username = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // user
+            // username
             // 
-            this.user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.user.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.user.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Location = new System.Drawing.Point(214, 257);
-            this.user.Margin = new System.Windows.Forms.Padding(2);
-            this.user.Multiline = true;
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(223, 21);
-            this.user.TabIndex = 0;
-            this.user.TextChanged += new System.EventHandler(this.user_TextChanged);
-            this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
+            this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Location = new System.Drawing.Point(285, 316);
+            this.username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.username.Multiline = true;
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(297, 26);
+            this.username.TabIndex = 0;
+            this.username.TextChanged += new System.EventHandler(this.user_TextChanged);
+            this.username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
             // pass
             // 
             this.pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass.Location = new System.Drawing.Point(214, 306);
-            this.pass.Margin = new System.Windows.Forms.Padding(2);
+            this.pass.Location = new System.Drawing.Point(285, 377);
+            this.pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pass.Multiline = true;
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(223, 21);
+            this.pass.Size = new System.Drawing.Size(297, 26);
             this.pass.TabIndex = 1;
             this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
@@ -70,10 +70,10 @@
             this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.Color.FloralWhite;
-            this.login.Location = new System.Drawing.Point(242, 350);
-            this.login.Margin = new System.Windows.Forms.Padding(150, 162, 150, 162);
+            this.login.Location = new System.Drawing.Point(323, 431);
+            this.login.Margin = new System.Windows.Forms.Padding(200, 199, 200, 199);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(144, 47);
+            this.login.Size = new System.Drawing.Size(192, 58);
             this.login.TabIndex = 2;
             this.login.Text = "Đăng Nhập";
             this.login.UseVisualStyleBackColor = false;
@@ -81,19 +81,19 @@
             // 
             // dangnhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(626, 465);
+            this.ClientSize = new System.Drawing.Size(835, 572);
             this.ControlBox = false;
             this.Controls.Add(this.pass);
-            this.Controls.Add(this.user);
+            this.Controls.Add(this.username);
             this.Controls.Add(this.login);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox user;
+        private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Button login;
     }

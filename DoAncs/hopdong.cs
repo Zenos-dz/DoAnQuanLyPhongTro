@@ -23,5 +23,10 @@ namespace Doancs
         {
             dataGridView1.DataSource = db.getData("select * from hopdong");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
