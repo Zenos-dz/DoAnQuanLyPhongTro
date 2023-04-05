@@ -34,7 +34,7 @@ namespace Doancs
             tbmaphong.Enabled = true;
             tbmanguoithue.Enabled = true;
             tbthanhtien.Enabled = true;
-            tbngaylap.Enabled = true;
+            ngaylap.Enabled = true;
             //disable except object
             foreach (var item in ex)
             {
@@ -60,7 +60,7 @@ namespace Doancs
                 tbmaphong.Enabled = false;
                 tbmanguoithue.Enabled = false;
                 tbthanhtien.Enabled = false;
-                tbngaylap.Enabled = false;
+                ngaylap.Enabled = false;
             }
             //enable except object
             foreach (var item in ex)
@@ -75,7 +75,7 @@ namespace Doancs
             tbmahd.Text = banghoadon.Rows[pos].Cells[0].Value.ToString();
             tbmaphong.Text = banghoadon.Rows[pos].Cells[1].Value.ToString();
             tbmanguoithue.Text = banghoadon.Rows[pos].Cells[2].Value.ToString();
-            tbngaylap.Text = ((DateTime)banghoadon.Rows[pos].Cells[3].Value).ToString("dd-MM-yyyy");
+            ngaylap.Text = ((DateTime)banghoadon.Rows[pos].Cells[3].Value).ToString("dd-MM-yyyy");
             tbthanhtien.Text = banghoadon.Rows[pos].Cells[4].Value.ToString();
 
         }
@@ -149,7 +149,7 @@ namespace Doancs
                         db.cmd($"UPDATE hoadon SET " +
                             $" maphong = {tbmaphong.Text},  " +
                             $" manguoithue = {tbmanguoithue.Text}, " +
-                            $" ngaylap = '{tbngaylap.Text}', " +
+                            $" ngaylap = '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" thanhtien = {tbthanhtien.Text} " +
                             $" WHERE mahoadon = {tbmahd.Text}");
                         loadbang();
@@ -166,7 +166,7 @@ namespace Doancs
                         db.cmd($"INSERT INTO hoadon VALUES ({tbmahd.Text}," +
                             $" {tbmaphong.Text},  " +
                             $" {tbmanguoithue.Text}, " +
-                            $" '{tbngaylap.Text}', " +
+                            $" '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" {tbthanhtien.Text} " +
                             $")");
                         loadbang();

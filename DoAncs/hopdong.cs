@@ -80,8 +80,8 @@ namespace Doancs
             tbmahd.Text = banghopdong.Rows[pos].Cells[0].Value.ToString();
             tbmaphong.Text = banghopdong.Rows[pos].Cells[1].Value.ToString();
             tbmanguoithue.Text = banghopdong.Rows[pos].Cells[2].Value.ToString();
-            ngaythue.Text = banghopdong.Rows[pos].Cells[3].Value.ToString();
-            ngayketthuc.Text = banghopdong.Rows[pos].Cells[4].Value.ToString();
+            ngaythue.Text =  ((DateTime)banghopdong.Rows[pos].Cells[3].Value).ToString("dd-MM-yyyy");
+            ngayketthuc.Text = ((DateTime)banghopdong.Rows[pos].Cells[4].Value).ToString("dd-MM-yyyy");
 
         }
         void loadbang(string temp = null)
@@ -150,8 +150,8 @@ namespace Doancs
                         db.cmd($"UPDATE hopdong SET " +
                             $" maphong = {tbmaphong.Text}, " +
                             $" manguoithue = {tbmanguoithue.Text}, " +
-                            $" ngaythue = {ngaythue.Value.ToString("dd-mm-yy")} " +
-                            $" ngaykethuc = {ngayketthuc.Value.ToString("dd-mm-yy")} " +
+                            $" ngaybatdauthue = '{ngaythue.Value.ToString("MM-dd-yyyy")}', " +
+                            $" ngayketthucthue = '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
                             $" WHERE maphong = {tbmahd.Text}");
                         loadbang();
                     }
@@ -167,8 +167,8 @@ namespace Doancs
                         db.cmd($"INSERT INTO hopdong VALUES ({tbmahd.Text}," +
                             $" {tbmaphong.Text},  " +
                             $" {tbmanguoithue.Text}, " +
-                            $" '{ngaythue.Value.ToString("dd-mm-yy")}', " +
-                            $" '{ngayketthuc.Value.ToString("dd-mm-yy")}' " +
+                            $" '{ngaythue.Value.ToString("MM-dd-yyyy")}', " +
+                            $" '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
                             $")");
                         loadbang();
                     }
