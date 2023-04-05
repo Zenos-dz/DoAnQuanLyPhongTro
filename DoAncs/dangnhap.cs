@@ -12,6 +12,7 @@ namespace Doancs
         {
             InitializeComponent();
             db.testconnect(); //load csdl 1 lan truoc khi chay main de tang toc do
+            pass.PasswordChar = '\u058E';
         }
         private void user_TextChanged(object sender, EventArgs e)
         {

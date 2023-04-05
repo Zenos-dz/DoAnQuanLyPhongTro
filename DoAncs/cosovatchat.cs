@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Doancs
 {
@@ -31,10 +23,10 @@ namespace Doancs
             bFind.Enabled = true;
             //enable textbox
             tbmaphong.Enabled = true;
-            tbdieuhoa.Enabled = true;
-            tbquatdien.Enabled = true;
-            tbtulanh.Enabled = true;
-            tbbinhnonglanh.Enabled = true;
+            dieuhoa.Enabled = true;
+            quatdien.Enabled = true;
+            tulanh.Enabled = true;
+            binhnonglanh.Enabled = true;
             //disable except object
             foreach (var item in ex)
             {
@@ -57,10 +49,10 @@ namespace Doancs
             if (disabletb == true)
             {
                 tbmaphong.Enabled = false;
-                tbdieuhoa.Enabled = false;
-                tbquatdien.Enabled = false;
-                tbtulanh.Enabled = false;
-                tbbinhnonglanh.Enabled = false;
+                dieuhoa.Enabled = false;
+                quatdien.Enabled = false;
+                tulanh.Enabled = false;
+                binhnonglanh.Enabled = false;
             }
             //enable except object
             foreach (var item in ex)
@@ -68,15 +60,22 @@ namespace Doancs
                 item.Enabled = true;
             }
         }
-
+        protected string for_combobox(string anystr)
+        {
+            if (anystr == "True")
+            {
+                return "Có";
+            }
+            return "Không";
+        }
         private void bangcosovatchat_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int pos = e.RowIndex;
             tbmaphong.Text = bangcosovatchat.Rows[pos].Cells[0].Value.ToString();
-            tbdieuhoa.Text = bangcosovatchat.Rows[pos].Cells[1].Value.ToString();
-            tbquatdien.Text = bangcosovatchat.Rows[pos].Cells[2].Value.ToString();
-            tbtulanh.Text = bangcosovatchat.Rows[pos].Cells[3].Value.ToString();
-            tbbinhnonglanh.Text = bangcosovatchat.Rows[pos].Cells[4].Value.ToString();
+            dieuhoa.Text = for_combobox(bangcosovatchat.Rows[pos].Cells[1].Value.ToString());
+            quatdien.Text = for_combobox(bangcosovatchat.Rows[pos].Cells[2].Value.ToString());
+            tulanh.Text = for_combobox(bangcosovatchat.Rows[pos].Cells[3].Value.ToString());
+            binhnonglanh.Text = for_combobox(bangcosovatchat.Rows[pos].Cells[4].Value.ToString());
 
         }
         void loadbang(string temp = null)
@@ -136,7 +135,14 @@ namespace Doancs
                 loadbang();
             }
         }
-
+        protected int for_save(string anystr)
+        {
+            if (anystr == "Có" || anystr == "có" || anystr == "Yes" || anystr == "yes")
+            {
+                return 1;
+            }
+            return 0;
+        }
         private void bSave_Click(object sender, EventArgs e)
         {
             switch (savebutton)
@@ -147,10 +153,10 @@ namespace Doancs
                     try
                     {
                         db.cmd($"UPDATE cosovatchat SET " +
-                            $" dieuhoa = {tbdieuhoa.Text},  " +
-                            $" quatdien = {tbquatdien.Text}, " +
-                            $" tulanh = {tbtulanh.Text}, " +
-                            $" binhnonglanh = {tbbinhnonglanh.Text} " +
+                            $" dieuhoa = {for_save(dieuhoa.Text)},  " +
+                            $" quatdien = {for_save(quatdien.Text)}, " +
+                            $" tulanh = {for_save(tulanh.Text)}, " +
+                            $" binhnonglanh = {for_save(binhnonglanh.Text)} " +
                             $" WHERE maphong = {tbmaphong.Text}");
                         loadbang();
                     }
@@ -164,10 +170,10 @@ namespace Doancs
                     try
                     {
                         db.cmd($"INSERT INTO cosovatchat VALUES ({tbmaphong.Text}," +
-                            $" {tbdieuhoa.Text},  " +
-                            $" {tbquatdien.Text}, " +
-                            $" {tbtulanh.Text}, " +
-                            $" {tbbinhnonglanh.Text} " +
+                            $" {for_save(dieuhoa.Text)},  " +
+                            $" {for_save(quatdien.Text)}, " +
+                            $" {for_save(tulanh.Text)}, " +
+                            $" {for_save(binhnonglanh.Text)} " +
                             $")");
                         loadbang();
                     }
