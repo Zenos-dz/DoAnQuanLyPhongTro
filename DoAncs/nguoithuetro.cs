@@ -153,25 +153,24 @@ namespace Doancs
                 string dn = txtcmnd.Text;
                 if (btnadd.Enabled == true)
                 {
-                    string ssql = $"INSERT INTO NGUOITHUETRO(manguoithue, tennguoithue, gioitinh, ngaysinh, sdt,cmnd) values" +
-                        $" ({uid}, {hn}, {an}, {fn} ,{ah} ,{dn})";
+                    string ssql = $"INSERT INTO NGUOITHUETRO values" +
+                        $" ('{uid}', N'{hn}', N'{an}', '{fn}' ,'{ah}' ,'{dn}');";
                     Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();
                 }
-                if (btnedit.Enabled == true)
+                else if (btnedit.Enabled == true)
                 {
                     int r = dataGridView1.CurrentRow.Index;
                     string id = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                    string ssql = string.Format("UPDATE nguoithuetro SET " +
-                                                  "manguoithue = N'{0}'," +
-                                                  "tennguoithue = N'{1}'," +
-                                                  "gioitinh = N'{2}'," +
-                                                  "ngaysinh = N'{3}'," +
-                                                  "sdt = N'{4}'," +
-                                                  "cmnd = N'{5}' "
-                                                  + $"WHERE manguoithue = {uid} "
-                                                  , uid, hn, an, fn, ah, dn);
+                    string ssql = "UPDATE nguoithuetro SET " +
+                            $"manguoithue = N'{uid}'," +
+                            $"tennguoithue = N'{hn}'," +
+                            $"gioitinh = N'{an}'," +
+                            $"ngaysinh = N'{fn}'," +
+                            $"sdt = N'{ah}'," +
+                            $"cmnd = N'{dn}' "
+                            + $"WHERE manguoithue = {uid} ";
                     Database db = new Database();
                     db.runQuery(ssql);
                     LoadGridData();

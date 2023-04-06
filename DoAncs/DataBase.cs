@@ -71,7 +71,6 @@ namespace Doancs
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return;
             }
         }
     }
