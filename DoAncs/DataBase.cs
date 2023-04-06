@@ -35,18 +35,6 @@ namespace Doancs
             SqlCommand sqlDatabaseCommand = new SqlCommand(commandString, conn);
             sqlDatabaseCommand.ExecuteNonQuery();
         }
-        public bool testconnect(string commandString = "select * from ...")
-        {
-            try
-            {
-                cmd(commandString);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
         /// <summary>
         ///     Truy vấn dữ liệu thông qua sqlQuery(ssql), trả về 1 bảng chứa dữ liệu hoặc không gì cả
         /// </summary>
