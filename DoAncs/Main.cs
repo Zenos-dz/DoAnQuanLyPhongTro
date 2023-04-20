@@ -23,7 +23,7 @@ namespace Doancs
             TimerForMainClock.Interval = 1000;
         }
         private void TimerForMainClock_Tick(object sender, EventArgs e)
-        {
+        { 
             //reset time clock
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
         }
