@@ -35,8 +35,9 @@ namespace Doancs
         private void LoadGridData (string ssql = "")
         {
             dgvUsers.DataSource = null;
-            if (string.IsNullOrEmpty(ssql)) { 
-                string sql = $"SELECT * FROM phongtro  ";
+            if (string.IsNullOrEmpty(ssql))
+            { 
+                string sql = $"SELECT * FROM phongtro ";
                 dgvUsers.DataSource = db.getData(sql);
             }
             else
@@ -158,7 +159,7 @@ namespace Doancs
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                MessageBox.Show($" Lỗi dòng {r} đã nằm trong bảng thanh toán, bạn có thể muốn xóa dữ liệu trong bảng thanh toán trước ");
+                MessageBox.Show($" Lỗi dòng {r} đã nằm trong bảng thanh toán, bạn có thể muốn xóa dữ liệu trong bảng thanh toán trước ","Thông Báo!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 

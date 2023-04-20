@@ -32,7 +32,7 @@ namespace Doancs
             }
             catch(Exception ex) 
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!");
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!","Thông Báo !",MessageBoxButtons.OK,MessageBoxIcon.Error );
             }
         }
         private void login_Click(object sender, EventArgs e)
@@ -53,6 +53,11 @@ namespace Doancs
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dangnhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
