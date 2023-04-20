@@ -42,11 +42,15 @@
             this.CLOCK = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TimerForMainClock = new System.Windows.Forms.Timer(this.components);
+            this.logo_main = new System.Windows.Forms.PictureBox();
+            this.logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_main)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -54,17 +58,17 @@
             this.splitter1.BackColor = System.Drawing.Color.DarkCyan;
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1261, 98);
+            this.splitter1.Size = new System.Drawing.Size(946, 80);
             this.splitter1.TabIndex = 7;
             this.splitter1.TabStop = false;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 98);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 80);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -81,8 +85,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1261, 575);
-            this.splitContainer1.SplitterDistance = 235;
+            this.splitContainer1.Size = new System.Drawing.Size(946, 467);
+            this.splitContainer1.SplitterDistance = 176;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 8;
             // 
             // bcsvc
@@ -91,10 +96,10 @@
             this.bcsvc.CausesValidation = false;
             this.bcsvc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bcsvc.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.bcsvc.Location = new System.Drawing.Point(1, 171);
-            this.bcsvc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bcsvc.Location = new System.Drawing.Point(1, 139);
+            this.bcsvc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bcsvc.Name = "bcsvc";
-            this.bcsvc.Size = new System.Drawing.Size(233, 79);
+            this.bcsvc.Size = new System.Drawing.Size(175, 64);
             this.bcsvc.TabIndex = 10;
             this.bcsvc.Text = "Cơ sở vật chất";
             this.bcsvc.UseVisualStyleBackColor = false;
@@ -106,10 +111,10 @@
             this.a1phongtro.CausesValidation = false;
             this.a1phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.a1phongtro.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.a1phongtro.Location = new System.Drawing.Point(1, 5);
-            this.a1phongtro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.a1phongtro.Location = new System.Drawing.Point(1, 4);
+            this.a1phongtro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.a1phongtro.Name = "a1phongtro";
-            this.a1phongtro.Size = new System.Drawing.Size(233, 79);
+            this.a1phongtro.Size = new System.Drawing.Size(175, 64);
             this.a1phongtro.TabIndex = 5;
             this.a1phongtro.Text = "Phòng trọ";
             this.a1phongtro.UseVisualStyleBackColor = false;
@@ -121,10 +126,10 @@
             this.a5hoadon.CausesValidation = false;
             this.a5hoadon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.a5hoadon.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.a5hoadon.Location = new System.Drawing.Point(1, 337);
-            this.a5hoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.a5hoadon.Location = new System.Drawing.Point(1, 274);
+            this.a5hoadon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.a5hoadon.Name = "a5hoadon";
-            this.a5hoadon.Size = new System.Drawing.Size(233, 79);
+            this.a5hoadon.Size = new System.Drawing.Size(175, 64);
             this.a5hoadon.TabIndex = 9;
             this.a5hoadon.Text = "Hoá đơn";
             this.a5hoadon.UseVisualStyleBackColor = false;
@@ -136,10 +141,10 @@
             this.a2nguoithue.CausesValidation = false;
             this.a2nguoithue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.a2nguoithue.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.a2nguoithue.Location = new System.Drawing.Point(1, 89);
-            this.a2nguoithue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.a2nguoithue.Location = new System.Drawing.Point(1, 72);
+            this.a2nguoithue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.a2nguoithue.Name = "a2nguoithue";
-            this.a2nguoithue.Size = new System.Drawing.Size(233, 79);
+            this.a2nguoithue.Size = new System.Drawing.Size(175, 64);
             this.a2nguoithue.TabIndex = 8;
             this.a2nguoithue.Text = "Người thuê";
             this.a2nguoithue.UseVisualStyleBackColor = false;
@@ -150,10 +155,10 @@
             this.a4sodiennuoc.BackColor = System.Drawing.Color.Snow;
             this.a4sodiennuoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.a4sodiennuoc.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.a4sodiennuoc.Location = new System.Drawing.Point(1, 254);
-            this.a4sodiennuoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.a4sodiennuoc.Location = new System.Drawing.Point(1, 206);
+            this.a4sodiennuoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.a4sodiennuoc.Name = "a4sodiennuoc";
-            this.a4sodiennuoc.Size = new System.Drawing.Size(233, 79);
+            this.a4sodiennuoc.Size = new System.Drawing.Size(175, 64);
             this.a4sodiennuoc.TabIndex = 6;
             this.a4sodiennuoc.Text = "Số điện nước";
             this.a4sodiennuoc.UseVisualStyleBackColor = false;
@@ -164,10 +169,10 @@
             this.a3hopdong.BackColor = System.Drawing.Color.Snow;
             this.a3hopdong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.a3hopdong.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.a3hopdong.Location = new System.Drawing.Point(1, 420);
-            this.a3hopdong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.a3hopdong.Location = new System.Drawing.Point(1, 341);
+            this.a3hopdong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.a3hopdong.Name = "a3hopdong";
-            this.a3hopdong.Size = new System.Drawing.Size(233, 79);
+            this.a3hopdong.Size = new System.Drawing.Size(175, 64);
             this.a3hopdong.TabIndex = 0;
             this.a3hopdong.Text = "Hợp đồng";
             this.a3hopdong.UseVisualStyleBackColor = false;
@@ -178,54 +183,84 @@
             this.panel1.Controls.Add(this.CLOCK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1022, 575);
+            this.panel1.Size = new System.Drawing.Size(767, 467);
             this.panel1.TabIndex = 0;
             // 
             // CLOCK
             // 
             this.CLOCK.AutoSize = true;
             this.CLOCK.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLOCK.Location = new System.Drawing.Point(304, 337);
-            this.CLOCK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CLOCK.Location = new System.Drawing.Point(228, 274);
             this.CLOCK.Name = "CLOCK";
-            this.CLOCK.Size = new System.Drawing.Size(387, 106);
+            this.CLOCK.Size = new System.Drawing.Size(311, 86);
             this.CLOCK.TabIndex = 0;
             this.CLOCK.Text = "hh:mm:ss";
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.logout);
+            this.panel2.Controls.Add(this.logo_main);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1261, 98);
+            this.panel2.Size = new System.Drawing.Size(946, 80);
             this.panel2.TabIndex = 9;
             // 
             // TimerForMainClock
             // 
             this.TimerForMainClock.Tick += new System.EventHandler(this.TimerForMainClock_Tick);
             // 
+            // logo_main
+            // 
+            this.logo_main.BackColor = System.Drawing.Color.Transparent;
+            this.logo_main.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logo_main.ErrorImage = global::Doancs.Properties.Resources.QHL;
+            this.logo_main.Image = global::Doancs.Properties.Resources.QHL;
+            this.logo_main.Location = new System.Drawing.Point(0, 0);
+            this.logo_main.Margin = new System.Windows.Forms.Padding(0);
+            this.logo_main.Name = "logo_main";
+            this.logo_main.Size = new System.Drawing.Size(177, 80);
+            this.logo_main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo_main.TabIndex = 0;
+            this.logo_main.TabStop = false;
+            // 
+            // logout
+            // 
+            this.logout.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.logout.Location = new System.Drawing.Point(816, 2);
+            this.logout.Margin = new System.Windows.Forms.Padding(0);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(129, 77);
+            this.logout.TabIndex = 1;
+            this.logout.Text = "Đăng xuất";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 673);
+            this.ClientSize = new System.Drawing.Size(946, 547);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.splitter1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo_main)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,6 +279,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label CLOCK;
         private System.Windows.Forms.Timer TimerForMainClock;
+        private System.Windows.Forms.PictureBox logo_main;
+        private System.Windows.Forms.Button logout;
     }
 }
 

@@ -25,12 +25,14 @@ namespace Doancs
                 if (reader.Rows[0].IsNull(0) == false)
                 {
                     this.Hide();
+                    username.Text = "";
+                    pass.Text = "";
                     Main main = new Main(db);
                     main.ShowDialog();
-                    Application.Exit();
+                    this.Show();
                 }
             }
-            catch(Exception ex) 
+            catch
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!","Thông Báo !",MessageBoxButtons.OK,MessageBoxIcon.Error );
             }

@@ -9,7 +9,7 @@ namespace Doancs
         public Database db = null;
         Form saveform = null;
         Button savebutton = null;
-
+        bool islogout = false;
         //for database and clock
         public Main(Database db)
         {
@@ -86,6 +86,21 @@ namespace Doancs
         {
             sodiennuoc sdn = new sodiennuoc(db);
             loadchildform(sdn,a4sodiennuoc);
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            islogout = true;
+            this.Close();
+
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (islogout == false)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
