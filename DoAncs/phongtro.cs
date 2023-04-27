@@ -14,7 +14,7 @@ namespace Doancs
 {
     public partial class phongtro : Form
     {
-        internal Database db = null;
+        internal Database db = new Database();
         public phongtro(Database dbinput)
         {
             InitializeComponent();
@@ -118,6 +118,7 @@ namespace Doancs
                 string pw = txtdientich.Text;
                 if (btnAddnew.Enabled == true)
                 {
+
                     string ssql = $"INSERT INTO phongtro(maphong,tenphong,giatienphong,dientich)VALUES" +
                         $"({fn}, N'{uid}', {un}, {pw})";
                     db.runQuery(ssql);
