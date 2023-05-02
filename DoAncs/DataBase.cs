@@ -64,9 +64,10 @@ namespace Doancs
         public void runQuery(string ssql)
         {
             try
-            {
+            { 
                 SqlCommand mySqlCommand = new SqlCommand(ssql, conn);
                 mySqlCommand.ExecuteNonQuery();
+                
             }
             catch (Exception ex)
             {
