@@ -32,17 +32,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtmaphong = new System.Windows.Forms.TextBox();
-            this.txttenphong = new System.Windows.Forms.TextBox();
-            this.txtdientich = new System.Windows.Forms.TextBox();
-            this.txtgiatien = new System.Windows.Forms.TextBox();
+            this.tbmaph = new System.Windows.Forms.TextBox();
+            this.tbtienphong = new System.Windows.Forms.TextBox();
+            this.tbdientich = new System.Windows.Forms.TextBox();
+            this.tbgiatien = new System.Windows.Forms.TextBox();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.btnAddnew = new System.Windows.Forms.Button();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
+            this.bAdd = new System.Windows.Forms.Button();
+            this.bCancel = new System.Windows.Forms.Button();
+            this.bSave = new System.Windows.Forms.Button();
+            this.bEdit = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.bFind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +50,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(51, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(38, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 23);
+            this.label1.Size = new System.Drawing.Size(80, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng: ";
             // 
@@ -61,10 +60,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(51, 207);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(38, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 23);
+            this.label2.Size = new System.Drawing.Size(77, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên phòng:";
             // 
@@ -72,10 +70,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(60, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 23);
+            this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Diện tích:";
             // 
@@ -83,49 +80,44 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(67, 282);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(50, 229);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 23);
+            this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Giá tiền:";
             // 
-            // txtmaphong
+            // tbmaph
             // 
-            this.txtmaphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtmaphong.Location = new System.Drawing.Point(163, 49);
-            this.txtmaphong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtmaphong.Name = "txtmaphong";
-            this.txtmaphong.Size = new System.Drawing.Size(223, 27);
-            this.txtmaphong.TabIndex = 4;
-            this.txtmaphong.TextChanged += new System.EventHandler(this.txtmaphong_TextChanged);
+            this.tbmaph.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbmaph.Location = new System.Drawing.Point(122, 40);
+            this.tbmaph.Name = "tbmaph";
+            this.tbmaph.Size = new System.Drawing.Size(168, 23);
+            this.tbmaph.TabIndex = 4;
+            this.tbmaph.TextChanged += new System.EventHandler(this.txtmaphong_TextChanged);
             // 
-            // txttenphong
+            // tbtienphong
             // 
-            this.txttenphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txttenphong.Location = new System.Drawing.Point(163, 204);
-            this.txttenphong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txttenphong.Name = "txttenphong";
-            this.txttenphong.Size = new System.Drawing.Size(223, 27);
-            this.txttenphong.TabIndex = 5;
+            this.tbtienphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbtienphong.Location = new System.Drawing.Point(122, 166);
+            this.tbtienphong.Name = "tbtienphong";
+            this.tbtienphong.Size = new System.Drawing.Size(168, 23);
+            this.tbtienphong.TabIndex = 5;
             // 
-            // txtdientich
+            // tbdientich
             // 
-            this.txtdientich.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtdientich.Location = new System.Drawing.Point(163, 126);
-            this.txtdientich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtdientich.Name = "txtdientich";
-            this.txtdientich.Size = new System.Drawing.Size(223, 27);
-            this.txtdientich.TabIndex = 6;
+            this.tbdientich.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbdientich.Location = new System.Drawing.Point(122, 102);
+            this.tbdientich.Name = "tbdientich";
+            this.tbdientich.Size = new System.Drawing.Size(168, 23);
+            this.tbdientich.TabIndex = 6;
             // 
-            // txtgiatien
+            // tbgiatien
             // 
-            this.txtgiatien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtgiatien.Location = new System.Drawing.Point(163, 279);
-            this.txtgiatien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtgiatien.Name = "txtgiatien";
-            this.txtgiatien.Size = new System.Drawing.Size(223, 27);
-            this.txtgiatien.TabIndex = 7;
+            this.tbgiatien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbgiatien.Location = new System.Drawing.Point(122, 227);
+            this.tbgiatien.Name = "tbgiatien";
+            this.tbgiatien.Size = new System.Drawing.Size(168, 23);
+            this.tbgiatien.TabIndex = 7;
             // 
             // dgvUsers
             // 
@@ -133,117 +125,109 @@
             this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AllowUserToOrderColumns = true;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(429, 38);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUsers.Location = new System.Drawing.Point(322, 31);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersWidth = 51;
-            this.dgvUsers.Size = new System.Drawing.Size(563, 500);
+            this.dgvUsers.Size = new System.Drawing.Size(422, 406);
             this.dgvUsers.TabIndex = 8;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             this.dgvUsers.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellEnter);
             this.dgvUsers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_RowEnter);
             // 
-            // btnAddnew
+            // bAdd
             // 
-            this.btnAddnew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddnew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddnew.Location = new System.Drawing.Point(33, 359);
-            this.btnAddnew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAddnew.Name = "btnAddnew";
-            this.btnAddnew.Size = new System.Drawing.Size(100, 28);
-            this.btnAddnew.TabIndex = 9;
-            this.btnAddnew.Text = "Addnew";
-            this.btnAddnew.UseVisualStyleBackColor = true;
-            this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
+            this.bAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAdd.Location = new System.Drawing.Point(25, 292);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(75, 23);
+            this.bAdd.TabIndex = 9;
+            this.bAdd.Text = "Addnew";
+            this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
-            // btncancel
+            // bCancel
             // 
-            this.btncancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(33, 421);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(100, 28);
-            this.btncancel.TabIndex = 11;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = true;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            this.bCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCancel.Location = new System.Drawing.Point(25, 342);
+            this.bCancel.Name = "bCancel";
+            this.bCancel.Size = new System.Drawing.Size(75, 23);
+            this.bCancel.TabIndex = 11;
+            this.bCancel.Text = "Cancel";
+            this.bCancel.UseVisualStyleBackColor = true;
+            this.bCancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
-            // btnSave
+            // bSave
             // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(304, 359);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.bSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSave.Location = new System.Drawing.Point(228, 292);
+            this.bSave.Name = "bSave";
+            this.bSave.Size = new System.Drawing.Size(75, 23);
+            this.bSave.TabIndex = 12;
+            this.bSave.Text = "Save";
+            this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnEdit
+            // bEdit
             // 
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(173, 359);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 28);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.bEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEdit.Location = new System.Drawing.Point(130, 292);
+            this.bEdit.Name = "bEdit";
+            this.bEdit.Size = new System.Drawing.Size(75, 23);
+            this.bEdit.TabIndex = 13;
+            this.bEdit.Text = "Edit";
+            this.bEdit.UseVisualStyleBackColor = true;
+            this.bEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnDelete
+            // bDelete
             // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(173, 421);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDelete.Location = new System.Drawing.Point(130, 342);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(75, 23);
+            this.bDelete.TabIndex = 14;
+            this.bDelete.Text = "Delete";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnFind
+            // bFind
             // 
-            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(304, 421);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(100, 28);
-            this.btnFind.TabIndex = 10;
-            this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnExit_Click);
+            this.bFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFind.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bFind.Location = new System.Drawing.Point(228, 342);
+            this.bFind.Name = "bFind";
+            this.bFind.Size = new System.Drawing.Size(75, 23);
+            this.bFind.TabIndex = 10;
+            this.bFind.Text = "Find";
+            this.bFind.UseVisualStyleBackColor = true;
+            this.bFind.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // phongtro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 574);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btncancel);
-            this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.btnAddnew);
+            this.ClientSize = new System.Drawing.Size(764, 466);
+            this.Controls.Add(this.bDelete);
+            this.Controls.Add(this.bEdit);
+            this.Controls.Add(this.bSave);
+            this.Controls.Add(this.bCancel);
+            this.Controls.Add(this.bFind);
+            this.Controls.Add(this.bAdd);
             this.Controls.Add(this.dgvUsers);
-            this.Controls.Add(this.txtgiatien);
-            this.Controls.Add(this.txtdientich);
-            this.Controls.Add(this.txttenphong);
-            this.Controls.Add(this.txtmaphong);
+            this.Controls.Add(this.tbgiatien);
+            this.Controls.Add(this.tbdientich);
+            this.Controls.Add(this.tbtienphong);
+            this.Controls.Add(this.tbmaph);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "phongtro";
             this.Text = "phongtro";
             this.Load += new System.EventHandler(this.phongtro_Load);
@@ -259,16 +243,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtmaphong;
-        private System.Windows.Forms.TextBox txttenphong;
-        private System.Windows.Forms.TextBox txtdientich;
-        private System.Windows.Forms.TextBox txtgiatien;
+        private System.Windows.Forms.TextBox tbmaph;
+        private System.Windows.Forms.TextBox tbtienphong;
+        private System.Windows.Forms.TextBox tbdientich;
+        private System.Windows.Forms.TextBox tbgiatien;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.Button btnAddnew;
-        private System.Windows.Forms.Button btncancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button bAdd;
+        private System.Windows.Forms.Button bCancel;
+        private System.Windows.Forms.Button bSave;
+        private System.Windows.Forms.Button bEdit;
+        private System.Windows.Forms.Button bDelete;
+        private System.Windows.Forms.Button bFind;
     }
 }

@@ -27,10 +27,10 @@ namespace Doancs
         }
         private void setEnable (bool check) 
         {
-            txtdientich.Enabled = check;
-            txtgiatien.Enabled = check;
-            txtgiatien.Enabled = check;
-            txttenphong.Enabled = check;
+            tbdientich.Enabled = check;
+            tbgiatien.Enabled = check;
+            tbgiatien.Enabled = check;
+            tbtienphong.Enabled = check;
         }
         private void LoadGridData (string ssql = "")
         {
@@ -54,9 +54,9 @@ namespace Doancs
                 this.Close();
             }*/
             string exp = " ";
-            if (!string.IsNullOrEmpty(txtmaphong.Text))
+            if (!string.IsNullOrEmpty(tbmaph.Text))
             {
-                exp += $"WHERE maphong = {txtmaphong.Text}";
+                exp += $"WHERE maphong = {tbmaph.Text}";
             }/*
             if (!string.IsNullOrEmpty(txtdientich.Text))
             {
@@ -82,23 +82,23 @@ namespace Doancs
         private void dgvUsers_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
-            txtdientich.Text = dgvUsers.Rows[i].Cells["dientich"].Value.ToString();
-            txtgiatien.Text = dgvUsers.Rows[i].Cells["giatienphong"].Value.ToString();
-            txtmaphong.Text = dgvUsers.Rows[i].Cells["maphong"].Value.ToString();
-            txttenphong.Text = dgvUsers.Rows[i].Cells["tenphong"].Value.ToString();
+            tbdientich.Text = dgvUsers.Rows[i].Cells["dientich"].Value.ToString();
+            tbgiatien.Text = dgvUsers.Rows[i].Cells["giatienphong"].Value.ToString();
+            tbmaph.Text = dgvUsers.Rows[i].Cells["maphong"].Value.ToString();
+            tbtienphong.Text = dgvUsers.Rows[i].Cells["tenphong"].Value.ToString();
         }
 
         private void btnAddnew_Click(object sender, EventArgs e)
         {
-                btnDelete.Enabled = false;
-                btnEdit.Enabled = false;
+                bDelete.Enabled = false;
+                bEdit.Enabled = false;
             //btnAddnew.Enabled = false;
-                btnEdit.Enabled = false;
+                bEdit.Enabled = false;
                 setEnable(true);
-                txtdientich.Clear();
-                txtgiatien.Clear();
-                txtmaphong.Clear();
-                txttenphong.Focus();
+                tbdientich.Clear();
+                tbgiatien.Clear();
+                tbmaph.Clear();
+                tbtienphong.Focus();
             }
         
 
@@ -106,24 +106,24 @@ namespace Doancs
         {
             try
             {
-                if (txttenphong.Text.Trim() == "")
+                if (tbtienphong.Text.Trim() == "")
                 {
                     MessageBox.Show("Thông tin tên phòng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txttenphong.Focus();
+                    tbtienphong.Focus();
                     return;
                 }
-                string uid = txttenphong.Text;
-                string fn = txtmaphong.Text;
-                string un = txtgiatien.Text;
-                string pw = txtdientich.Text;
-                if (btnAddnew.Enabled == true)
+                string uid = tbtienphong.Text;
+                string fn = tbmaph.Text;
+                string un = tbgiatien.Text;
+                string pw = tbdientich.Text;
+                if (bAdd.Enabled == true)
                 {
                     string ssql = $"INSERT INTO phongtro(maphong,tenphong,giatienphong,dientich)VALUES" +
                         $"({fn}, N'{uid}', {un}, {pw})";
                     db.runQuery(ssql);
                     LoadGridData();
                 }
-                if (btnEdit.Enabled == true)
+                if (bEdit.Enabled == true)
                 {
                     int r = dgvUsers.CurrentRow.Index;
                     string id = dgvUsers.Rows[r].Cells[0].Value.ToString();
@@ -137,10 +137,10 @@ namespace Doancs
                     db.runQuery(ssql);
                     LoadGridData();
                 }
-                btnAddnew.Enabled = true;
-                btnSave.Enabled = true;
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
+                bAdd.Enabled = true;
+                bSave.Enabled = true;
+                bEdit.Enabled = true;
+                bDelete.Enabled = true;
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message.ToString());
@@ -165,8 +165,8 @@ namespace Doancs
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            btnAddnew.Enabled = false;
-            btnDelete.Enabled = false;
+            bAdd.Enabled = false;
+            bDelete.Enabled = false;
             setEnable(true);
 
         }
@@ -174,10 +174,10 @@ namespace Doancs
         private void btncancel_Click(object sender, EventArgs e)
         {
             setEnable(true);
-            btnAddnew.Enabled = true;
-            btnSave.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            bAdd.Enabled = true;
+            bSave.Enabled = true;
+            bEdit.Enabled = true;
+            bDelete.Enabled = true;
         }
 
         private void txtmaphong_TextChanged(object sender, EventArgs e)
