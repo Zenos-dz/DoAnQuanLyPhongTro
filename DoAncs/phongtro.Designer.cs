@@ -32,18 +32,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbmaph = new System.Windows.Forms.TextBox();
-            this.tbtienphong = new System.Windows.Forms.TextBox();
+            this.tbmaphong = new System.Windows.Forms.TextBox();
+            this.tbtenphong = new System.Windows.Forms.TextBox();
             this.tbdientich = new System.Windows.Forms.TextBox();
             this.tbgiatien = new System.Windows.Forms.TextBox();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.bangphongtro = new System.Windows.Forms.DataGridView();
             this.bAdd = new System.Windows.Forms.Button();
             this.bCancel = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.bFind = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangphongtro)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,22 +86,21 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Giá tiền:";
             // 
-            // tbmaph
+            // tbmaphong
             // 
-            this.tbmaph.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbmaph.Location = new System.Drawing.Point(122, 40);
-            this.tbmaph.Name = "tbmaph";
-            this.tbmaph.Size = new System.Drawing.Size(168, 23);
-            this.tbmaph.TabIndex = 4;
-            this.tbmaph.TextChanged += new System.EventHandler(this.txtmaphong_TextChanged);
+            this.tbmaphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbmaphong.Location = new System.Drawing.Point(122, 40);
+            this.tbmaphong.Name = "tbmaphong";
+            this.tbmaphong.Size = new System.Drawing.Size(168, 23);
+            this.tbmaphong.TabIndex = 4;
             // 
-            // tbtienphong
+            // tbtenphong
             // 
-            this.tbtienphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbtienphong.Location = new System.Drawing.Point(122, 166);
-            this.tbtienphong.Name = "tbtienphong";
-            this.tbtienphong.Size = new System.Drawing.Size(168, 23);
-            this.tbtienphong.TabIndex = 5;
+            this.tbtenphong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbtenphong.Location = new System.Drawing.Point(122, 166);
+            this.tbtenphong.Name = "tbtenphong";
+            this.tbtenphong.Size = new System.Drawing.Size(168, 23);
+            this.tbtenphong.TabIndex = 5;
             // 
             // tbdientich
             // 
@@ -119,21 +118,19 @@
             this.tbgiatien.Size = new System.Drawing.Size(168, 23);
             this.tbgiatien.TabIndex = 7;
             // 
-            // dgvUsers
+            // bangphongtro
             // 
-            this.dgvUsers.AllowUserToAddRows = false;
-            this.dgvUsers.AllowUserToDeleteRows = false;
-            this.dgvUsers.AllowUserToOrderColumns = true;
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(322, 31);
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.RowHeadersWidth = 51;
-            this.dgvUsers.Size = new System.Drawing.Size(422, 406);
-            this.dgvUsers.TabIndex = 8;
-            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
-            this.dgvUsers.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellEnter);
-            this.dgvUsers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_RowEnter);
+            this.bangphongtro.AllowUserToAddRows = false;
+            this.bangphongtro.AllowUserToDeleteRows = false;
+            this.bangphongtro.AllowUserToOrderColumns = true;
+            this.bangphongtro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bangphongtro.Location = new System.Drawing.Point(322, 31);
+            this.bangphongtro.Name = "bangphongtro";
+            this.bangphongtro.ReadOnly = true;
+            this.bangphongtro.RowHeadersWidth = 51;
+            this.bangphongtro.Size = new System.Drawing.Size(422, 406);
+            this.bangphongtro.TabIndex = 8;
+            this.bangphongtro.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangphongtro_CellEnter);
             // 
             // bAdd
             // 
@@ -145,7 +142,7 @@
             this.bAdd.TabIndex = 9;
             this.bAdd.Text = "Addnew";
             this.bAdd.UseVisualStyleBackColor = true;
-            this.bAdd.Click += new System.EventHandler(this.btnAddnew_Click);
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // bCancel
             // 
@@ -157,7 +154,7 @@
             this.bCancel.TabIndex = 11;
             this.bCancel.Text = "Cancel";
             this.bCancel.UseVisualStyleBackColor = true;
-            this.bCancel.Click += new System.EventHandler(this.btncancel_Click);
+            this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // bSave
             // 
@@ -169,7 +166,7 @@
             this.bSave.TabIndex = 12;
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
-            this.bSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // bEdit
             // 
@@ -181,7 +178,7 @@
             this.bEdit.TabIndex = 13;
             this.bEdit.Text = "Edit";
             this.bEdit.UseVisualStyleBackColor = true;
-            this.bEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
             // bDelete
             // 
@@ -193,7 +190,7 @@
             this.bDelete.TabIndex = 14;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
-            this.bDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // bFind
             // 
@@ -205,7 +202,7 @@
             this.bFind.TabIndex = 10;
             this.bFind.Text = "Find";
             this.bFind.UseVisualStyleBackColor = true;
-            this.bFind.Click += new System.EventHandler(this.btnExit_Click);
+            this.bFind.Click += new System.EventHandler(this.bFind_Click);
             // 
             // phongtro
             // 
@@ -218,11 +215,11 @@
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bFind);
             this.Controls.Add(this.bAdd);
-            this.Controls.Add(this.dgvUsers);
+            this.Controls.Add(this.bangphongtro);
             this.Controls.Add(this.tbgiatien);
             this.Controls.Add(this.tbdientich);
-            this.Controls.Add(this.tbtienphong);
-            this.Controls.Add(this.tbmaph);
+            this.Controls.Add(this.tbtenphong);
+            this.Controls.Add(this.tbmaphong);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -231,7 +228,7 @@
             this.Name = "phongtro";
             this.Text = "phongtro";
             this.Load += new System.EventHandler(this.phongtro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bangphongtro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,11 +240,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbmaph;
-        private System.Windows.Forms.TextBox tbtienphong;
+        private System.Windows.Forms.TextBox tbmaphong;
+        private System.Windows.Forms.TextBox tbtenphong;
         private System.Windows.Forms.TextBox tbdientich;
         private System.Windows.Forms.TextBox tbgiatien;
-        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.DataGridView bangphongtro;
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.Button bCancel;
         private System.Windows.Forms.Button bSave;

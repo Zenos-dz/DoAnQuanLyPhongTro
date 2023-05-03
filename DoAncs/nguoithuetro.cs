@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,178 +14,178 @@ namespace Doancs
     public partial class nguoithuetro : Form
     {
         Database db = null;
-        public nguoithuetro(Database dbinput)
+        string savebutton = "";
+        public nguoithuetro(Database db)
         {
             InitializeComponent();
-            db = dbinput;
+            this.db = db;
+            disable_all(false, true, tbmanguoithue);
         }
-
-        private void nguoithuetro_Load(object sender, EventArgs e)
+        //enable all button and textbox with except
+        void enable_all(params Control[] ex)
         {
-            /* dataGridView1.DataSource = db.getData("Select * from nguoithuetro");*/
-            LoadGridData();
-        }
-
-        private void setEnable(bool check)
-        {
-            txtmanguoithue.Enabled = check;
-            txttennguoithue.Enabled = check;
-            txtgioitinh.Enabled = check;
-            txtngaysinh.Enabled = check;
-            txtngaysinh.Enabled = check;
-            txtcmnd.Enabled = check;
-        }
-
-        private void LoadGridData(string ssql = "")
-        {
-            dataGridView1.DataSource = null;
-            if (string.IsNullOrEmpty(ssql))
+            //button
+            bAdd.Enabled = true;
+            bEdit.Enabled = true;
+            bDelete.Enabled = true;
+            bSave.Enabled = true;
+            bFind.Enabled = true;
+            //textbox
+            tbmanguoithue.Enabled = true;
+            tbtennguoithue.Enabled = true;
+            tbcmnd.Enabled = true;
+            tbgioitinh.Enabled = true;
+            tbngaysinh.Enabled = true;
+            tbsdt.Enabled = true;
+            //except
+            foreach (var item in ex)
             {
-                string sql = $"SELECT * FROM nguoithuetro ";
-                dataGridView1.DataSource = db.getData(sql);
+                item.Enabled = false;
+            }
+        }
+        //disable all button and textbox with except
+        void disable_all(bool disablebt = true, bool disabletb = true, params Control[] ex)
+        {
+            //button
+            if (disablebt == true)
+            {
+                bAdd.Enabled = false;
+                bEdit.Enabled = false;
+                bDelete.Enabled = false;
+                bSave.Enabled = false;
+                bFind.Enabled = false;
+            }
+            //textbox
+            if (disabletb == true)
+            {
+                tbmanguoithue.Enabled = false;
+                tbtennguoithue.Enabled = false;
+                tbcmnd.Enabled = false;
+                tbgioitinh.Enabled = false;
+                tbngaysinh.Enabled = false;
+                tbsdt.Enabled = false;
+            }
+            //ex object
+            foreach (var item in ex)
+            {
+                item.Enabled = true;
+            }
+        }
+
+        private void bangnguoithuetro_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int pos = e.RowIndex;
+            tbmanguoithue.Text = bangnguoithuetro.Rows[pos].Cells[0].Value.ToString();
+            tbtennguoithue.Text = bangnguoithuetro.Rows[pos].Cells[1].Value.ToString();
+            tbgioitinh.Text = bangnguoithuetro.Rows[pos].Cells[2].Value.ToString();
+            tbngaysinh.Text = bangnguoithuetro.Rows[pos].Cells[3].Value.ToString();
+            tbsdt.Text = bangnguoithuetro.Rows[pos].Cells[2].Value.ToString();
+            tbcmnd.Text = bangnguoithuetro.Rows[pos].Cells[3].Value.ToString();
+
+        }
+        void loadbang(string temp = null)
+        {
+            if (temp == null)
+            {
+                bangnguoithuetro.DataSource = db.getData("SELECT * FROM nguoithuetro");
             }
             else
             {
-                dataGridView1.DataSource = db.getData(ssql);
-                setEnable(false);
+                bangnguoithuetro.DataSource = db.getData(temp);
             }
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void nguoithuetro_Load(object sender, EventArgs e)
         {
-            btndelete.Enabled = false;
-            btnsave.Enabled = true;
-            /*  btnadd.Enabled = false;*/
-            btnedit.Enabled = false;
-            setEnable(true);
-            txtcmnd.Clear();
-            txtgioitinh.Clear();
-            txtngaysinh.Clear();
-            txtmanguoithue.Clear();
-            txttennguoithue.Clear();
-            txtsdt.Clear();
+            loadbang();
         }
-
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        //button
+        private void bCancel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = e.RowIndex;
-            txtmanguoithue.Text = dataGridView1.Rows[i].Cells["manguoithue"].Value.ToString();
-            txttennguoithue.Text = dataGridView1.Rows[i].Cells["tennguoithue"].Value.ToString();
-            txtngaysinh.Text = ((DateTime)dataGridView1.Rows[i].Cells["ngaysinh"].Value).ToString("dd-MM-yyyy");
-            txtgioitinh.Text = dataGridView1.Rows[i].Cells["gioitinh"].Value.ToString();
-            txtsdt.Text = dataGridView1.Rows[i].Cells["sdt"].Value.ToString();
-            txtcmnd.Text = dataGridView1.Rows[i].Cells["cmnd"].Value.ToString();
-        }
-
-        private void btnedit_Click(object sender, EventArgs e)
-        {
-            btnadd.Enabled = false;
-            btndelete.Enabled = false;
-            setEnable(true);
-
-        }
-
-        private void btndelete_Click(object sender, EventArgs e)
-        {
-            int r = dataGridView1.CurrentRow.Index;
-            try
+            if (savebutton == "find")
             {
-                string uid  = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                ask_form temp = new ask_form();
-                temp.ShowDialog();
-                if(temp.result == true) { 
-                    string sSql = $"DELETE FROM nguoithuetro WHERE manguoithue={uid}";
-                    Database db = new Database();
-                    db.runQuery(sSql);
-                    LoadGridData();
-                }
+                loadbang();
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-
+            enable_all();
+            savebutton = "";
         }
 
-        private void btncancel_Click(object sender, EventArgs e)
+        private void bAdd_Click(object sender, EventArgs e)
         {
-            setEnable(true);
-            btnadd.Enabled = true;
-            btnsave.Enabled = true;
-            btnedit.Enabled = true;
-            btndelete.Enabled = true;
+            disable_all(true, false, bAdd, bSave);
+            savebutton = "add";
         }
 
-        private void btnfind_Click(object sender, EventArgs e)
+        private void bEdit_Click(object sender, EventArgs e)
         {
-            txtsdt.Enabled= false;
-            string exp = " ";
-            if (!string.IsNullOrEmpty(txtmanguoithue.Text))
-            {
-                exp += $"WHERE manguoithue = {txtmanguoithue.Text}";
-            }
-            string ssql = $"SELECT * FROM NGUOITHUETRO{exp} ";
-            LoadGridData(ssql);
-            txtmanguoithue.Enabled = true;
+            enable_all();
+            disable_all(true, false, bEdit, bSave);
+            savebutton = "edit";
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+
+        private void bFind_Click(object sender, EventArgs e)
         {
-            try
+            disable_all(true, true, bFind, tbmanguoithue);
+            savebutton = "find";
+            loadbang($"SELECT * FROM nguoithuetro WHERE manguoithue = {tbmanguoithue.Text}");
+        }
+
+        private void bDelete_Click(object sender, EventArgs e)
+        {
+            ask_form temp = new ask_form();
+            temp.ShowDialog();
+            if (temp.result == true)
             {
-                if (txttennguoithue.Text.Trim() == "")
+                try
                 {
-                    MessageBox.Show("Thông tin tên người thuê không được bỏ trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txttennguoithue.Focus();
-                    return;
+                    db.cmd($"DELETE FROM nguoithuetro WHERE manguoithue= {tbmanguoithue.Text}");
                 }
-                string uid = txtmanguoithue.Text;
-                string hn = txttennguoithue.Text;
-                string an = txtgioitinh.Text;
-                string fn = txtngaysinh.Text;
-                string ah = txtsdt.Text;
-                string dn = txtcmnd.Text;
-                if (btnadd.Enabled == true)
+                catch
                 {
-                    string ssql = $"INSERT INTO NGUOITHUETRO values" +
-                        $" ('{uid}', N'{hn}', N'{an}', '{fn}' ,'{ah}' ,'{dn}');";
-                    Database db = new Database();
-                    db.runQuery(ssql);
-                    LoadGridData();
+                    //lỗi khóa phụ
                 }
-                else if (btnedit.Enabled == true)
-                {
-                    int r = dataGridView1.CurrentRow.Index;
-                    string id = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                    string ssql = "UPDATE nguoithuetro SET " +
-                            $"manguoithue = N'{uid}'," +
-                            $"tennguoithue = N'{hn}'," +
-                            $"gioitinh = N'{an}'," +
-                            $"ngaysinh = N'{fn}'," +
-                            $"sdt = N'{ah}'," +
-                            $"cmnd = N'{dn}' "
-                            + $"WHERE manguoithue = {uid} ";
-                    Database db = new Database();
-                    db.runQuery(ssql);
-                    LoadGridData();
-                }
-                btnadd.Enabled = true;
-                btnsave.Enabled = true;
-                btnedit.Enabled = true;
-                btndelete.Enabled = true;
+                loadbang();
             }
-            catch (Exception ex)
+        }
+
+        private void bSave_Click(object sender, EventArgs e)
+        {
+            switch (savebutton)
             {
-                MessageBox.Show(ex.Message.ToString());
-            };
-               
+                case "":
+                    break;
+                case "edit":
+                    try
+                    {
+                        db.cmd($"UPDATE nguoithuetro SET " +
+                            $"thang = {tbtennguoithue.Text}," +
+                            $"nam = {tbgioitinh.Text}," +
+                            $"ChiSoDienCu = {tbngaysinh.Text}," +
+                            $" WHERE manguoithue = {tbmanguoithue.Text}");
+                        loadbang();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
+                    }
+
+                    break;
+                case "add":
+                    try
+                    {
+                        db.cmd($"INSERT INTO nguoithuetro VALUES ({tbmanguoithue.Text}," +
+                            $"{tbtennguoithue.Text}," +
+                            $"{tbgioitinh.Text}," +
+                            $"{tbngaysinh.Text}," +
+                            $")");
+                        loadbang();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
+                    }
+                    break;
+            }
         }
     }
 }

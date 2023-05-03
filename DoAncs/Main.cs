@@ -52,6 +52,7 @@ namespace Doancs
             anyform.TopLevel = false;
             panel1.Controls.Add(anyform);
             anyform.Dock = DockStyle.Fill;
+            //anyform.Show(Parent);
             anyform.Show();
             saveform = anyform;
             savebutton = anybutton;

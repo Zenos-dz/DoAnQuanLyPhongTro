@@ -31,10 +31,15 @@ namespace Doancs
                     main.ShowDialog();
                     this.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!","Thông Báo !",MessageBoxButtons.OK,MessageBoxIcon.Error );
+                MessageBox.Show("có lỗi trong quá trình vận hành ứng dụng, vui lòng liên hệ lập trình viên!");
+                this.Show();
             }
         }
         private void login_Click(object sender, EventArgs e)
@@ -52,14 +57,10 @@ namespace Doancs
                 checklogin();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void dangnhap_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
