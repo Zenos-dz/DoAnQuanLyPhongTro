@@ -43,6 +43,7 @@
             this.logout = new System.Windows.Forms.Button();
             this.logo_main = new System.Windows.Forms.PictureBox();
             this.TimerForMainClock = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -200,6 +201,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CLOCK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -213,7 +215,7 @@
             this.CLOCK.AutoSize = true;
             this.CLOCK.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CLOCK.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.CLOCK.Location = new System.Drawing.Point(34, 422);
+            this.CLOCK.Location = new System.Drawing.Point(335, 431);
             this.CLOCK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CLOCK.Name = "CLOCK";
             this.CLOCK.Size = new System.Drawing.Size(387, 106);
@@ -250,13 +252,14 @@
             // logo_main
             // 
             this.logo_main.BackColor = System.Drawing.Color.Transparent;
+            this.logo_main.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logo_main.Dock = System.Windows.Forms.DockStyle.Left;
             this.logo_main.ErrorImage = global::Doancs.Properties.Resources.QHL;
             this.logo_main.Image = ((System.Drawing.Image)(resources.GetObject("logo_main.Image")));
             this.logo_main.Location = new System.Drawing.Point(0, 0);
             this.logo_main.Margin = new System.Windows.Forms.Padding(0);
             this.logo_main.Name = "logo_main";
-            this.logo_main.Size = new System.Drawing.Size(83, 73);
+            this.logo_main.Size = new System.Drawing.Size(88, 73);
             this.logo_main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_main.TabIndex = 0;
             this.logo_main.TabStop = false;
@@ -266,6 +269,17 @@
             // 
             this.TimerForMainClock.Interval = 80;
             this.TimerForMainClock.Tick += new System.EventHandler(this.TimerForMainClock_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(125, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(781, 46);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chào mừng bạn đến với phần mềm quản lý nhà trọ";
             // 
             // Main
             // 
@@ -306,6 +320,7 @@
         private System.Windows.Forms.Timer TimerForMainClock;
         private System.Windows.Forms.PictureBox logo_main;
         private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Label label1;
     }
 }
 
