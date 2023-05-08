@@ -14,10 +14,9 @@ namespace Doancs
         public Main(Database db)
         {
             InitializeComponent();
-            CLOCK.ForeColor = SystemColors.Control;
             this.db = db;
             //setup clock
-            CLOCK.ForeColor = SystemColors.ControlText;
+            CLOCK.ForeColor = SystemColors.MenuBar;
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
             TimerForMainClock.Enabled = true;
             TimerForMainClock.Interval = 1000;
@@ -34,10 +33,11 @@ namespace Doancs
             if (saveform != null)
             {
                 saveform.Close();
-                savebutton.ForeColor = SystemColors.ControlText;
+                //savebutton.ForeColor = Color.MidnightBlue;
                 savebutton.FlatAppearance.BorderColor = default;
                 savebutton.FlatAppearance.BorderSize = 1;
-                savebutton.FlatStyle = FlatStyle.Standard;
+                savebutton.BackColor = default;
+                savebutton.FlatStyle = FlatStyle.Flat;
             }
             else
             {
@@ -45,10 +45,11 @@ namespace Doancs
                 CLOCK.Hide();
                 TimerForMainClock.Stop();
             }
-            anybutton.ForeColor = Color.MidnightBlue;
+            //anybutton.ForeColor = Color.MidnightBlue;
             anybutton.FlatAppearance.BorderColor = Color.DarkCyan;//Color.FromArgb(238,238,0);
             anybutton.FlatAppearance.BorderSize = 1;
             anybutton.FlatStyle = FlatStyle.Flat;
+            anybutton.BackColor = Color.Blue;
             anyform.TopLevel = false;
             panel1.Controls.Add(anyform);
             anyform.Dock = DockStyle.Fill;
@@ -100,7 +101,35 @@ namespace Doancs
         {
             if (islogout == false)
             {
-                Environment.Exit(0);
+                    Environment.Exit(0);
+            }
+        }
+
+        private void button_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = Color.MidnightBlue;
+        }
+
+        private void button_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Button).BackColor = default;
+        }
+
+        private void logo_main_Click(object sender, EventArgs e)
+        {
+            //form control
+            if (saveform != null)
+            {
+                TimerForMainClock.Start();
+                CLOCK.Show();
+                saveform.Close();
+                //savebutton.ForeColor = Color.MidnightBlue;
+                savebutton.FlatAppearance.BorderColor = default;
+                savebutton.FlatAppearance.BorderSize = 1;
+                savebutton.BackColor = default;
+                savebutton.FlatStyle = FlatStyle.Flat;
+                savebutton = null; 
+                saveform = null;
             }
         }
     }

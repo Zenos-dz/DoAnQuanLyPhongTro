@@ -48,6 +48,7 @@
             this.bDelete = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.bangnguoithuetro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -294,6 +295,14 @@
             this.bEdit.UseVisualStyleBackColor = false;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // nguoithuetro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,5 +361,6 @@
         private System.Windows.Forms.Button bDelete;
         private System.Windows.Forms.Button bSave;
         private System.Windows.Forms.Button bEdit;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

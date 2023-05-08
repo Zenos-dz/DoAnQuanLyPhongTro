@@ -94,6 +94,8 @@
             this.bcsvc.Text = "Cơ sở vật chất";
             this.bcsvc.UseVisualStyleBackColor = false;
             this.bcsvc.Click += new System.EventHandler(this.cosovchat);
+            this.bcsvc.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.bcsvc.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a5hoadon
             // 
@@ -112,6 +114,8 @@
             this.a5hoadon.Text = "Hoá đơn";
             this.a5hoadon.UseVisualStyleBackColor = false;
             this.a5hoadon.Click += new System.EventHandler(this.hoadon);
+            this.a5hoadon.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a5hoadon.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a4sodiennuoc
             // 
@@ -129,6 +133,8 @@
             this.a4sodiennuoc.Text = "Số điện nước";
             this.a4sodiennuoc.UseVisualStyleBackColor = false;
             this.a4sodiennuoc.Click += new System.EventHandler(this.sdn_Click);
+            this.a4sodiennuoc.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a4sodiennuoc.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a3hopdong
             // 
@@ -146,6 +152,8 @@
             this.a3hopdong.Text = "Hợp đồng";
             this.a3hopdong.UseVisualStyleBackColor = false;
             this.a3hopdong.Click += new System.EventHandler(this.hopdong);
+            this.a3hopdong.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a3hopdong.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a2nguoithue
             // 
@@ -164,6 +172,8 @@
             this.a2nguoithue.Text = "Người thuê";
             this.a2nguoithue.UseVisualStyleBackColor = false;
             this.a2nguoithue.Click += new System.EventHandler(this.nguoithuetro);
+            this.a2nguoithue.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a2nguoithue.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a1phongtro
             // 
@@ -182,6 +192,8 @@
             this.a1phongtro.Text = "Phòng trọ";
             this.a1phongtro.UseVisualStyleBackColor = false;
             this.a1phongtro.Click += new System.EventHandler(this.phongtro);
+            this.a1phongtro.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a1phongtro.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // panel1
             // 
@@ -200,7 +212,7 @@
             // 
             this.CLOCK.AutoSize = true;
             this.CLOCK.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLOCK.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.CLOCK.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.CLOCK.Location = new System.Drawing.Point(34, 422);
             this.CLOCK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CLOCK.Name = "CLOCK";
@@ -248,6 +260,7 @@
             this.logo_main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_main.TabIndex = 0;
             this.logo_main.TabStop = false;
+            this.logo_main.Click += new System.EventHandler(this.logo_main_Click);
             // 
             // TimerForMainClock
             // 
