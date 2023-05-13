@@ -35,7 +35,7 @@ namespace Doancs
             tbtennguoithue.Enabled = true;
             tbcmnd.Enabled = true;
             tbgioitinh.Enabled = true;
-            tbngaysinh.Enabled = true;
+            ngaysinh.Enabled = true;
             tbsdt.Enabled = true;
             //except
             foreach (var item in ex)
@@ -62,7 +62,7 @@ namespace Doancs
                 tbtennguoithue.Enabled = false;
                 tbcmnd.Enabled = false;
                 tbgioitinh.Enabled = false;
-                tbngaysinh.Enabled = false;
+                ngaysinh.Enabled = false;
                 tbsdt.Enabled = false;
             }
             //ex object
@@ -78,9 +78,9 @@ namespace Doancs
             tbmanguoithue.Text = bangnguoithuetro.Rows[pos].Cells[0].Value.ToString();
             tbtennguoithue.Text = bangnguoithuetro.Rows[pos].Cells[1].Value.ToString();
             tbgioitinh.Text = bangnguoithuetro.Rows[pos].Cells[2].Value.ToString();
-            tbngaysinh.Text = bangnguoithuetro.Rows[pos].Cells[3].Value.ToString();
-            tbsdt.Text = bangnguoithuetro.Rows[pos].Cells[2].Value.ToString();
-            tbcmnd.Text = bangnguoithuetro.Rows[pos].Cells[3].Value.ToString();
+            ngaysinh.Text = ((DateTime)bangnguoithuetro.Rows[pos].Cells[3].Value).ToString("dd-MM-yyyy");
+            tbsdt.Text = bangnguoithuetro.Rows[pos].Cells[4].Value.ToString();
+            tbcmnd.Text = bangnguoithuetro.Rows[pos].Cells[5].Value.ToString();
 
         }
         void loadbang(string temp = null)
@@ -143,6 +143,7 @@ namespace Doancs
                 catch
                 {
                     //lỗi khóa phụ
+                    MessageBox.Show("Người thuê này đã đăng kí phòng, bạn phải hủy hợp đồng của người thuê này trước khi xóa!");
                 }
                 loadbang();
             }
@@ -158,9 +159,11 @@ namespace Doancs
                     try
                     {
                         db.cmd($"UPDATE nguoithuetro SET " +
-                            $"thang = {tbtennguoithue.Text}," +
-                            $"nam = {tbgioitinh.Text}," +
-                            $"ChiSoDienCu = {tbngaysinh.Text}," +
+                            $"tennguoithue = N'{tbtennguoithue.Text}'," +
+                            $"gioitinh = '{tbgioitinh.Text}'," +
+                            $"ngaysinh = '{ngaysinh.Value.ToString("MM-dd-yyyy")}'," +
+                            $"sdt = '{tbsdt.Text}'," +
+                            $"cmnd = '{tbcmnd.Text}' " +
                             $" WHERE manguoithue = {tbmanguoithue.Text}");
                         loadbang();
                     }
@@ -174,9 +177,11 @@ namespace Doancs
                     try
                     {
                         db.cmd($"INSERT INTO nguoithuetro VALUES ({tbmanguoithue.Text}," +
-                            $"{tbtennguoithue.Text}," +
-                            $"{tbgioitinh.Text}," +
-                            $"{tbngaysinh.Text}," +
+                            $"N'{tbtennguoithue.Text}'," +
+                            $"N'{tbgioitinh.Text}'," +
+                            $"{ngaysinh.Value.ToString("MM-dd-yyyy")}," +
+                            $"'{tbsdt.Text}'," +
+                            $"'{tbcmnd.Text}'" +
                             $")");
                         loadbang();
                     }

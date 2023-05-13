@@ -7,7 +7,7 @@ namespace Doancs
 {
     public class Database
     {
-        //sử dụng đường dẫn cục bộ ./asset/csdl để lưu database (mdf,_log.mdf)
+        //sử dụng đường dẫn cục bộ ./asset/csdl để lưu database (.mdf,_log.mdf)
         private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\asset\csdl\QUANLYTRO.mdf;Integrated Security=True";
 
         // Cac đối tượng để truy vấn dữ liệu
@@ -53,25 +53,6 @@ namespace Doancs
             {
                 MessageBox.Show(ex.Message);
                 return null;
-            }
-        }
-        //
-        /// <summary>
-        ///     sử dụng ngoại lệ mặc định
-        ///     dùng trong trường hợp xử lý các ngoại lệ không biết trước(system exception)
-        /// </summary>
-        /// <param name="ssql"></param>
-        public void runQuery(string ssql)
-        {
-            try
-            { 
-                SqlCommand mySqlCommand = new SqlCommand(ssql, conn);
-                mySqlCommand.ExecuteNonQuery();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
     }

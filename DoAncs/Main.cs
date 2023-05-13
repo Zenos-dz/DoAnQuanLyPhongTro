@@ -43,6 +43,7 @@ namespace Doancs
             {
                 //stop clock in main form
                 CLOCK.Hide();
+                txt_welcome.Hide();
                 TimerForMainClock.Stop();
             }
             //anybutton.ForeColor = Color.MidnightBlue;
@@ -122,6 +123,7 @@ namespace Doancs
             {
                 TimerForMainClock.Start();
                 CLOCK.Show();
+                txt_welcome.Show();
                 saveform.Close();
                 //savebutton.ForeColor = Color.MidnightBlue;
                 savebutton.FlatAppearance.BorderColor = default;

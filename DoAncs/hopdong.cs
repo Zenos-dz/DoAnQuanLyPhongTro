@@ -120,7 +120,6 @@ namespace Doancs
             savebutton = "edit";
         }
 
-
         private void bFind_Click(object sender, EventArgs e)
         {
             loadbang($"SELECT * FROM hopdong WHERE maphong = {tbmaphong.Text}");
@@ -180,6 +179,5 @@ namespace Doancs
                     break;
             }
         }
-
     }
 }

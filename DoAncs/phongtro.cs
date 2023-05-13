@@ -72,10 +72,9 @@ namespace Doancs
         {
             int pos = e.RowIndex;
             tbmaphong.Text = bangphongtro.Rows[pos].Cells[0].Value.ToString();
-            tbdientich.Text = bangphongtro.Rows[pos].Cells[1].Value.ToString();
-            tbtenphong.Text = bangphongtro.Rows[pos].Cells[2].Value.ToString();
+            tbtenphong.Text = bangphongtro.Rows[pos].Cells[1].Value.ToString();
+            tbdientich.Text = bangphongtro.Rows[pos].Cells[2].Value.ToString();
             tbgiatien.Text = bangphongtro.Rows[pos].Cells[3].Value.ToString();
-
         }
         void loadbang(string temp = null)
         {
@@ -135,7 +134,8 @@ namespace Doancs
                 }
                 catch
                 {
-                     //lỗi khóa phụ
+                    //lỗi khóa phụ
+                    MessageBox.Show("Phòng này đang được sử dụng, nếu bạn muốn xóa bỏ nó hãy hủy hợp đồng của phòng này!");
                 }
                 loadbang();
             }
@@ -151,9 +151,9 @@ namespace Doancs
                     try
                     {
                         db.cmd($"UPDATE phongtro SET " +
-                            $"thang = {tbdientich.Text}," +
-                            $"nam = {tbtenphong.Text}," +
-                            $"ChiSoDienCu = {tbgiatien.Text}," +
+                            $"tenphong = '{tbtenphong.Text}'," +
+                            $"dientich = {tbdientich.Text}," +
+                            $"giatienphong = {tbgiatien.Text}," +
                             $" WHERE maphong = {tbmaphong.Text}");
                         loadbang();
                     }
@@ -167,9 +167,9 @@ namespace Doancs
                     try
                     {
                         db.cmd($"INSERT INTO phongtro VALUES ({tbmaphong.Text}," +
-                            $"{tbdientich.Text}," +
                             $"{tbtenphong.Text}," +
-                            $"{tbgiatien.Text}," +
+                            $"{tbdientich.Text}," +
+                            $"{tbgiatien.Text} " +
                             $")");
                         loadbang();
                     }
