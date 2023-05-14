@@ -185,6 +185,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="hoadon_out.rdlc" />
     <EmbeddedResource Include="sodiennuoc.resx">
       <DependentUpon>sodiennuoc.cs</DependentUpon>
     </EmbeddedResource>
