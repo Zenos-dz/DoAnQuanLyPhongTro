@@ -108,14 +108,14 @@ namespace Doancs
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            disable_all(true, false, bAdd, bSave);
+            disable_all(true, true, bAdd, bSave,tbmahd);
             savebutton = "add";
             Report_Start rdlc1 = new Report_Start(db);
             rdlc1.ShowDialog();
             tbmaphong.Text = rdlc1.value[0];
             tbmanguoithue.Text = rdlc1.value[1];
             tbthanhtien.Text = rdlc1.value[2];
-            ngaylap.Text = DateTime.Today.ToString("MM-dd-yyyy");
+            ngaylap.Value = DateTime.Today;
         }
 
         private void bEdit_Click(object sender, EventArgs e)
