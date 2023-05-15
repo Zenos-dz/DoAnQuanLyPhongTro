@@ -110,8 +110,12 @@ namespace Doancs
         {
             disable_all(true, false, bAdd, bSave);
             savebutton = "add";
-            Form rdlc1 = new report(db,tbmanguoithue.Text,tbmaphong.Text);
+            Report_Start rdlc1 = new Report_Start(db);
             rdlc1.ShowDialog();
+            tbmaphong.Text = rdlc1.value[0];
+            tbmanguoithue.Text = rdlc1.value[1];
+            tbthanhtien.Text = rdlc1.value[2];
+            ngaylap.Text = DateTime.Today.ToString("MM-dd-yyyy");
         }
 
         private void bEdit_Click(object sender, EventArgs e)

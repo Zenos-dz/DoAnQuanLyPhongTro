@@ -160,6 +160,12 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_Start.Designer.cs">
+      <DependentUpon>Report_Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="sodiennuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <EmbeddedResource Include="hoadon_out.rdlc" />
     <EmbeddedResource Include="report.resx">
       <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_Start.resx">
+      <DependentUpon>Report_Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sodiennuoc.resx">
       <DependentUpon>sodiennuoc.cs</DependentUpon>

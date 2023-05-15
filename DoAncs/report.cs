@@ -18,12 +18,15 @@ namespace Doancs
         string maphong;
         float giadien = 1;
         float gianuoc = 1;
-        public report(Database db, string mkh, string maphong)
+        float tongtien = 0;
+        public report(Database db, string mkh, string maphong,float giadien,float gianuoc)
         {
             InitializeComponent();
             this.db = db;
             this.mkh = mkh;
             this.maphong = maphong;
+            this.giadien = giadien;
+            this.gianuoc = gianuoc;
             var table0 = db.getData($"SELECT tenphong,giatienphong FROM phongtro WHERE maphong = '{maphong}' ");
             var table1 = db.getData($"SELECT tennguoithue FROM nguoithuetro WHERE manguoithue = '{mkh}' ");
             var table2 = db.getData($"SELECT chisodiencu,chisodienmoi,chisonuoccu,chisonuocmoi FROM sodiennuoc WHERE maphong = '{maphong}' ");
@@ -46,8 +49,14 @@ namespace Doancs
                 giadien = giadien,
                 gianuoc = gianuoc,
             };
+            tongtien = giadien * (int.Parse(table2.Rows[0]["chisodienmoi"].ToString()) - int.Parse(table2.Rows[0]["chisodiencu"].ToString())) + gianuoc * (int.Parse(table2.Rows[0]["chisonuocmoi"].ToString()) - int.Parse(table2.Rows[0]["chisonuoccu"].ToString()));
         }
-
+        public List<string> value()
+        {
+            List<string> data = new List<string> { };
+            data.Add(maphong); data.Add(mkh); data.Add(tongtien.ToString());
+            return data;
+        }
         private void report_Load(object sender, EventArgs e)
         {
             
