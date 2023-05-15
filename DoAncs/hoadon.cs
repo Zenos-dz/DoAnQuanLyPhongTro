@@ -110,6 +110,8 @@ namespace Doancs
         {
             disable_all(true, false, bAdd, bSave);
             savebutton = "add";
+            Form rdlc1 = new report(db,tbmanguoithue.Text,tbmaphong.Text);
+            rdlc1.ShowDialog();
         }
 
         private void bEdit_Click(object sender, EventArgs e)

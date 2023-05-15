@@ -36,9 +36,9 @@ namespace Doancs
                     MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("có lỗi trong quá trình vận hành ứng dụng, vui lòng liên hệ lập trình viên!");
+                MessageBox.Show("có lỗi trong quá trình vận hành ứng dụng, vui lòng liên hệ lập trình viên!" + ex.Message);
                 this.Show();
             }
         }

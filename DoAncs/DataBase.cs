@@ -51,7 +51,7 @@ namespace Doancs
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+ $"  {ssql}");
                 return null;
             }
         }
