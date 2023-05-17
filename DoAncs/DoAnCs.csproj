@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -14,6 +15,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,8 +31,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,6 +68,12 @@
     <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -88,8 +95,11 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -108,13 +118,46 @@
     <Compile Include="ask_form.Designer.cs">
       <DependentUpon>ask_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoSoVatChat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HopDong.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="nguoidung.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiThueTro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhongTro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="rdlc.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="cosovatchat.cs">
+    <Compile Include="linq_cosovatchat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cosovatchat.Designer.cs">
-      <DependentUpon>cosovatchat.cs</DependentUpon>
+    <Compile Include="linq_cosovatchat.Designer.cs">
+      <DependentUpon>linq_cosovatchat.cs</DependentUpon>
     </Compile>
     <Compile Include="dangnhap.cs">
       <SubType>Form</SubType>
@@ -122,11 +165,20 @@
     <Compile Include="dangnhap.Designer.cs">
       <DependentUpon>dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="hoadon.cs">
+    <Compile Include="SoDienNuoc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sqlclient_cosovatchat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hoadon.Designer.cs">
-      <DependentUpon>hoadon.cs</DependentUpon>
+    <Compile Include="sqlclient_cosovatchat.Designer.cs">
+      <DependentUpon>sqlclient_cosovatchat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlclient_hoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlclient_hoadon.Designer.cs">
+      <DependentUpon>sqlclient_hoadon.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -134,23 +186,23 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="hopdong.cs">
+    <Compile Include="sqlclient_hopdong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hopdong.Designer.cs">
-      <DependentUpon>hopdong.cs</DependentUpon>
+    <Compile Include="sqlclient_hopdong.Designer.cs">
+      <DependentUpon>sqlclient_hopdong.cs</DependentUpon>
     </Compile>
-    <Compile Include="nguoithuetro.cs">
+    <Compile Include="sqlclient_nguoithuetro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nguoithuetro.Designer.cs">
-      <DependentUpon>nguoithuetro.cs</DependentUpon>
+    <Compile Include="sqlclient_nguoithuetro.Designer.cs">
+      <DependentUpon>sqlclient_nguoithuetro.cs</DependentUpon>
     </Compile>
-    <Compile Include="phongtro.cs">
+    <Compile Include="linq_phongtro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="phongtro.Designer.cs">
-      <DependentUpon>phongtro.cs</DependentUpon>
+    <Compile Include="linq_phongtro.Designer.cs">
+      <DependentUpon>linq_phongtro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,36 +218,51 @@
     <Compile Include="Report_Start.Designer.cs">
       <DependentUpon>Report_Start.cs</DependentUpon>
     </Compile>
-    <Compile Include="sodiennuoc.cs">
+    <Compile Include="linq_sodiennuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sodiennuoc.Designer.cs">
-      <DependentUpon>sodiennuoc.cs</DependentUpon>
+    <Compile Include="linq_sodiennuoc.Designer.cs">
+      <DependentUpon>linq_sodiennuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlclient_phongtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlclient_phongtro.Designer.cs">
+      <DependentUpon>sqlclient_phongtro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlclient_sodiennuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlclient_sodiennuoc.Designer.cs">
+      <DependentUpon>sqlclient_sodiennuoc.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ask_form.resx">
       <DependentUpon>ask_form.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="cosovatchat.resx">
-      <DependentUpon>cosovatchat.cs</DependentUpon>
+    <EmbeddedResource Include="linq_cosovatchat.resx">
+      <DependentUpon>linq_cosovatchat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dangnhap.resx">
       <DependentUpon>dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hoadon.resx">
-      <DependentUpon>hoadon.cs</DependentUpon>
+    <EmbeddedResource Include="sqlclient_cosovatchat.resx">
+      <DependentUpon>sqlclient_cosovatchat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sqlclient_hoadon.resx">
+      <DependentUpon>sqlclient_hoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="hopdong.resx">
-      <DependentUpon>hopdong.cs</DependentUpon>
+    <EmbeddedResource Include="sqlclient_hopdong.resx">
+      <DependentUpon>sqlclient_hopdong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nguoithuetro.resx">
-      <DependentUpon>nguoithuetro.cs</DependentUpon>
+    <EmbeddedResource Include="sqlclient_nguoithuetro.resx">
+      <DependentUpon>sqlclient_nguoithuetro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="phongtro.resx">
-      <DependentUpon>phongtro.cs</DependentUpon>
+    <EmbeddedResource Include="linq_phongtro.resx">
+      <DependentUpon>linq_phongtro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -214,9 +281,22 @@
     <EmbeddedResource Include="Report_Start.resx">
       <DependentUpon>Report_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sodiennuoc.resx">
-      <DependentUpon>sodiennuoc.cs</DependentUpon>
+    <EmbeddedResource Include="linq_sodiennuoc.resx">
+      <DependentUpon>linq_sodiennuoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sqlclient_phongtro.resx">
+      <DependentUpon>sqlclient_phongtro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sqlclient_sodiennuoc.resx">
+      <DependentUpon>sqlclient_sodiennuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\rdlc.datasource" />
     <None Include="Properties\Settings.settings">
@@ -254,12 +334,23 @@
     </Content>
     <Content Include="asset\img\logo.png" />
     <Content Include="asset\img\logo.ico" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -267,5 +358,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

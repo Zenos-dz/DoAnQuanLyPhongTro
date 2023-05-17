@@ -20,6 +20,7 @@ namespace Doancs
             //code check login
             string query = $"SELECT username FROM NguoiDung WHERE username='{username.Text}' AND password='{pass.Text}'";
             DataTable reader = db.getData(query);
+            reader.Rows.Add();
             try
             {
                 if (reader.Rows[0].IsNull(0) == false)
