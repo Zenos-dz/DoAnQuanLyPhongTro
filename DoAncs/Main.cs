@@ -52,6 +52,10 @@ namespace Doancs
         //for form
         private void loadchildform(Form anyform,Button anybutton,bool holdopenpanel = false)
         {
+            if(anybutton == savebutton && anyform == saveform)
+            {
+                return;
+            }
             //form control
             if (saveform != null)
             {
@@ -195,7 +199,7 @@ namespace Doancs
         private void changepass_Click(object sender, EventArgs e)
         {
             form_doimatkhau doimk = new form_doimatkhau(ref db, logintype);
-            loadchildform(doimk, null);
+            loadchildform(doimk, bchangepass);
         }
     }
 }
