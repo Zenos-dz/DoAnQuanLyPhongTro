@@ -25,7 +25,7 @@ namespace Doancs
             try { 
                 var table0 = db.getData($"SELECT manguoithue FROM hopdong WHERE maphong = '{tbmaphong.Text}' ");
 
-                var temp = new report(db, table0.Rows[0]["manguoithue"].ToString(), tbmaphong.Text,float.Parse(tbgiadien.Text),float.Parse(tbgianuoc.Text));
+                var temp = new report(ref db, table0.Rows[0]["manguoithue"].ToString(), tbmaphong.Text,float.Parse(tbgiadien.Text),float.Parse(tbgianuoc.Text));
                 this.Hide();
                 temp.ShowDialog();
                 this.value = temp.value();

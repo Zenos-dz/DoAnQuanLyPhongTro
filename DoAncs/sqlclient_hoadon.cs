@@ -128,7 +128,7 @@ namespace Doancs
         {
             disable_all(true, true, bAdd, bSave,tbmahd);
             savebutton = "add";
-            Report_Start rdlc1 = new Report_Start(db);
+            Report_Start rdlc1 = new Report_Start(ref db);
             rdlc1.ShowDialog();
             tbmaphong.Text = rdlc1.value[0];
             tbmanguoithue.Text = rdlc1.value[1];
