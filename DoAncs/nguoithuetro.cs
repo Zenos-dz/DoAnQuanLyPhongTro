@@ -27,6 +27,7 @@ namespace Doancs
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string SDT { get; set; }
         public string CMND { get; set; }
+        public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDon { get; set; }

@@ -20,6 +20,9 @@ namespace Doancs
             InitializeComponent();
             this.db = db;
             this.logintype = logintype;
+            tboldpass.PasswordChar = '*';
+            tbnewpass.PasswordChar = '*';
+            tbnewpass2.PasswordChar = '*';
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -27,61 +30,47 @@ namespace Doancs
             DataTable dt = null;
             if (this.logintype == "")
             {
-                dt = db.getData($"SELECT * FROM nguoidung WHERE password = '{tboldpass}'");
+                dt = db.getData($"SELECT * FROM nguoidung WHERE password = '{tboldpass.Text}'");
             }
             else
             {
-                dt = db.getData($"SELECT * FROM nguoithuetro WHERE pass = '{tboldpass}'");
+                dt = db.getData($"SELECT * FROM nguoithuetro WHERE pass = '{tboldpass.Text}'");
             }
             try
             {
                 string temp = dt.Rows[0][1].ToString();
-                lboldpass.Text = "OK";
-            }
+                }
             catch
             {
-                lboldpass.Text = "X";
+                MessageBox.Show("Mật khẩu cũ không chính xác!!!");
                 return;
             }
-            if (tbnewpass == tbnewpass2 && tbnewpass.Text.IndexOf(" ") != -1)
+            if (tbnewpass.Text != tbnewpass2.Text)
             {
-                if (this.logintype == "")
-                {
-                    db.cmd($"UPDATE nguoidung SET " +
-                            $"password = '{tbnewpass}'," +
-                            $" WHERE username = 'admin'");
-                }
-                else
-                {
-                    db.cmd($"UPDATE nguoithuetro SET " +
-                            $"password = '{tbnewpass}'," +
-                            $" WHERE manguoithue = '{this.logintype}'");
-                }
+                MessageBox.Show("Mật khẩu mới không khớp!!!");
+                return;
+            }    
+            if (tbnewpass.Text.IndexOf(" ") != -1)
+            {
+                MessageBox.Show("Mật khẩu mới không được chứa kí tự trống!!!");
+                return;
             }
-        }
-
-        private void tbnewpass2_TextChanged(object sender, EventArgs e)
-        {
-            if(tbnewpass == tbnewpass2)
+            if (this.logintype == "")
             {
-                lbnewpassmatch.Text = "OK";
+                db.cmd($"UPDATE nguoidung SET " +
+                        $"password = '{tbnewpass}' " +
+                        $" WHERE username = 'admin'");
             }
             else
             {
-                lbnewpassmatch.Text = "X";
+                db.cmd($"UPDATE nguoithuetro SET " +
+                        $"password = '{tbnewpass}' " +
+                        $" WHERE manguoithue = '{this.logintype}'");
             }
-        }
-
-        private void tbnewpass_TextChanged(object sender, EventArgs e)
-        {
-            if (tbnewpass.Text.IndexOf(" ") != -1) //có chứa dấu cách
-            {
-                lbnewpass.Text = "X";
-            }
-            else
-            {
-                lbnewpass.Text = "OK";
-            }
+            MessageBox.Show("Đổi mật khẩu thành công, vui lòng đăng nhập lại!!!");
+            //https://stackoverflow.com/questions/779405/how-do-i-restart-my-c-sharp-winform-application
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
+            Environment.Exit(0);
         }
     }
 }

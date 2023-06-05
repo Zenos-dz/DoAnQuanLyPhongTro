@@ -13,7 +13,6 @@ namespace Doancs
         bool islogout = false;
         protected Panel savepanel = null;
         protected string logintype = "";
-        //for database and clock
         public Main(ref Database db, string logintype)
         {
             InitializeComponent();
@@ -186,7 +185,6 @@ namespace Doancs
                 CLOCK.Show();
                 txt_welcome.Show();
                 saveform.Close();
-                //savebutton.ForeColor = Color.MidnightBlue;
                 savebutton.FlatAppearance.BorderColor = default;
                 savebutton.FlatAppearance.BorderSize = 1;
                 savebutton.BackColor = default;

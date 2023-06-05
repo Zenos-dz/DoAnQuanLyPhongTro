@@ -119,37 +119,37 @@
       <DependentUpon>ask_form.cs</DependentUpon>
     </Compile>
     <Compile Include="CoSoVatChat.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="HopDong.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="nguoidung.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="NguoiThueTro.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PhongTro.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLYTRO_Entity_Data_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLYTRO_Entity_Data_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLYTRO_Entity_Data_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="rdlc.cs" />
     <Compile Include="DataBase.cs" />
@@ -172,7 +172,7 @@
       <DependentUpon>form_doimatkhau.cs</DependentUpon>
     </Compile>
     <Compile Include="SoDienNuoc.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="sqlclient_cosovatchat.cs">
       <SubType>Form</SubType>
@@ -299,13 +299,6 @@
     <EmbeddedResource Include="sqlclient_sodiennuoc.resx">
       <DependentUpon>sqlclient_sodiennuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\rdlc.datasource" />
     <None Include="Properties\Settings.settings">
@@ -317,6 +310,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="QUANLYTRO_Entity_Data_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QUANLYTRO_Entity_Data_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QUANLYTRO_Entity_Data_Model.edmx.diagram">
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -343,15 +343,15 @@
     </Content>
     <Content Include="asset\img\logo.png" />
     <Content Include="asset\img\logo.ico" />
-    <Content Include="Model1.Context.tt">
+    <Content Include="QUANLYTRO_Entity_Data_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.edmx</DependentUpon>
+      <LastGenOutput>QUANLYTRO_Entity_Data_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="QUANLYTRO_Entity_Data_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>QUANLYTRO_Entity_Data_Model.edmx</DependentUpon>
+      <LastGenOutput>QUANLYTRO_Entity_Data_Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
