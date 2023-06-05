@@ -126,6 +126,7 @@ namespace Doancs
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            enable_all();
             disable_all(true, true, bAdd, bSave,tbmahd);
             savebutton = "add";
             Report_Start rdlc1 = new Report_Start(ref db);
@@ -164,6 +165,7 @@ namespace Doancs
 
         private void bSave_Click(object sender, EventArgs e)
         {
+            int ok = 0;
             switch (savebutton)
             {
                 case "":
@@ -173,11 +175,12 @@ namespace Doancs
                     {
                         db.cmd($"UPDATE hoadon SET " +
                             $" maphong = '{tbmaphong.Text}',  " +
-                            $" manguoithue = {tbmanguoithue.Text}, " +
+                            $" manguoithue = '{tbmanguoithue.Text}', " +
                             $" ngaylap = '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" thanhtien = {tbthanhtien.Text} " +
                             $" WHERE mahoadon = {tbmahd.Text}");
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -190,17 +193,25 @@ namespace Doancs
                     {
                         db.cmd($"INSERT INTO hoadon VALUES ({tbmahd.Text}," +
                             $" '{tbmaphong.Text}',  " +
-                            $" {tbmanguoithue.Text}, " +
+                            $" '{tbmanguoithue.Text}', " +
                             $" '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" {tbthanhtien.Text} " +
                             $")");
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
                     }
                     break;
+            }
+
+            if (ok == 1)
+            {
+                enable_all();
+                savebutton = "";
+                disable_all(false, true, tbmanguoithue);
             }
         }
 

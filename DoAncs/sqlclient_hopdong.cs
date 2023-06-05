@@ -128,6 +128,7 @@ namespace Doancs
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            enable_all();
             disable_all(true, false, bAdd, bSave);
             savebutton = "add";
         }
@@ -159,6 +160,7 @@ namespace Doancs
 
         private void bSave_Click(object sender, EventArgs e)
         {
+            int ok = 0;
             switch (savebutton)
             {
                 case "":
@@ -171,8 +173,9 @@ namespace Doancs
                             $" manguoithue = '{tbmanguoithue.Text}' , " +
                             $" ngaybatdauthue = '{ngaythue.Value.ToString("MM-dd-yyyy")}', " +
                             $" ngayketthucthue = '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
-                            $" WHERE maphong = {tbmahd.Text}");
+                            $" WHERE mahopdong = '{tbmahd.Text}'");
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -190,12 +193,19 @@ namespace Doancs
                             $" '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
                             $")");
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
                     }
                     break;
+            }
+            if (ok == 1)
+            {
+                enable_all();
+                savebutton = "";
+                disable_all(false, true, tbmaphong);
             }
         }
     }

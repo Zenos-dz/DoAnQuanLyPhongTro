@@ -125,6 +125,7 @@ namespace Doancs
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            enable_all();
             disable_all(true, false, bAdd, bSave);
             savebutton = "add";
         }
@@ -169,6 +170,7 @@ namespace Doancs
 
         private void bSave_Click(object sender, EventArgs e)
         {
+            int ok = 0;
             switch (savebutton)
             {
                 case "":
@@ -186,6 +188,7 @@ namespace Doancs
                         itemuse.GiaTienPhong = int.Parse(tbgiatien.Text);
                         qlt.SaveChanges();
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -203,12 +206,19 @@ namespace Doancs
                         qlt.PhongTro.Add(linq_phongtro_val);
                         qlt.SaveChanges();
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Kiểm tra dữ liệu nhập vào!" + ex.Message.ToString());
                     }
                     break;
+            }
+            if (ok == 1)
+            {
+                enable_all();
+                savebutton = "";
+                disable_all(false, true, tbmaphong);
             }
         }
     }

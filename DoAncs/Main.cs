@@ -51,7 +51,7 @@ namespace Doancs
         //for form
         private void loadchildform(Form anyform,Button anybutton,bool holdopenpanel = false)
         {
-            if(anybutton == savebutton && anyform == saveform)
+            if(anybutton == savebutton || anyform == saveform)
             {
                 return;
             }
@@ -128,7 +128,7 @@ namespace Doancs
         private void csvc_linq_Click(object sender, EventArgs e)
         {
             linq_cosovatchat csvc = new linq_cosovatchat(ref qlt,logintype);
-            loadchildform(csvc, bcsvc, true);
+            loadchildform(csvc, bcsvc, true);  
         }
         private void csvc_sqlclient_Click(object sender, EventArgs e)
         {

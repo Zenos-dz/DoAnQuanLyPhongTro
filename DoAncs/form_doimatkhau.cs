@@ -58,17 +58,17 @@ namespace Doancs
             if (this.logintype == "")
             {
                 db.cmd($"UPDATE nguoidung SET " +
-                        $"password = '{tbnewpass}' " +
+                        $"password = '{tbnewpass.Text}' " +
                         $" WHERE username = 'admin'");
             }
             else
             {
                 db.cmd($"UPDATE nguoithuetro SET " +
-                        $"password = '{tbnewpass}' " +
+                        $"password = '{tbnewpass.Text}' " +
                         $" WHERE manguoithue = '{this.logintype}'");
             }
             MessageBox.Show("Đổi mật khẩu thành công, vui lòng đăng nhập lại!!!");
-            //https://stackoverflow.com/questions/779405/how-do-i-restart-my-c-sharp-winform-application
+            ParentForm.Hide();
             System.Diagnostics.Process.Start(Application.ExecutablePath);
             Environment.Exit(0);
         }

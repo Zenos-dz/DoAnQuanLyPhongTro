@@ -149,6 +149,7 @@ namespace Doancs
 
         private void bAdd_Click(object sender, EventArgs e)
         {
+            enable_all();
             disable_all(true, false, bAdd, bSave);
             savebutton = "add";
         }
@@ -192,6 +193,7 @@ namespace Doancs
         }
         private void bSave_Click(object sender, EventArgs e)
         {
+            int ok = 0;
             switch (savebutton)
             {
                 case "":
@@ -210,6 +212,7 @@ namespace Doancs
                         itemuse.BinhNongLanh = for_save(binhnonglanh.Text);
                         qlt.SaveChanges();
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -228,6 +231,7 @@ namespace Doancs
                         qlt.CoSoVatChat.Add(linq_cosovatchat_val);
                         qlt.SaveChanges();
                         loadbang();
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -235,7 +239,12 @@ namespace Doancs
                     }
                     break;
             }
+            if (ok == 1)
+            {
+                enable_all();
+                savebutton = "";
+                disable_all(false, true, tbmaphong);
+            }
         }
-
     }
 }
