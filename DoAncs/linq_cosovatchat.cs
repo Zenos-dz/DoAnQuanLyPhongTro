@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,14 +7,39 @@ namespace Doancs
 {
     public partial class linq_cosovatchat : Form
     {
-        QUANLYTRO_LINQ_Entities qlt = null;
-        CoSoVatChat linq_cosovatchat_val = new CoSoVatChat();
-        string savebutton = "";
-        public linq_cosovatchat(QUANLYTRO_LINQ_Entities qlt)
+        protected QUANLYTRO_LINQ_Entities qlt = null;
+        protected CoSoVatChat linq_cosovatchat_val = new CoSoVatChat();
+        protected string savebutton = "";
+        protected string logintype = "";
+        public linq_cosovatchat(QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             InitializeComponent();
             this.qlt = qlt;
             disable_all(false, true, tbmaphong);
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+                try
+                {
+                    //lấy mã phòng từ mã người thuê logintype
+                    var query = from inn in qlt.HopDong
+                                where (inn.MaNguoiThue == logintype)
+                                select inn.MaPhong;
+                    var dt = query.ToList();
+                    logintype = dt[0];
+                }
+                catch
+                {
+                    logintype = "   ";
+                }
+                this.logintype = logintype;
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -83,6 +109,14 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
+            if (logintype != "")
+            {
+                var load = from inn in qlt.CoSoVatChat
+                           where (inn.MaPhong == logintype)
+                           select inn;
+                bangcosovatchat.DataSource = load.ToList();
+                return;
+            }
             if (temp == null)
             {
                 var load = from inn in qlt.CoSoVatChat
@@ -110,6 +144,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)

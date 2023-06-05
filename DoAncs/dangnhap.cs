@@ -28,13 +28,29 @@ namespace Doancs
                     this.Hide();
                     username.Text = "";
                     pass.Text = "";
-                    Main main = new Main(db);
+                    Main main = new Main(db,"");
                     main.ShowDialog();
                     this.Show();
                 }
-                else
+                else 
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    query = $"SELECT MaNguoiThue FROM NguoiThueTro WHERE MaNguoiThue='{username.Text}' AND password='{pass.Text}'";
+                    reader = db.getData(query);
+                    reader.Rows.Add();
+                    if (reader.Rows[0].IsNull(0) == false)
+                    {
+                        this.Hide();
+                        Main main = new Main(db, username.Text);
+                        username.Text = "";
+                        pass.Text = "";
+                        main.ShowDialog();
+                        this.Show();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
             }
             catch(Exception ex)

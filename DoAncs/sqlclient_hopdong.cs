@@ -14,11 +14,23 @@ namespace Doancs
     {
         protected Database db = null;
         protected string savebutton = "";
-        public sqlclient_hopdong(Database dbinput)
+        protected string logintype = "";
+        public sqlclient_hopdong(Database dbinput, string logintype)
         {
             InitializeComponent();
             db = dbinput;
             disable_all(false, true, tbmaphong);
+            this.logintype = logintype;
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+            }
         }
 
         private void HopDong_Load(object sender, EventArgs e)
@@ -87,6 +99,12 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
+
+            if (logintype != "")
+            {
+                banghopdong.DataSource = db.getData($"SELECT * FROM hopdong WHERE manguoithue = '{logintype}'");
+                return;
+            }
             if (temp == null)
             {
                 banghopdong.DataSource = db.getData("SELECT * FROM hopdong");
@@ -105,6 +123,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -122,7 +141,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"SELECT * FROM hopdong WHERE maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM hopdong WHERE maphong = '{tbmaphong.Text}'");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -133,7 +152,7 @@ namespace Doancs
             temp.ShowDialog();
             if (temp.result == true)
             {
-                db.cmd($"DELETE FROM hopdong WHERE maphong= {tbmaphong.Text}");
+                db.cmd($"DELETE FROM hopdong WHERE maphong= '{tbmaphong.Text}'");
                 loadbang();
             }
         }
@@ -148,8 +167,8 @@ namespace Doancs
                     try
                     {
                         db.cmd($"UPDATE hopdong SET " +
-                            $" maphong = {tbmaphong.Text}, " +
-                            $" manguoithue = {tbmanguoithue.Text}, " +
+                            $" maphong = '{tbmaphong.Text}', " +
+                            $" manguoithue = '{tbmanguoithue.Text}' , " +
                             $" ngaybatdauthue = '{ngaythue.Value.ToString("MM-dd-yyyy")}', " +
                             $" ngayketthucthue = '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
                             $" WHERE maphong = {tbmahd.Text}");
@@ -165,8 +184,8 @@ namespace Doancs
                     try
                     {
                         db.cmd($"INSERT INTO hopdong VALUES ({tbmahd.Text}," +
-                            $" {tbmaphong.Text},  " +
-                            $" {tbmanguoithue.Text}, " +
+                            $" '{tbmaphong.Text}',  " +
+                            $" '{tbmanguoithue.Text}', " +
                             $" '{ngaythue.Value.ToString("MM-dd-yyyy")}', " +
                             $" '{ngayketthuc.Value.ToString("MM-dd-yyyy")}' " +
                             $")");

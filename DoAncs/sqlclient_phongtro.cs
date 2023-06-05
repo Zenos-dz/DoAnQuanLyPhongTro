@@ -13,13 +13,25 @@ namespace Doancs
 {
     public partial class sqlclient_phongtro : Form
     {
-        Database db = null;
-        string savebutton = "";
-        public sqlclient_phongtro(Database db)
+        protected Database db = null;
+        protected string savebutton = "";
+        protected string logintype = "";
+        public sqlclient_phongtro(Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
             disable_all(false, true, tbmaphong);
+            this.logintype = logintype;
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -100,6 +112,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -120,7 +133,7 @@ namespace Doancs
         {
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
-            loadbang($"SELECT * FROM phongtro WHERE maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM phongtro WHERE maphong = '{tbmaphong.Text}'");
         }
 
         private void bDelete_Click(object sender, EventArgs e)
@@ -130,7 +143,7 @@ namespace Doancs
             if (temp.result == true)
             {
                 try { 
-                db.cmd($"DELETE FROM phongtro WHERE maphong= {tbmaphong.Text}");
+                db.cmd($"DELETE FROM phongtro WHERE maphong= '{tbmaphong.Text}'");
                 }
                 catch
                 {
@@ -154,7 +167,7 @@ namespace Doancs
                             $"tenphong = '{tbtenphong.Text}'," +
                             $"dientich = {tbdientich.Text}," +
                             $"giatienphong = {tbgiatien.Text}," +
-                            $" WHERE maphong = {tbmaphong.Text}");
+                            $" WHERE maphong = '{tbmaphong.Text}'");
                         loadbang();
                     }
                     catch (Exception ex)
@@ -166,7 +179,7 @@ namespace Doancs
                 case "add":
                     try
                     {
-                        db.cmd($"INSERT INTO phongtro VALUES ({tbmaphong.Text}," +
+                        db.cmd($"INSERT INTO phongtro VALUES ('{tbmaphong.Text}'," +
                             $"{tbtenphong.Text}," +
                             $"{tbdientich.Text}," +
                             $"{tbgiatien.Text} " +

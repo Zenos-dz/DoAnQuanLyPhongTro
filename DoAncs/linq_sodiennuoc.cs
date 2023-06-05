@@ -13,14 +13,38 @@ namespace Doancs
 {
     public partial class linq_sodiennuoc : Form
     {
-        QUANLYTRO_LINQ_Entities qlt = null;
-        SoDienNuoc linq_sodiennuoc_val = new SoDienNuoc();
-        string savebutton = "";
-        public linq_sodiennuoc(QUANLYTRO_LINQ_Entities qlt)
+        protected QUANLYTRO_LINQ_Entities qlt = null;
+        protected SoDienNuoc linq_sodiennuoc_val = new SoDienNuoc();
+        protected string savebutton = "";
+        protected string logintype = "";
+        public linq_sodiennuoc(QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             InitializeComponent();
             this.qlt = qlt;
             disable_all(false, true, tbmaphong);
+            if(logintype!= "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+                try { 
+                    //lấy mã phòng từ mã người thuê logintype
+                    var query = from inn in qlt.HopDong
+                                where (inn.MaNguoiThue == logintype)
+                                select inn.MaPhong;
+                    var dt = query.ToList();
+                    logintype = dt[0];
+                }
+                catch
+                {
+                    logintype = "   ";
+                }
+                this.logintype = logintype;
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -88,7 +112,15 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
-            if(temp == null) {
+            if (logintype != "")
+            {
+                var load = from inn in qlt.SoDienNuoc
+                           where (inn.MaPhong == logintype)
+                           select inn;
+                bangsodiennuoc.DataSource = load.ToList();
+                return;
+            }
+            if (temp == null) {
                 var load = from inn in qlt.SoDienNuoc
                            select inn;
                 bangsodiennuoc.DataSource = load.ToList();
@@ -114,6 +146,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)

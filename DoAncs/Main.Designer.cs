@@ -36,12 +36,15 @@
             this.csvc_linq = new System.Windows.Forms.Button();
             this.bcsvc = new System.Windows.Forms.Button();
             this.a5hoadon = new System.Windows.Forms.Button();
+            this.sodiennuoc_panel = new System.Windows.Forms.Panel();
+            this.sodiennuocsql = new System.Windows.Forms.Button();
+            this.sodiennuoclinq = new System.Windows.Forms.Button();
             this.a4sodiennuoc = new System.Windows.Forms.Button();
             this.a3hopdong = new System.Windows.Forms.Button();
+            this.a2nguoithue = new System.Windows.Forms.Button();
             this.phongtro_panel = new System.Windows.Forms.Panel();
             this.phongtrosql = new System.Windows.Forms.Button();
             this.phongtrolinq = new System.Windows.Forms.Button();
-            this.a2nguoithue = new System.Windows.Forms.Button();
             this.a1phongtro = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_welcome = new System.Windows.Forms.Label();
@@ -50,19 +53,16 @@
             this.logout = new System.Windows.Forms.Button();
             this.logo_main = new System.Windows.Forms.PictureBox();
             this.TimerForMainClock = new System.Windows.Forms.Timer(this.components);
-            this.sodiennuoc_panel = new System.Windows.Forms.Panel();
-            this.sodiennuoclinq = new System.Windows.Forms.Button();
-            this.sodiennuocsql = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.csvc_panel.SuspendLayout();
+            this.sodiennuoc_panel.SuspendLayout();
             this.phongtro_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_main)).BeginInit();
-            this.sodiennuoc_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -167,6 +167,39 @@
             this.a5hoadon.MouseEnter += new System.EventHandler(this.button_MouseEnter);
             this.a5hoadon.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
+            // sodiennuoc_panel
+            // 
+            this.sodiennuoc_panel.Controls.Add(this.sodiennuocsql);
+            this.sodiennuoc_panel.Controls.Add(this.sodiennuoclinq);
+            this.sodiennuoc_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sodiennuoc_panel.Location = new System.Drawing.Point(0, 316);
+            this.sodiennuoc_panel.Name = "sodiennuoc_panel";
+            this.sodiennuoc_panel.Size = new System.Drawing.Size(173, 60);
+            this.sodiennuoc_panel.TabIndex = 14;
+            this.sodiennuoc_panel.Visible = false;
+            // 
+            // sodiennuocsql
+            // 
+            this.sodiennuocsql.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sodiennuocsql.Location = new System.Drawing.Point(0, 28);
+            this.sodiennuocsql.Name = "sodiennuocsql";
+            this.sodiennuocsql.Size = new System.Drawing.Size(173, 28);
+            this.sodiennuocsql.TabIndex = 1;
+            this.sodiennuocsql.Text = "sodiennuocsql";
+            this.sodiennuocsql.UseVisualStyleBackColor = true;
+            this.sodiennuocsql.Click += new System.EventHandler(this.sodiennuocsql_Click);
+            // 
+            // sodiennuoclinq
+            // 
+            this.sodiennuoclinq.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sodiennuoclinq.Location = new System.Drawing.Point(0, 0);
+            this.sodiennuoclinq.Name = "sodiennuoclinq";
+            this.sodiennuoclinq.Size = new System.Drawing.Size(173, 28);
+            this.sodiennuoclinq.TabIndex = 0;
+            this.sodiennuoclinq.Text = "sodiennuoclinq";
+            this.sodiennuoclinq.UseVisualStyleBackColor = true;
+            this.sodiennuoclinq.Click += new System.EventHandler(this.sodiennuoclinq_Click);
+            // 
             // a4sodiennuoc
             // 
             this.a4sodiennuoc.BackColor = System.Drawing.Color.Transparent;
@@ -205,6 +238,26 @@
             this.a3hopdong.MouseEnter += new System.EventHandler(this.button_MouseEnter);
             this.a3hopdong.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
+            // a2nguoithue
+            // 
+            this.a2nguoithue.BackColor = System.Drawing.Color.Transparent;
+            this.a2nguoithue.CausesValidation = false;
+            this.a2nguoithue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.a2nguoithue.Dock = System.Windows.Forms.DockStyle.Top;
+            this.a2nguoithue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.a2nguoithue.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.a2nguoithue.ForeColor = System.Drawing.Color.White;
+            this.a2nguoithue.Location = new System.Drawing.Point(0, 124);
+            this.a2nguoithue.Margin = new System.Windows.Forms.Padding(2);
+            this.a2nguoithue.Name = "a2nguoithue";
+            this.a2nguoithue.Size = new System.Drawing.Size(173, 64);
+            this.a2nguoithue.TabIndex = 1;
+            this.a2nguoithue.Text = "Người thuê";
+            this.a2nguoithue.UseVisualStyleBackColor = false;
+            this.a2nguoithue.Click += new System.EventHandler(this.nguoithuetro);
+            this.a2nguoithue.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+            this.a2nguoithue.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            // 
             // phongtro_panel
             // 
             this.phongtro_panel.Controls.Add(this.phongtrosql);
@@ -237,26 +290,6 @@
             this.phongtrolinq.Text = "phongtrolinq";
             this.phongtrolinq.UseVisualStyleBackColor = true;
             this.phongtrolinq.Click += new System.EventHandler(this.phongtrolinq_Click);
-            // 
-            // a2nguoithue
-            // 
-            this.a2nguoithue.BackColor = System.Drawing.Color.Transparent;
-            this.a2nguoithue.CausesValidation = false;
-            this.a2nguoithue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.a2nguoithue.Dock = System.Windows.Forms.DockStyle.Top;
-            this.a2nguoithue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.a2nguoithue.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.a2nguoithue.ForeColor = System.Drawing.Color.White;
-            this.a2nguoithue.Location = new System.Drawing.Point(0, 124);
-            this.a2nguoithue.Margin = new System.Windows.Forms.Padding(2);
-            this.a2nguoithue.Name = "a2nguoithue";
-            this.a2nguoithue.Size = new System.Drawing.Size(173, 64);
-            this.a2nguoithue.TabIndex = 1;
-            this.a2nguoithue.Text = "Người thuê";
-            this.a2nguoithue.UseVisualStyleBackColor = false;
-            this.a2nguoithue.Click += new System.EventHandler(this.nguoithuetro);
-            this.a2nguoithue.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-            this.a2nguoithue.MouseLeave += new System.EventHandler(this.button_MouseLeave);
             // 
             // a1phongtro
             // 
@@ -363,39 +396,6 @@
             this.TimerForMainClock.Interval = 80;
             this.TimerForMainClock.Tick += new System.EventHandler(this.TimerForMainClock_Tick);
             // 
-            // sodiennuoc_panel
-            // 
-            this.sodiennuoc_panel.Controls.Add(this.sodiennuocsql);
-            this.sodiennuoc_panel.Controls.Add(this.sodiennuoclinq);
-            this.sodiennuoc_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sodiennuoc_panel.Location = new System.Drawing.Point(0, 316);
-            this.sodiennuoc_panel.Name = "sodiennuoc_panel";
-            this.sodiennuoc_panel.Size = new System.Drawing.Size(173, 60);
-            this.sodiennuoc_panel.TabIndex = 14;
-            this.sodiennuoc_panel.Visible = false;
-            // 
-            // sodiennuoclinq
-            // 
-            this.sodiennuoclinq.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sodiennuoclinq.Location = new System.Drawing.Point(0, 0);
-            this.sodiennuoclinq.Name = "sodiennuoclinq";
-            this.sodiennuoclinq.Size = new System.Drawing.Size(173, 28);
-            this.sodiennuoclinq.TabIndex = 0;
-            this.sodiennuoclinq.Text = "sodiennuoclinq";
-            this.sodiennuoclinq.UseVisualStyleBackColor = true;
-            this.sodiennuoclinq.Click += new System.EventHandler(this.sodiennuoclinq_Click);
-            // 
-            // sodiennuocsql
-            // 
-            this.sodiennuocsql.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sodiennuocsql.Location = new System.Drawing.Point(0, 28);
-            this.sodiennuocsql.Name = "sodiennuocsql";
-            this.sodiennuocsql.Size = new System.Drawing.Size(173, 28);
-            this.sodiennuocsql.TabIndex = 1;
-            this.sodiennuocsql.Text = "sodiennuocsql";
-            this.sodiennuocsql.UseVisualStyleBackColor = true;
-            this.sodiennuocsql.Click += new System.EventHandler(this.sodiennuocsql_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,12 +414,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.csvc_panel.ResumeLayout(false);
+            this.sodiennuoc_panel.ResumeLayout(false);
             this.phongtro_panel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo_main)).EndInit();
-            this.sodiennuoc_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

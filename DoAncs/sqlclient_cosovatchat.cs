@@ -5,13 +5,34 @@ namespace Doancs
 {
     public partial class sqlclient_cosovatchat : Form
     {
-        Database db = null;
-        string savebutton = "";
-        public sqlclient_cosovatchat(Database db)
+        protected Database db = null;
+        protected string savebutton = "";
+        protected string logintype = "";
+        public sqlclient_cosovatchat(Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
             disable_all(false, true, tbmaphong);
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+                var dt = db.getData($"SELECT maphong FROM hopdong WHERE manguoithue = '{logintype}'");
+                try
+                {
+                    logintype = dt.Rows[0][0].ToString();
+                }
+                catch
+                {
+                    logintype = "   ";
+                }
+                this.logintype = logintype;
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -81,6 +102,11 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
+            if (logintype != "")
+            {
+                bangcosovatchat.DataSource = db.getData($"SELECT * FROM cosovatchat WHERE maphong = '{logintype}'");
+                return;
+            }
             if (temp == null)
             {
                 bangcosovatchat.DataSource = db.getData("SELECT * FROM cosovatchat");
@@ -103,6 +129,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -121,7 +148,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"SELECT * FROM cosovatchat WHERE maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM cosovatchat WHERE maphong = '{tbmaphong.Text}'");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -132,7 +159,7 @@ namespace Doancs
             temp.ShowDialog();
             if (temp.result == true)
             {
-                db.cmd($"DELETE FROM cosovatchat WHERE maphong= {tbmaphong.Text}");
+                db.cmd($"DELETE FROM cosovatchat WHERE maphong= '{tbmaphong.Text}'");
                 loadbang();
             }
         }
@@ -158,7 +185,7 @@ namespace Doancs
                             $" quatdien = {for_save(quatdien.Text)}, " +
                             $" tulanh = {for_save(tulanh.Text)}, " +
                             $" binhnonglanh = {for_save(binhnonglanh.Text)} " +
-                            $" WHERE maphong = {tbmaphong.Text}");
+                            $" WHERE maphong = '{tbmaphong.Text}'");
                         loadbang();
                     }
                     catch (Exception ex)
@@ -170,7 +197,7 @@ namespace Doancs
                 case "add":
                     try
                     {
-                        db.cmd($"INSERT INTO cosovatchat VALUES ({tbmaphong.Text}," +
+                        db.cmd($"INSERT INTO cosovatchat VALUES ('{tbmaphong.Text}'," +
                             $" {for_save(dieuhoa.Text)},  " +
                             $" {for_save(quatdien.Text)}, " +
                             $" {for_save(tulanh.Text)}, " +

@@ -12,13 +12,25 @@ namespace Doancs
 {
     public partial class sqlclient_hoadon : Form
     {
-        Database db = null;
-        string savebutton = "";
-        public sqlclient_hoadon(Database db)
+        protected Database db = null;
+        protected string savebutton = "";
+        protected string logintype = "";
+        public sqlclient_hoadon(Database db,string logintype)
         {
             InitializeComponent();
             this.db = db;
+            this.logintype = logintype;
             disable_all(false, true, tbmaphong);
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+            }
         }
 
         //enable all button and textbox with except
@@ -82,6 +94,11 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
+            if (logintype != "")
+            {
+                banghoadon.DataSource = db.getData($"SELECT * FROM hoadon WHERE manguoithue = '{logintype}'");
+                return;
+            }
             if (temp == null)
             {
                 banghoadon.DataSource = db.getData("SELECT * FROM hoadon");
@@ -104,6 +121,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmanguoithue);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -128,7 +146,7 @@ namespace Doancs
 
         private void bFind_Click(object sender, EventArgs e)
         {
-            loadbang($"SELECT * FROM hoadon WHERE maphong = {tbmaphong.Text}");
+            loadbang($"SELECT * FROM hoadon WHERE maphong = '{tbmaphong.Text}'");
             disable_all(true, true, bFind, tbmaphong);
             savebutton = "find";
         }
@@ -154,7 +172,7 @@ namespace Doancs
                     try
                     {
                         db.cmd($"UPDATE hoadon SET " +
-                            $" maphong = {tbmaphong.Text},  " +
+                            $" maphong = '{tbmaphong.Text}',  " +
                             $" manguoithue = {tbmanguoithue.Text}, " +
                             $" ngaylap = '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" thanhtien = {tbthanhtien.Text} " +
@@ -171,7 +189,7 @@ namespace Doancs
                     try
                     {
                         db.cmd($"INSERT INTO hoadon VALUES ({tbmahd.Text}," +
-                            $" {tbmaphong.Text},  " +
+                            $" '{tbmaphong.Text}',  " +
                             $" {tbmanguoithue.Text}, " +
                             $" '{ngaylap.Value.ToString("MM-dd-yyyy")}', " +
                             $" {tbthanhtien.Text} " +

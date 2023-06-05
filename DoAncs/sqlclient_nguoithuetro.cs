@@ -13,13 +13,27 @@ namespace Doancs
 {
     public partial class sqlclient_nguoithuetro : Form
     {
-        Database db = null;
-        string savebutton = "";
-        public sqlclient_nguoithuetro(Database db)
+        protected Database db = null;
+        protected string savebutton = "";
+        protected string logintype = "";
+        public sqlclient_nguoithuetro(Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
+            this.logintype = logintype;
             disable_all(false, true, tbmanguoithue);
+            if (logintype != "")
+            {
+                //disable textbox manguoithue
+                tbmanguoithue.Enabled = false;
+                // hide button
+                bAdd.Hide();
+                //bEdit.Hide();
+                bDelete.Hide();
+                //bSave.Hide();
+                bFind.Hide();
+                //bCancel.Hide();
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -85,6 +99,11 @@ namespace Doancs
         }
         void loadbang(string temp = null)
         {
+            if (logintype != "")
+            {
+                bangnguoithuetro.DataSource = db.getData($"SELECT * FROM nguoithuetro WHERE manguoithue = '{logintype}'");
+                return;
+            }
             if (temp == null)
             {
                 bangnguoithuetro.DataSource = db.getData("SELECT * FROM nguoithuetro");
@@ -107,6 +126,11 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmanguoithue);
+            if(logintype != "")
+            {
+                tbmanguoithue.Enabled = false;
+            }
         }
 
         private void bAdd_Click(object sender, EventArgs e)
@@ -118,7 +142,14 @@ namespace Doancs
         private void bEdit_Click(object sender, EventArgs e)
         {
             enable_all();
-            disable_all(true, false, bEdit, bSave);
+            if(logintype == "")
+            {     
+                disable_all(true, false, bEdit, bSave);
+            }
+            else
+            {
+                disable_all(true, true, bEdit, bSave,tbsdt);
+            }
             savebutton = "edit";
         }
 

@@ -6,24 +6,24 @@ namespace Doancs
 {
     public partial class Main : Form
     {
-        public Database db = null;
-        public QUANLYTRO_LINQ_Entities qlt = new QUANLYTRO_LINQ_Entities();
-        Form saveform = null;
-        Button savebutton = null;
+        private Database db = null;
+        private QUANLYTRO_LINQ_Entities qlt = new QUANLYTRO_LINQ_Entities();
+        protected Form saveform = null;
+        protected Button savebutton = null;
         bool islogout = false;
-        Panel savepanel = null;
+        protected Panel savepanel = null;
+        protected string logintype = "";
         //for database and clock
-        public Main(Database db)
+        public Main(Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
+            this.logintype = logintype; //"" : chủ trọ, khác : mã người thuê
             //setup clock
             CLOCK.ForeColor = SystemColors.MenuBar;
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
             TimerForMainClock.Enabled = true;
             TimerForMainClock.Interval = 1000;
-            //hide menu dropdown
-            //csvc_panel.Hide();
         }
         private void TimerForMainClock_Tick(object sender, EventArgs e)
         { 
@@ -90,7 +90,7 @@ namespace Doancs
         }
         private void hopdong(object sender, EventArgs e)
         {
-            sqlclient_hopdong hd = new sqlclient_hopdong(db);
+            sqlclient_hopdong hd = new sqlclient_hopdong(db,logintype);
             loadchildform(hd,a3hopdong);
         }
         private void phongtro(object sender, EventArgs e)
@@ -100,23 +100,23 @@ namespace Doancs
         }
         private void phongtrolinq_Click(object sender, EventArgs e)
         {
-            linq_phongtro pt = new linq_phongtro(qlt);
+            linq_phongtro pt = new linq_phongtro(qlt,logintype);
             loadchildform(pt, a1phongtro,true);
         }
 
         private void phongtrosql_Click(object sender, EventArgs e)
         {
-            sqlclient_phongtro pt = new sqlclient_phongtro(db);
+            sqlclient_phongtro pt = new sqlclient_phongtro(db,logintype);
             loadchildform(pt, a1phongtro, true);
         }
         private void nguoithuetro(object sender, EventArgs e)
         {
-            sqlclient_nguoithuetro ntt = new sqlclient_nguoithuetro(db);
+            sqlclient_nguoithuetro ntt = new sqlclient_nguoithuetro(db,logintype);
             loadchildform(ntt, a2nguoithue);
         }
         private void hoadon(object sender, EventArgs e)
         {
-            sqlclient_hoadon fhd = new sqlclient_hoadon(db);
+            sqlclient_hoadon fhd = new sqlclient_hoadon(db,logintype);
             loadchildform(fhd,a5hoadon);
         }
         private void cosovchat(object sender, EventArgs e)
@@ -125,12 +125,12 @@ namespace Doancs
         }
         private void csvc_linq_Click(object sender, EventArgs e)
         {
-            linq_cosovatchat csvc = new linq_cosovatchat(qlt);
+            linq_cosovatchat csvc = new linq_cosovatchat(qlt,logintype);
             loadchildform(csvc, bcsvc, true);
         }
         private void csvc_sqlclient_Click(object sender, EventArgs e)
         {
-            sqlclient_cosovatchat csvc = new sqlclient_cosovatchat(db);
+            sqlclient_cosovatchat csvc = new sqlclient_cosovatchat(db,logintype);
             loadchildform(csvc, bcsvc,true);
         }
         private void sdn_Click(object sender, EventArgs e)
@@ -139,13 +139,13 @@ namespace Doancs
         }
         private void sodiennuoclinq_Click(object sender, EventArgs e)
         {
-            linq_sodiennuoc sdn = new linq_sodiennuoc(qlt);
+            linq_sodiennuoc sdn = new linq_sodiennuoc(qlt,logintype);
             loadchildform(sdn, a4sodiennuoc, true);
         }
 
         private void sodiennuocsql_Click(object sender, EventArgs e)
         {
-            sqlclient_sodiennuoc sdn = new sqlclient_sodiennuoc(db);
+            sqlclient_sodiennuoc sdn = new sqlclient_sodiennuoc(db,logintype);
             loadchildform(sdn, a4sodiennuoc, true);
         }
         private void logout_Click(object sender, EventArgs e)
@@ -158,7 +158,8 @@ namespace Doancs
         {
             if (islogout == false)
             {
-                Environment.Exit(0);
+                //thoát trực tiếp chứ không phải đăng xuất
+                Environment.Exit(0); //thoát tất cả các thứ liên quan đến ctrình(gồm form login ở trạng thái ẩn - hide() )
             }
         }
         //hover in

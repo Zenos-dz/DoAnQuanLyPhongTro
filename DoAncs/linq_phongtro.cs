@@ -15,14 +15,26 @@ namespace Doancs
 {
     public partial class linq_phongtro : Form
     {
-        QUANLYTRO_LINQ_Entities qlt = null;
-        string savebutton = "";
-        PhongTro linq_phongtro_val = new PhongTro();
-        public linq_phongtro(QUANLYTRO_LINQ_Entities qlt)
+        protected QUANLYTRO_LINQ_Entities qlt = null;
+        protected string savebutton = "";
+        protected PhongTro linq_phongtro_val = new PhongTro();
+        protected string logintype = "";
+        public linq_phongtro(QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             this.qlt = qlt;
             InitializeComponent();
             disable_all(false, true, tbmaphong);
+            this.logintype = logintype; 
+            if (logintype != "")
+            {
+                // hide button
+                bAdd.Hide();
+                bEdit.Hide();
+                bDelete.Hide();
+                bSave.Hide();
+                bFind.Hide();
+                bCancel.Hide();
+            }
         }
         //enable all button and textbox with except
         void enable_all(params Control[] ex)
@@ -108,6 +120,7 @@ namespace Doancs
             }
             enable_all();
             savebutton = "";
+            disable_all(false, true, tbmaphong);
         }
 
         private void bAdd_Click(object sender, EventArgs e)
