@@ -165,11 +165,11 @@
     <Compile Include="dangnhap.Designer.cs">
       <DependentUpon>dangnhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="setting.cs">
+    <Compile Include="form_doimatkhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="setting.Designer.cs">
-      <DependentUpon>setting.cs</DependentUpon>
+    <Compile Include="form_doimatkhau.Designer.cs">
+      <DependentUpon>form_doimatkhau.cs</DependentUpon>
     </Compile>
     <Compile Include="SoDienNuoc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="dangnhap.resx">
       <DependentUpon>dangnhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="setting.resx">
-      <DependentUpon>setting.cs</DependentUpon>
+    <EmbeddedResource Include="form_doimatkhau.resx">
+      <DependentUpon>form_doimatkhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sqlclient_cosovatchat.resx">
       <DependentUpon>sqlclient_cosovatchat.cs</DependentUpon>

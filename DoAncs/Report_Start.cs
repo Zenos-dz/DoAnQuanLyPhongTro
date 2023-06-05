@@ -14,7 +14,7 @@ namespace Doancs
     {
         Database db = null;
         public List<string> value = null;
-        public Report_Start(Database db)
+        public Report_Start(ref Database db)
         {
             InitializeComponent();
             this.db = db;  

@@ -19,7 +19,7 @@ namespace Doancs
         protected string savebutton = "";
         protected PhongTro linq_phongtro_val = new PhongTro();
         protected string logintype = "";
-        public linq_phongtro(QUANLYTRO_LINQ_Entities qlt, string logintype)
+        public linq_phongtro(ref QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             this.qlt = qlt;
             InitializeComponent();

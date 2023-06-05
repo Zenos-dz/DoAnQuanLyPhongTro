@@ -1,6 +1,6 @@
 ﻿namespace Doancs
 {
-    partial class setting
+    partial class form_doimatkhau
     {
         /// <summary>
         /// Required designer variable.

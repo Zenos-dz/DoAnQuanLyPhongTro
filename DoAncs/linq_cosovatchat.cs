@@ -11,7 +11,7 @@ namespace Doancs
         protected CoSoVatChat linq_cosovatchat_val = new CoSoVatChat();
         protected string savebutton = "";
         protected string logintype = "";
-        public linq_cosovatchat(QUANLYTRO_LINQ_Entities qlt, string logintype)
+        public linq_cosovatchat(ref QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             InitializeComponent();
             this.qlt = qlt;

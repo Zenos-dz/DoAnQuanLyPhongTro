@@ -15,7 +15,7 @@ namespace Doancs
         protected Database db = null;
         protected string savebutton = "";
         protected string logintype = "";
-        public sqlclient_hopdong(Database dbinput, string logintype)
+        public sqlclient_hopdong(ref Database dbinput, string logintype)
         {
             InitializeComponent();
             db = dbinput;

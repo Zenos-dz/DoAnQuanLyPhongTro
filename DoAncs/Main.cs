@@ -14,7 +14,7 @@ namespace Doancs
         protected Panel savepanel = null;
         protected string logintype = "";
         //for database and clock
-        public Main(Database db, string logintype)
+        public Main(ref Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
@@ -83,14 +83,13 @@ namespace Doancs
             anyform.TopLevel = false;
             panel1.Controls.Add(anyform);
             anyform.Dock = DockStyle.Fill;
-            //anyform.Show(Parent);
             anyform.Show();
             saveform = anyform;
             savebutton = anybutton;
         }
         private void hopdong(object sender, EventArgs e)
         {
-            sqlclient_hopdong hd = new sqlclient_hopdong(db,logintype);
+            sqlclient_hopdong hd = new sqlclient_hopdong(ref db,logintype);
             loadchildform(hd,a3hopdong);
         }
         private void phongtro(object sender, EventArgs e)
@@ -100,23 +99,23 @@ namespace Doancs
         }
         private void phongtrolinq_Click(object sender, EventArgs e)
         {
-            linq_phongtro pt = new linq_phongtro(qlt,logintype);
+            linq_phongtro pt = new linq_phongtro(ref qlt,logintype);
             loadchildform(pt, a1phongtro,true);
         }
 
         private void phongtrosql_Click(object sender, EventArgs e)
         {
-            sqlclient_phongtro pt = new sqlclient_phongtro(db,logintype);
+            sqlclient_phongtro pt = new sqlclient_phongtro(ref db,logintype);
             loadchildform(pt, a1phongtro, true);
         }
         private void nguoithuetro(object sender, EventArgs e)
         {
-            sqlclient_nguoithuetro ntt = new sqlclient_nguoithuetro(db,logintype);
+            sqlclient_nguoithuetro ntt = new sqlclient_nguoithuetro(ref db,logintype);
             loadchildform(ntt, a2nguoithue);
         }
         private void hoadon(object sender, EventArgs e)
         {
-            sqlclient_hoadon fhd = new sqlclient_hoadon(db,logintype);
+            sqlclient_hoadon fhd = new sqlclient_hoadon(ref db,logintype);
             loadchildform(fhd,a5hoadon);
         }
         private void cosovchat(object sender, EventArgs e)
@@ -125,12 +124,12 @@ namespace Doancs
         }
         private void csvc_linq_Click(object sender, EventArgs e)
         {
-            linq_cosovatchat csvc = new linq_cosovatchat(qlt,logintype);
+            linq_cosovatchat csvc = new linq_cosovatchat(ref qlt,logintype);
             loadchildform(csvc, bcsvc, true);
         }
         private void csvc_sqlclient_Click(object sender, EventArgs e)
         {
-            sqlclient_cosovatchat csvc = new sqlclient_cosovatchat(db,logintype);
+            sqlclient_cosovatchat csvc = new sqlclient_cosovatchat(ref db,logintype);
             loadchildform(csvc, bcsvc,true);
         }
         private void sdn_Click(object sender, EventArgs e)
@@ -139,13 +138,13 @@ namespace Doancs
         }
         private void sodiennuoclinq_Click(object sender, EventArgs e)
         {
-            linq_sodiennuoc sdn = new linq_sodiennuoc(qlt,logintype);
+            linq_sodiennuoc sdn = new linq_sodiennuoc(ref qlt,logintype);
             loadchildform(sdn, a4sodiennuoc, true);
         }
 
         private void sodiennuocsql_Click(object sender, EventArgs e)
         {
-            sqlclient_sodiennuoc sdn = new sqlclient_sodiennuoc(db,logintype);
+            sqlclient_sodiennuoc sdn = new sqlclient_sodiennuoc(ref db,logintype);
             loadchildform(sdn, a4sodiennuoc, true);
         }
         private void logout_Click(object sender, EventArgs e)
@@ -193,5 +192,10 @@ namespace Doancs
             }
         }
 
+        private void changepass_Click(object sender, EventArgs e)
+        {
+            form_doimatkhau doimk = new form_doimatkhau(ref db, logintype);
+            loadchildform(doimk, null);
+        }
     }
 }

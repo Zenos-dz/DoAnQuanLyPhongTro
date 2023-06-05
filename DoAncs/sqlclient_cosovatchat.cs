@@ -8,7 +8,7 @@ namespace Doancs
         protected Database db = null;
         protected string savebutton = "";
         protected string logintype = "";
-        public sqlclient_cosovatchat(Database db, string logintype)
+        public sqlclient_cosovatchat(ref Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;

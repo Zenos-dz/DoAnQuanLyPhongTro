@@ -16,7 +16,7 @@ namespace Doancs
         protected Database db = null;
         protected string savebutton = "";
         protected string logintype = "";
-        public sqlclient_sodiennuoc(Database db, string logintype)
+        public sqlclient_sodiennuoc(ref Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;

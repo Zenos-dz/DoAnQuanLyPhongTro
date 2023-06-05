@@ -18,7 +18,7 @@ namespace Doancs
         protected void checklogin()
         {
             //code check login
-            string query = $"SELECT username FROM NguoiDung WHERE username='{username.Text}' AND password='{pass.Text}'";
+            string query = $"SELECT username FROM NguoiDung WHERE username='{username.Text.ToLower()}' AND password='{pass.Text}'";
             DataTable reader = db.getData(query);
             reader.Rows.Add();
             try
@@ -28,7 +28,7 @@ namespace Doancs
                     this.Hide();
                     username.Text = "";
                     pass.Text = "";
-                    Main main = new Main(db,"");
+                    Main main = new Main(ref db,"");
                     main.ShowDialog();
                     this.Show();
                 }
@@ -40,7 +40,7 @@ namespace Doancs
                     if (reader.Rows[0].IsNull(0) == false)
                     {
                         this.Hide();
-                        Main main = new Main(db, username.Text);
+                        Main main = new Main(ref db, username.Text);
                         username.Text = "";
                         pass.Text = "";
                         main.ShowDialog();

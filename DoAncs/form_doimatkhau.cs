@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Doancs
 {
-    public partial class setting : Form
+    public partial class form_doimatkhau : Form
     {
         protected Database db = null;
         protected string logintype;
-        public setting(Database db,string logintype)
+        public form_doimatkhau(ref Database db,string logintype)
         {
             InitializeComponent();
             this.db = db;
@@ -49,11 +49,13 @@ namespace Doancs
                 {
                     db.cmd($"UPDATE nguoidung SET " +
                             $"password = '{tbnewpass}'," +
-                            $" WHERE manguoithue = 'admin'");
+                            $" WHERE username = 'admin'");
                 }
                 else
                 {
-
+                    db.cmd($"UPDATE nguoithuetro SET " +
+                            $"password = '{tbnewpass}'," +
+                            $" WHERE manguoithue = '{this.logintype}'");
                 }
             }
         }

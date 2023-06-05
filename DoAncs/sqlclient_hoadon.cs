@@ -15,7 +15,7 @@ namespace Doancs
         protected Database db = null;
         protected string savebutton = "";
         protected string logintype = "";
-        public sqlclient_hoadon(Database db,string logintype)
+        public sqlclient_hoadon(ref Database db,string logintype)
         {
             InitializeComponent();
             this.db = db;

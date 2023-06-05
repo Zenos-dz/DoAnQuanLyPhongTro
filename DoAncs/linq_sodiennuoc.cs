@@ -17,7 +17,7 @@ namespace Doancs
         protected SoDienNuoc linq_sodiennuoc_val = new SoDienNuoc();
         protected string savebutton = "";
         protected string logintype = "";
-        public linq_sodiennuoc(QUANLYTRO_LINQ_Entities qlt, string logintype)
+        public linq_sodiennuoc(ref QUANLYTRO_LINQ_Entities qlt, string logintype)
         {
             InitializeComponent();
             this.qlt = qlt;

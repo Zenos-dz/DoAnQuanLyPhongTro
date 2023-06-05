@@ -19,7 +19,7 @@ namespace Doancs
         float giadien = 1;
         float gianuoc = 1;
         float tongtien = 0;
-        public report(Database db, string mkh, string maphong,float giadien,float gianuoc)
+        public report(ref Database db, string mkh, string maphong,float giadien,float gianuoc)
         {
             InitializeComponent();
             this.db = db;

@@ -53,6 +53,7 @@
             this.logout = new System.Windows.Forms.Button();
             this.logo_main = new System.Windows.Forms.PictureBox();
             this.TimerForMainClock = new System.Windows.Forms.Timer(this.components);
+            this.changepass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -353,6 +354,7 @@
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.changepass);
             this.panel2.Controls.Add(this.logout);
             this.panel2.Controls.Add(this.logo_main);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -395,6 +397,19 @@
             // 
             this.TimerForMainClock.Interval = 80;
             this.TimerForMainClock.Tick += new System.EventHandler(this.TimerForMainClock_Tick);
+            // 
+            // changepass
+            // 
+            this.changepass.Dock = System.Windows.Forms.DockStyle.Right;
+            this.changepass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.changepass.Location = new System.Drawing.Point(768, 0);
+            this.changepass.Margin = new System.Windows.Forms.Padding(0);
+            this.changepass.Name = "changepass";
+            this.changepass.Size = new System.Drawing.Size(89, 59);
+            this.changepass.TabIndex = 2;
+            this.changepass.Text = "Đổi mật khẩu";
+            this.changepass.UseVisualStyleBackColor = true;
+            this.changepass.Click += new System.EventHandler(this.changepass_Click);
             // 
             // Main
             // 
@@ -448,6 +463,7 @@
         private System.Windows.Forms.Panel sodiennuoc_panel;
         private System.Windows.Forms.Button sodiennuocsql;
         private System.Windows.Forms.Button sodiennuoclinq;
+        private System.Windows.Forms.Button changepass;
     }
 }
 
