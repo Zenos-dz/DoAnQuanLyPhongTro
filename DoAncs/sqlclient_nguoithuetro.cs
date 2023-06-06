@@ -24,43 +24,43 @@ namespace Doancs
             disable_all(false, true, tbmanguoithue);
             if (logintype != "")
             {
-                //disable textbox manguoithue
+                 manguoithue
                 tbmanguoithue.Enabled = false;
-                // hide button
+                
                 bAdd.Hide();
-                //bEdit.Hide();
+                
                 bDelete.Hide();
-                //bSave.Hide();
+                
                 bFind.Hide();
-                //bCancel.Hide();
+                
             }
         }
-        //enable all button and textbox with except
+        
         void enable_all(params Control[] ex)
         {
-            //button
+            
             bAdd.Enabled = true;
             bEdit.Enabled = true;
             bDelete.Enabled = true;
             bSave.Enabled = true;
             bFind.Enabled = true;
-            //textbox
+            
             tbmanguoithue.Enabled = true;
             tbtennguoithue.Enabled = true;
             tbcmnd.Enabled = true;
             tbgioitinh.Enabled = true;
             ngaysinh.Enabled = true;
             tbsdt.Enabled = true;
-            //except
+            
             foreach (var item in ex)
             {
                 item.Enabled = false;
             }
         }
-        //disable all button and textbox with except
+        
         void disable_all(bool disablebt = true, bool disabletb = true, params Control[] ex)
         {
-            //button
+            
             if (disablebt == true)
             {
                 bAdd.Enabled = false;
@@ -69,7 +69,7 @@ namespace Doancs
                 bSave.Enabled = false;
                 bFind.Enabled = false;
             }
-            //textbox
+            
             if (disabletb == true)
             {
                 tbmanguoithue.Enabled = false;
@@ -79,7 +79,7 @@ namespace Doancs
                 ngaysinh.Enabled = false;
                 tbsdt.Enabled = false;
             }
-            //ex object
+            
             foreach (var item in ex)
             {
                 item.Enabled = true;
@@ -117,7 +117,7 @@ namespace Doancs
         {
             loadbang();
         }
-        //button
+        
         private void bCancel_Click(object sender, EventArgs e)
         {
             if (savebutton == "find")
@@ -174,7 +174,7 @@ namespace Doancs
                 }
                 catch
                 {
-                    //lỗi khóa phụ
+                    
                     MessageBox.Show("Người thuê này đã đăng kí phòng, bạn phải hủy hợp đồng của người thuê này trước khi xóa!");
                 }
                 loadbang();

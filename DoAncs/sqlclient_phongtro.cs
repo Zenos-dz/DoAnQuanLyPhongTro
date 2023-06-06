@@ -24,7 +24,7 @@ namespace Doancs
             this.logintype = logintype;
             if (logintype != "")
             {
-                // hide button
+                
                 bAdd.Hide();
                 bEdit.Hide();
                 bDelete.Hide();
@@ -33,30 +33,30 @@ namespace Doancs
                 bCancel.Hide();
             }
         }
-        //enable all button and textbox with except
+        
         void enable_all(params Control[] ex)
         {
-            //button
+            
             bAdd.Enabled = true;
             bEdit.Enabled = true;
             bDelete.Enabled = true;
             bSave.Enabled = true;
             bFind.Enabled = true;
-            //textbox
+            
             tbmaphong.Enabled = true;
             tbdientich.Enabled = true;
             tbgiatien.Enabled = true;
             tbtenphong.Enabled = true;
-            //except
+            
             foreach (var item in ex)
             {
                 item.Enabled = false;
             }
         }
-        //disable all button and textbox with except
+        
         void disable_all(bool disablebt = true, bool disabletb = true, params Control[] ex)
         {
-            //button
+            
             if (disablebt == true)
             {
                 bAdd.Enabled = false;
@@ -65,7 +65,7 @@ namespace Doancs
                 bSave.Enabled = false;
                 bFind.Enabled = false;
             }
-            //textbox
+            
             if (disabletb == true)
             {
                 tbmaphong.Enabled = false;
@@ -73,7 +73,7 @@ namespace Doancs
                 tbgiatien.Enabled = false;
                 tbtenphong.Enabled = false;
             }
-            //ex object
+            
             foreach (var item in ex)
             {
                 item.Enabled = true;
@@ -103,7 +103,7 @@ namespace Doancs
         {
             loadbang();
         }
-        //button
+        
         private void bCancel_Click(object sender, EventArgs e)
         {
             if (savebutton == "find")
@@ -148,7 +148,7 @@ namespace Doancs
                 }
                 catch
                 {
-                    //lỗi khóa phụ
+                    
                     MessageBox.Show("Phòng này đang được sử dụng, nếu bạn muốn xóa bỏ nó hãy hủy hợp đồng của phòng này!");
                 }
                 loadbang();

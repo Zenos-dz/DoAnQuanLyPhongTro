@@ -18,7 +18,6 @@ namespace Doancs
             disable_all(false, true, tbmaphong);
             if (logintype != "")
             {
-                // hide button
                 bAdd.Hide();
                 bEdit.Hide();
                 bDelete.Hide();
@@ -27,7 +26,6 @@ namespace Doancs
                 bCancel.Hide();
                 try
                 {
-                    //lấy mã phòng từ mã người thuê logintype
                     var query = from inn in qlt.HopDong
                                 where (inn.MaNguoiThue == logintype)
                                 select inn.MaPhong;
@@ -41,31 +39,27 @@ namespace Doancs
                 this.logintype = logintype;
             }
         }
-        //enable all button and textbox with except
         void enable_all(params Control[] ex)
         {
-            //enable button
             bAdd.Enabled = true;
             bEdit.Enabled = true;
             bDelete.Enabled = true;
             bSave.Enabled = true;
             bFind.Enabled = true;
-            //enable textbox
+            
             tbmaphong.Enabled = true;
             dieuhoa.Enabled = true;
             quatdien.Enabled = true;
             tulanh.Enabled = true;
             binhnonglanh.Enabled = true;
-            //disable except object
+            
             foreach (var item in ex)
             {
                 item.Enabled = false;
             }
         }
-        //disable all button and textbox with except
         void disable_all(bool disablebt = true, bool disabletb = true, params Control[] ex)
         {
-            //disable button
             if (disablebt == true)
             {
                 bAdd.Enabled = false;
@@ -74,7 +68,6 @@ namespace Doancs
                 bSave.Enabled = false;
                 bFind.Enabled = false;
             }
-            //disable textbox
             if (disabletb == true)
             {
                 tbmaphong.Enabled = false;
@@ -83,7 +76,6 @@ namespace Doancs
                 tulanh.Enabled = false;
                 binhnonglanh.Enabled = false;
             }
-            //enable except object
             foreach (var item in ex)
             {
                 item.Enabled = true;
@@ -135,7 +127,6 @@ namespace Doancs
         {
             loadbang();
         }
-        //button controll
         private void bCancel_Click(object sender, EventArgs e)
         {
             if (savebutton == "find")

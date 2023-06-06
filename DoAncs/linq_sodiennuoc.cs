@@ -24,7 +24,7 @@ namespace Doancs
             disable_all(false, true, tbmaphong);
             if(logintype!= "")
             {
-                // hide button
+                
                 bAdd.Hide();
                 bEdit.Hide();
                 bDelete.Hide();
@@ -32,7 +32,7 @@ namespace Doancs
                 bFind.Hide();
                 bCancel.Hide();
                 try { 
-                    //lấy mã phòng từ mã người thuê logintype
+                    
                     var query = from inn in qlt.HopDong
                                 where (inn.MaNguoiThue == logintype)
                                 select inn.MaPhong;
@@ -46,16 +46,16 @@ namespace Doancs
                 this.logintype = logintype;
             }
         }
-        //enable all button and textbox with except
+        
         void enable_all(params Control[] ex)
         {
-            //button
+            
             bAdd.Enabled = true;
             bEdit.Enabled = true;
             bDelete.Enabled = true;
             bSave.Enabled = true;
             bFind.Enabled = true;
-            //textbox
+            
             tbcsdc.Enabled = true;
             tbcsdm.Enabled = true;
             tbcsnc.Enabled = true;
@@ -63,16 +63,16 @@ namespace Doancs
             tbmaphong.Enabled = true;
             tbthang.Enabled = true;
             tbnam.Enabled = true;
-            //except
+            
             foreach (var item in ex)
             {
                 item.Enabled = false;
             }
         }
-        //disable all button and textbox with except
+        
         void disable_all(bool disablebt = true, bool disabletb = true,params Control[] ex)
         {
-            //button
+            
             if (disablebt == true)
             {
                 bAdd.Enabled = false;
@@ -81,7 +81,7 @@ namespace Doancs
                 bSave.Enabled = false;
                 bFind.Enabled = false;
             }
-            //textbox
+            
             if (disabletb == true) { 
                 tbcsdc.Enabled = false;
                 tbcsdm.Enabled = false;
@@ -91,7 +91,7 @@ namespace Doancs
                 tbthang.Enabled = false;
                 tbnam.Enabled = false;
             }
-            //ex object
+            
             foreach (var item in ex)
             {
                 item.Enabled = true;
@@ -137,7 +137,7 @@ namespace Doancs
         {
             loadbang();
         }
-        //button
+        
         private void bCancel_Click(object sender, EventArgs e)
         {
             if(savebutton == "find")

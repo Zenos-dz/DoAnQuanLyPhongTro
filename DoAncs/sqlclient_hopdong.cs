@@ -23,7 +23,7 @@ namespace Doancs
             this.logintype = logintype;
             if (logintype != "")
             {
-                // hide button
+                
                 bAdd.Hide();
                 bEdit.Hide();
                 bDelete.Hide();
@@ -38,31 +38,31 @@ namespace Doancs
             loadbang();
         }
 
-        //enable all button and textbox with except
+        
         void enable_all(params Control[] ex)
         {
-            //enable button
+            
             bAdd.Enabled = true;
             bEdit.Enabled = true;
             bDelete.Enabled = true;
             bSave.Enabled = true;
             bFind.Enabled = true;
-            //enable textbox
+            
             tbmaphong.Enabled = true;
             tbmahd.Enabled = true;
             tbmanguoithue.Enabled = true;
             ngaythue.Enabled = true;
             ngayketthuc.Enabled = true;
-            //disable except object
+            
             foreach (var item in ex)
             {
                 item.Enabled = false;
             }
         }
-        //disable all button and textbox with except
+        
         void disable_all(bool disablebt = true, bool disabletb = true, params Control[] ex)
         {
-            //disable button
+            
             if (disablebt == true)
             {
                 bAdd.Enabled = false;
@@ -71,7 +71,7 @@ namespace Doancs
                 bSave.Enabled = false;
                 bFind.Enabled = false;
             }
-            //disable textbox
+            
             if (disabletb == true)
             {
                 tbmaphong.Enabled = false;
@@ -80,7 +80,7 @@ namespace Doancs
                 ngaythue.Enabled = false;
                 ngayketthuc.Enabled = false;
             }
-            //enable except object
+            
             foreach (var item in ex)
             {
                 item.Enabled = true;
@@ -114,7 +114,7 @@ namespace Doancs
                 banghopdong.DataSource = db.getData(temp);
             }
         }
-        //button controll
+        
         private void bCancel_Click(object sender, EventArgs e)
         {
             if (savebutton == "find")

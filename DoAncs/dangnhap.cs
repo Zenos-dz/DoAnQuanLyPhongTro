@@ -13,11 +13,8 @@ namespace Doancs
             InitializeComponent();
             pass.PasswordChar = '\u058E';
         }
-        
-        //for login
         protected void checklogin()
         {
-            //code check login
             string query = $"SELECT username FROM NguoiDung WHERE username='{username.Text.ToLower()}' AND password='{pass.Text}'";
             DataTable reader = db.getData(query);
             reader.Rows.Add();

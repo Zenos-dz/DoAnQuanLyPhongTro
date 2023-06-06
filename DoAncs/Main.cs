@@ -10,15 +10,14 @@ namespace Doancs
         private QUANLYTRO_LINQ_Entities qlt = new QUANLYTRO_LINQ_Entities();
         protected Form saveform = null;
         protected Button savebutton = null;
-        bool islogout = false;
+        protected bool islogout = false;
         protected Panel savepanel = null;
         protected string logintype = "";
         public Main(ref Database db, string logintype)
         {
             InitializeComponent();
             this.db = db;
-            this.logintype = logintype; //"" : chủ trọ, khác : mã người thuê
-            //setup clock
+            this.logintype = logintype; 
             CLOCK.ForeColor = SystemColors.MenuBar;
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
             TimerForMainClock.Enabled = true;
@@ -26,40 +25,32 @@ namespace Doancs
         }
         private void TimerForMainClock_Tick(object sender, EventArgs e)
         { 
-            //reset realtime clock
             CLOCK.Text = DateTime.Now.ToString("hh:mm:ss");
         }
-        //hide pannel nếu click 2 lần, nếu click lần đầu : mở panel + đóng panel trước đó(nếu có)
         private void Check2ndClick(Panel inputPanel)
         {
             if (savepanel == inputPanel)
             {
-                //nếu click 2 lần
                 savepanel.Hide();
                 savepanel = null;
             }
             else { 
-                //click lần đầu
                 if(savepanel != null) {
-                    //đóng panel đã mở trước đó nếu có
                     savepanel.Hide();
                 }
                 savepanel = inputPanel;
                 savepanel.Show();
             }
         }
-        //for form
         private void loadchildform(Form anyform,Button anybutton,bool holdopenpanel = false)
         {
             if(anybutton == savebutton || anyform == saveform)
             {
                 return;
             }
-            //form control
             if (saveform != null)
             {
                 saveform.Close();
-                //savebutton.ForeColor = Color.MidnightBlue;
                 savebutton.FlatAppearance.BorderColor = default;
                 savebutton.FlatAppearance.BorderSize = 1;
                 savebutton.BackColor = default;
@@ -67,19 +58,16 @@ namespace Doancs
             }
             else
             {
-                //stop clock in main form
                 CLOCK.Hide();
                 txt_welcome.Hide();
                 TimerForMainClock.Stop();
             }
-            //for pannel
             if (savepanel != null && holdopenpanel == false)
             {
                 savepanel.Hide();
                 savepanel = null;
             }
-            //anybutton.ForeColor = Color.MidnightBlue;
-            anybutton.FlatAppearance.BorderColor = Color.DarkCyan;//Color.FromArgb(238,238,0);
+            anybutton.FlatAppearance.BorderColor = Color.DarkCyan;
             anybutton.FlatAppearance.BorderSize = 1;
             anybutton.FlatStyle = FlatStyle.Flat;
             anybutton.BackColor = Color.Blue;
@@ -160,17 +148,14 @@ namespace Doancs
         {
             if (islogout == false)
             {
-                //thoát trực tiếp chứ không phải đăng xuất
-                Environment.Exit(0); //thoát tất cả các thứ liên quan đến ctrình(gồm form login ở trạng thái ẩn - hide() )
+                Environment.Exit(0);
             }
         }
-        //hover in
         private void button_MouseEnter(object sender, EventArgs e)
         {
             (sender as Button).BackColor = Color.MidnightBlue;
         }
 
-        //hover out
         private void button_MouseLeave(object sender, EventArgs e)
         {
             (sender as Button).BackColor = default;
@@ -178,7 +163,6 @@ namespace Doancs
 
         private void logo_main_Click(object sender, EventArgs e)
         {
-            //form control
             if (saveform != null)
             {
                 TimerForMainClock.Start();
